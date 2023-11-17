@@ -406,6 +406,14 @@
 "Assets/Tower Defense Level Kit/Tower Defense Level Kit/Origin/Standard Assets/Environment/Water/Water/Scripts/WaterBase.cs"
 "Assets/Tower Defense Level Kit/Tower Defense Level Kit/Origin/Standard Assets/Environment/Water/Water/Scripts/WaterTile.cs"
 "Assets/Tower Defense Level Kit/Tower Defense Level Kit/Origin/Standard Assets/Utility/FPSCounter.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/Enemy.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/EnemyBullet.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/EnemyHp.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/Tower.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/TowerBullet.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/TowerHP.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/TowerTrigger.cs"
+"Assets/TowerDefence_Vsquad/TowerDefence_Vsquad/Scripts/WaveSpawn.cs"
 -langversion:9.0
 
 /deterministic
