@@ -1268,6 +1268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 1085293396}
+  towerPlacement: {fileID: 333596863}
   inPreviewMode: 0
 --- !u!1 &131207015
 GameObject:
@@ -2116,7 +2117,7 @@ GameObject:
   - component: {fileID: 258802940}
   m_Layer: 0
   m_Name: TowerPlacement01 (8)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2148,9 +2149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &258802941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2427,11 +2425,10 @@ GameObject:
   - component: {fileID: 333596862}
   - component: {fileID: 333596866}
   - component: {fileID: 333596865}
-  - component: {fileID: 333596864}
   - component: {fileID: 333596863}
   m_Layer: 0
   m_Name: TowerPlacement01 (1)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2443,8 +2440,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333596861}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.9, y: -0, z: 69.4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.9, y: 0, z: 69.4}
   m_LocalScale: {x: 31.934505, y: 0, z: 24.8781}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2463,22 +2460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!65 &333596864
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 333596861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &333596865
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3421,7 +3402,7 @@ GameObject:
   - component: {fileID: 487782239}
   m_Layer: 0
   m_Name: TowerPlacement01 (3)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3453,9 +3434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &487782240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3818,7 +3796,7 @@ GameObject:
   - component: {fileID: 588341367}
   m_Layer: 0
   m_Name: TowerPlacement01
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3834,7 +3812,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &588341364
 MeshRenderer:
@@ -3913,9 +3891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &639975055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6134,8 +6109,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944338973}
-  m_LocalRotation: {x: -0.6755898, y: 0.0008227219, z: 0.00089784496, w: 0.73727673}
-  m_LocalPosition: {x: 472.7, y: -268.15997, z: 379.5}
+  m_LocalRotation: {x: 0.087172285, y: 0.89959055, z: 0.21045254, w: -0.37262255}
+  m_LocalPosition: {x: 16.505478, y: 14.586166, z: 16.50548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6251,7 +6226,7 @@ GameObject:
   - component: {fileID: 976257587}
   m_Layer: 0
   m_Name: TowerPlacement01 (6)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6283,9 +6258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &976257588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7478,7 +7450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159.61023, y: -212}
+  m_AnchoredPosition: {x: -153.2, y: -212}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1151962372
@@ -7825,7 +7797,7 @@ GameObject:
   - component: {fileID: 1184093225}
   m_Layer: 0
   m_Name: TowerPlacement01 (4)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7857,9 +7829,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1184093226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8727,6 +8696,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4571182584650926, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
   m_PrefabInstance: {fileID: 1337038185}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1337038188
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085293396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1362529593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8936,6 +8918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 1203191403}
+  towerPlacement: {fileID: 0}
   inPreviewMode: 0
 --- !u!1 &1436234814
 GameObject:
@@ -9314,7 +9297,7 @@ GameObject:
   - component: {fileID: 1545537986}
   m_Layer: 0
   m_Name: TowerPlacement01 (2)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9346,9 +9329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1545537987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10324,6 +10304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 438530388}
+  towerPlacement: {fileID: 0}
   inPreviewMode: 0
 --- !u!1001 &1713965243
 PrefabInstance:
@@ -12264,7 +12245,7 @@ GameObject:
   - component: {fileID: 2058643466}
   m_Layer: 0
   m_Name: TowerPlacement01 (7)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12296,9 +12277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &2058643467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12484,7 +12462,7 @@ GameObject:
   - component: {fileID: 2104903816}
   m_Layer: 0
   m_Name: TowerPlacement01 (5)
-  m_TagString: Untagged
+  m_TagString: PlaceHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12516,9 +12494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &2104903817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12830,4 +12805,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 1118012185}
+  towerPlacement: {fileID: 0}
   inPreviewMode: 0

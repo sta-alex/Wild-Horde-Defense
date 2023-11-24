@@ -8,6 +8,8 @@ public class BuildSelectionTower : MonoBehaviour
     public GameObject tower;
     private GameObject previewTower;
 
+    public TowerPlacement towerPlacement;
+
     public bool inPreviewMode = false;
 
     void Update()
@@ -20,11 +22,10 @@ public class BuildSelectionTower : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 mousePosition = hit.point;
-                mousePosition.y = 0f;
+                mousePosition.y = 14.99725f;
 
                 if (previewTower == null)
                 {
-                    previewTower = Instantiate(tower, mousePosition, Quaternion.identity) as GameObject;
                     SetPreviewCannonScale();
                     DisableCollider(previewTower);
                 }
@@ -49,7 +50,7 @@ public class BuildSelectionTower : MonoBehaviour
     {
         if (previewTower != null)
         {
-            previewTower.transform.localScale = new Vector3(20f, 20f, 20f);
+            previewTower.transform.localScale = new Vector3(10f, 10f, 10f);
         }
     }
 
@@ -75,10 +76,24 @@ public class BuildSelectionTower : MonoBehaviour
     {
         if (previewTower != null)
         {
-            GameObject newCannon = Instantiate(tower, previewTower.transform.position, Quaternion.identity);
-            newCannon.transform.localScale = new Vector3(20f, 20f, 20f);
-            inPreviewMode = false;
-            Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
+
+            if (previewTower.transform.position.x > towerPlacement.transform.position.x - 15f && previewTower.transform.position.x < towerPlacement.transform.position.x + 15f &&
+                previewTower.transform.position.y > towerPlacement.transform.position.y - 15f && previewTower.transform.position.y < towerPlacement.transform.position.y + 15f &&
+                previewTower.transform.position.z > towerPlacement.transform.position.z - 15f && previewTower.transform.position.z < towerPlacement.transform.position.z + 15f)
+            {
+                Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
+
+                GameObject newTower = Instantiate(tower, snapPosition, Quaternion.identity);
+                newTower.transform.localScale = new Vector3(10f, 10f, 10f);
+                inPreviewMode = false;
+                Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
+            }
+            else
+            {
+                // Das Objekt befindet sich nicht im rechteckigen Bereich
+                Debug.Log("Das Objekt kann nicht platziert werden.");
+            }
+
         }
     }
 
