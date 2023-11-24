@@ -1268,6 +1268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 1085293396}
+  towerPlacement: {fileID: 333596863}
   inPreviewMode: 0
 --- !u!1 &131207015
 GameObject:
@@ -2148,9 +2149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &258802941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2463,9 +2461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &333596864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3453,9 +3448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &487782240
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3913,9 +3905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &639975055
 GameObject:
   m_ObjectHideFlags: 0
@@ -6134,7 +6123,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944338973}
-  m_LocalRotation: {x: -0.6755898, y: 0.0008227219, z: 0.00089784496, w: 0.73727673}
+  m_LocalRotation: {x: -0.6755903, y: 0, z: 0, w: 0.73727727}
   m_LocalPosition: {x: 472.7, y: -268.15997, z: 379.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6283,9 +6272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &976257588
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7857,9 +7843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1184093226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8936,6 +8919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 1203191403}
+  towerPlacement: {fileID: 0}
   inPreviewMode: 0
 --- !u!1 &1436234814
 GameObject:
@@ -9346,9 +9330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &1545537987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9986,6 +9967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuilderMenu: {fileID: 2102167778}
+  buildSelectionTower: {fileID: 127386400}
 --- !u!1 &1689414648
 GameObject:
   m_ObjectHideFlags: 0
@@ -10324,6 +10306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 438530388}
+  towerPlacement: {fileID: 0}
   inPreviewMode: 0
 --- !u!1001 &1713965243
 PrefabInstance:
@@ -12296,9 +12279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &2058643467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12516,9 +12496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62767db16ac572f4590e5d92a5444d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &2104903817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12830,4 +12807,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 963194227}
   tower: {fileID: 1118012185}
+  towerPlacement: {fileID: 0}
   inPreviewMode: 0
