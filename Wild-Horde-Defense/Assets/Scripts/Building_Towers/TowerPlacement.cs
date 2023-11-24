@@ -5,6 +5,8 @@ using UnityEngine;
 public class TowerPlacement : MonoBehaviour
 {
 
+    public bool towerPlaced;
+
     void Start()
     {
 

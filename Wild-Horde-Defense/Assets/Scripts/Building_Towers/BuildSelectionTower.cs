@@ -5,14 +5,18 @@ using UnityEngine;
 public class BuildSelectionTower : MonoBehaviour
 {
     public Camera cam;
+    public List<GameObject> availableTowers;
+   
     public GameObject tower;
+
     private GameObject previewTower;
 
     private GameObject newTower;
 
-    public TowerPlacement towerPlacement;
+    public List<TowerPlacement> towerPlacementList;
 
     public bool inPreviewMode = false;
+    private bool oneTowerAtTime = false;
 
     void Update()
     {
@@ -26,8 +30,9 @@ public class BuildSelectionTower : MonoBehaviour
                 Vector3 mousePosition = hit.point;
                 mousePosition.y = 14.99725f;
 
-                if (previewTower == null)
+                if (previewTower != null && tower != null && oneTowerAtTime)
                 {
+                    oneTowerAtTime = false;
                     previewTower = Instantiate(tower, mousePosition, Quaternion.identity) as GameObject;
                     SetPreviewCannonScale();
                     DisableCollider(previewTower);
@@ -41,12 +46,6 @@ public class BuildSelectionTower : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void OnClick()
-    {
-        inPreviewMode = true;
-        Debug.Log("in Preview");
     }
 
     void SetPreviewCannonScale()
@@ -80,31 +79,73 @@ public class BuildSelectionTower : MonoBehaviour
         if (previewTower != null)
         {
 
-            if (previewTower.transform.position.x > towerPlacement.transform.position.x - 15f && previewTower.transform.position.x < towerPlacement.transform.position.x + 15f &&
+            foreach (TowerPlacement towerPlacement in towerPlacementList)
+            {
+                if (previewTower.transform.position.x > towerPlacement.transform.position.x - 15f && previewTower.transform.position.x < towerPlacement.transform.position.x + 15f &&
                 previewTower.transform.position.y > towerPlacement.transform.position.y - 15f && previewTower.transform.position.y < towerPlacement.transform.position.y + 15f &&
                 previewTower.transform.position.z > towerPlacement.transform.position.z - 15f && previewTower.transform.position.z < towerPlacement.transform.position.z + 15f)
-            {
-
-                if(newTower == null)
                 {
-                    Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
-                    newTower = Instantiate(tower, snapPosition, Quaternion.identity);
-                    newTower.transform.localScale = new Vector3(14f, 14f, 14f);
-                    GameObject.Destroy(previewTower);
-                    inPreviewMode = false;
-                    Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
+                    if (!towerPlacement.towerPlaced)
+                    {
+                        Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
+                        newTower = Instantiate(tower, snapPosition, Quaternion.identity);
+                        newTower.transform.localScale = new Vector3(14f, 14f, 14f);
+                        GameObject.Destroy(previewTower);
+                        inPreviewMode = false;
+                        towerPlacement.towerPlaced = true;
+                        Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
+                    }
+                    else
+                    {
+                        Debug.Log("Tower allready placed!");
+                    }
                 }
                 else
                 {
-                    Debug.Log("Tower allready placed!");
+                    Debug.Log("Das Objekt kann nicht platziert werden.");
                 }
             }
-            else
-            {
-                Debug.Log("Das Objekt kann nicht platziert werden.");
-            }
+
         }
     }
+
+    public void loadFireTower()
+    {
+        GameObject.Destroy(previewTower);
+        oneTowerAtTime = true;
+        inPreviewMode = true;
+        Debug.Log("in Preview");
+        this.tower = availableTowers[3];
+        this.previewTower = tower;
+    }
+    public void loadCannonTower()
+    {
+        GameObject.Destroy(previewTower);
+        oneTowerAtTime = true;
+        inPreviewMode = true;
+        Debug.Log("in Preview");
+        this.tower = availableTowers[2];
+        this.previewTower = tower;
+    }
+    public void loadPoisionTower()
+    {
+        GameObject.Destroy(previewTower);
+        oneTowerAtTime = true;
+        inPreviewMode = true;
+        Debug.Log("in Preview");
+        this.tower = availableTowers[1];
+        this.previewTower = tower;
+    }
+    public void loadCrossbowTower()
+    {
+        GameObject.Destroy(previewTower);
+        oneTowerAtTime = true;
+        inPreviewMode = true;
+        Debug.Log("in Preview");
+        this.tower = availableTowers[0];
+        this.previewTower = tower;
+    }
+
 
     public bool getIsinPreview()
     {
@@ -118,6 +159,11 @@ public class BuildSelectionTower : MonoBehaviour
     public void destroyPreview()
     {
         GameObject.Destroy(this.previewTower);
+    }
+
+    public GameObject getPreviewTower()
+    {
+        return this.previewTower;
     }
 
 
