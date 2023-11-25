@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildSelectionTower : MonoBehaviour
 {
+    public GameManager gameManager;
     public Camera cam;
     public List<GameObject> availableTowers;
    
@@ -17,6 +19,7 @@ public class BuildSelectionTower : MonoBehaviour
 
     public bool inPreviewMode = false;
     private bool oneTowerAtTime = false;
+    private bool transaction;
 
     void Update()
     {
@@ -88,13 +91,21 @@ public class BuildSelectionTower : MonoBehaviour
                 {
                     if (!towerPlacement.towerPlaced)
                     {
-                        Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
-                        newTower = Instantiate(tower, snapPosition, Quaternion.identity);
-                        newTower.transform.localScale = new Vector3(14f, 14f, 14f);
-                        GameObject.Destroy(previewTower);
-                        inPreviewMode = false;
-                        towerPlacement.towerPlaced = true;
-                        Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
+                        DecreaseMoneyFromPlayer();
+                        if (transaction)
+                        {
+                            Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
+                            newTower = Instantiate(tower, snapPosition, Quaternion.identity);
+                            newTower.transform.localScale = new Vector3(14f, 14f, 14f);
+                            GameObject.Destroy(previewTower);
+                            inPreviewMode = false;
+                            towerPlacement.towerPlaced = true;
+                            Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
+                        }
+                        else
+                        {
+                            Debug.Log("Kein Geld verfügbar!");
+                        }
                     }
                     else
                     {
@@ -103,7 +114,7 @@ public class BuildSelectionTower : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Das Objekt kann nicht platziert werden.");
+                    Debug.Log("Das Objekt kann nicht platziert werden!");
                 }
             }
 
@@ -174,6 +185,27 @@ public class BuildSelectionTower : MonoBehaviour
             }
         }
     }
+
+    private void DecreaseMoneyFromPlayer()
+    {
+        if (tower.name.Equals("HM_crossbow_1"))
+        {
+            transaction = gameManager.updateCurrency(100);
+        }
+        if (tower.name.Equals("HM_cannon_1"))
+        {
+            transaction = gameManager.updateCurrency(120);
+        }
+        if (tower.name.Equals("HM_poison_1"))
+        {
+            transaction = gameManager.updateCurrency(160);
+        }
+        if (tower.name.Equals("HM_fire_1"))
+        {
+            transaction = gameManager.updateCurrency(200);
+        }
+    }
+
     public bool getIsinPreview()
     {
         return this.inPreviewMode;
