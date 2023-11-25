@@ -35,6 +35,7 @@ public class BuildSelectionTower : MonoBehaviour
                     oneTowerAtTime = false;
                     previewTower = Instantiate(tower, mousePosition, Quaternion.identity) as GameObject;
                     SetPreviewCannonScale();
+                    ShowTowerZone(previewTower);
                     DisableCollider(previewTower);
                 }
 
@@ -146,7 +147,33 @@ public class BuildSelectionTower : MonoBehaviour
         this.previewTower = tower;
     }
 
+    void ShowTowerZone(GameObject towerObject)
+    {
+        Transform scaledTransform = towerObject.transform.Find("SCALED");
 
+        if (scaledTransform != null)
+        {
+            GameObject zoneObject = scaledTransform.Find("Zone")?.gameObject;
+
+            Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
+
+            halo.enabled = true;
+        }
+        else
+        {
+            scaledTransform = towerObject.transform.Find("Zone");
+
+            if (scaledTransform != null)
+            {
+                GameObject zoneObject = towerObject.transform.Find("Zone")?.gameObject;
+                if (zoneObject != null)
+                {
+                    Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
+                    halo.enabled = true;
+                }
+            }
+        }
+    }
     public bool getIsinPreview()
     {
         return this.inPreviewMode;
