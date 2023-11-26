@@ -54,6 +54,10 @@ public class EnemyPathController : MonoBehaviour
             pathAgent.SetDestination(waypointsPartent.GetChild(nearestWayPoint).position);
             nearestWayPoint+=1;
         }
+        else
+        {
+            Destroy(gameObject); // trigger Destroy
+        }
   
     }
 
@@ -68,5 +72,4 @@ public class EnemyPathController : MonoBehaviour
     {
         return pathAgent.speed;
     }
-
 }
