@@ -68,7 +68,10 @@ public class GameManager : MonoBehaviour
                         }
                         else
                         {
-                            HUD_Tower(previousTower, false);
+                            if (previousTower.activeSelf)
+                            {
+                                HUD_Tower(previousTower, false);
+                            }
                             Debug.Log("HUD turned OFF" + previousTower.name);
                             HUD_Tower(clickedTower, true);
                             Debug.Log("HUD turned ON" + clickedTower.name);
@@ -85,9 +88,18 @@ public class GameManager : MonoBehaviour
         if (scaledTransform != null)
         {
             GameObject zoneObject = scaledTransform.Find("Zone")?.gameObject;
-
-            Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-            enableOrDisableRange(halo, hudTowerOn);
+            if(zoneObject == null)
+            {
+                zoneObject = scaledTransform.Find("Zone2")?.gameObject;
+            }else if(zoneObject == null)
+            {
+                zoneObject = scaledTransform.Find("Zone3")?.gameObject;
+            }
+            if(zoneObject != null)
+            {
+                Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
+                enableOrDisableRange(halo, hudTowerOn);
+            }
         }
         else
         {
@@ -96,6 +108,16 @@ public class GameManager : MonoBehaviour
             if (scaledTransform != null)
             {
                 GameObject zoneObject = clickedTower.transform.Find("Zone")?.gameObject;
+
+                if (zoneObject == null)
+                {
+                    zoneObject = clickedTower.transform.Find("Zone2")?.gameObject;
+                }
+                else if (zoneObject == null)
+                {
+                    zoneObject = clickedTower.transform.Find("Zone3")?.gameObject;
+                }
+
                 if (zoneObject != null)
                 {
                     Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
