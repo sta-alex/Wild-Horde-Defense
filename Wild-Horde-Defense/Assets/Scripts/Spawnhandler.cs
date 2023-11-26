@@ -6,7 +6,14 @@ public class Spawnhandler : MonoBehaviour
 {
     // Start is called before the first frame update
     public Terrain TerrainMap;
-    float spawntimer = 2.0f;
+    public float spawntimer = 0.75f;
+    //Tests
+    public GameObject TestspawnPoint;
+    public Vector2 TestspawnSizeXZ;
+    public GameObject TestobjectToSpawn;
+    public int Testspawnnumber;
+    public bool TestonTerrain;
+    
     void Start()
     {
 
@@ -61,5 +68,10 @@ public class Spawnhandler : MonoBehaviour
         {
             GameObject createdObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
         }
+    }
+
+    public void SpawnTestfunc()
+    {
+    SpawnGameobject(TestspawnPoint, TestspawnSizeXZ, TestobjectToSpawn, Testspawnnumber, TestonTerrain);
     }
 }
