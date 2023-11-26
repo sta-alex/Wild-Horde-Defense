@@ -21,10 +21,16 @@ public class BuildSelectionTower : MonoBehaviour
     private bool oneTowerAtTime = false;
     private bool transaction;
 
+
+    private void Start()
+    {
+        gameManager.enabled = false;
+    }
     void Update()
     {
         if (inPreviewMode)
         {
+            gameManager.enabled = false;
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
@@ -100,6 +106,7 @@ public class BuildSelectionTower : MonoBehaviour
                             GameObject.Destroy(previewTower);
                             inPreviewMode = false;
                             towerPlacement.towerPlaced = true;
+                            gameManager.enabled = true;
                             Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
                         }
                         else

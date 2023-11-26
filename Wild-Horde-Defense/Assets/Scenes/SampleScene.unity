@@ -3915,6 +3915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 1674050128692650, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 4420940651482308, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -4559,6 +4563,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 907905714}
     m_Modifications:
+    - target: {fileID: 1297006832363006, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 1712933440683884, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: m_Name
       value: Zone3
@@ -5190,6 +5198,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1975802823}
     m_Modifications:
+    - target: {fileID: 1261893928371566, guid: 99ece9e9b0f569e47b4f7e25409c82d7, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 1322900919975240, guid: 99ece9e9b0f569e47b4f7e25409c82d7, type: 3}
       propertyPath: m_Name
       value: Zone
@@ -6217,6 +6229,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1557066623}
     m_Modifications:
+    - target: {fileID: 1144989041015720, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 4485292105258098, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6
@@ -6503,7 +6519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &907905714
 Transform:
   m_ObjectHideFlags: 0
@@ -8845,6 +8861,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1975802823}
     m_Modifications:
+    - target: {fileID: 1618792508222544, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 4449779493613100, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -9022,6 +9042,10 @@ PrefabInstance:
     - target: {fileID: 1625777184147098, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625777184147098, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
+      propertyPath: m_TagString
+      value: Tower
       objectReference: {fileID: 0}
     - target: {fileID: 1901516294787152, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: m_IsActive
@@ -9458,6 +9482,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 190745753}
     m_Modifications:
+    - target: {fileID: 1043585126853052, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 1059515782015894, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: m_Name
       value: Zone
@@ -9465,6 +9493,10 @@ PrefabInstance:
     - target: {fileID: 1059515782015894, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162075595987228, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
+      propertyPath: m_TagString
+      value: Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4571182584650926, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: m_RootOrder
@@ -10055,6 +10087,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1557066623}
     m_Modifications:
+    - target: {fileID: 1079211923614252, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 4023231558317660, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -11078,7 +11114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1684111364
 Transform:
   m_ObjectHideFlags: 0
@@ -11475,6 +11511,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1975802823}
     m_Modifications:
+    - target: {fileID: 1695960375590364, guid: b102820ebbbf10e47adb3f1cb1144c78, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 1940499522460082, guid: b102820ebbbf10e47adb3f1cb1144c78, type: 3}
       propertyPath: m_Name
       value: Zone3
@@ -11675,6 +11715,10 @@ PrefabInstance:
     - target: {fileID: 1085163797507038, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085163797507038, guid: b5d493498b1ba5f449c440d193046551, type: 3}
+      propertyPath: m_TagString
+      value: Tower
       objectReference: {fileID: 0}
     - target: {fileID: 1539711374335060, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: m_Name
@@ -12301,6 +12345,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 907905714}
     m_Modifications:
+    - target: {fileID: 1829664690148712, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 4168932714287992, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -12837,6 +12885,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1557066623}
     m_Modifications:
+    - target: {fileID: 1111581069580094, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 4017774328649912, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4
