@@ -10956,10 +10956,18 @@ MonoBehaviour:
   cam: {fileID: 963194227}
   availableTowers:
   - {fileID: 1085293396}
+  - {fileID: 2001660946}
+  - {fileID: 289522882}
   - {fileID: 1203191403}
+  - {fileID: 313475905}
+  - {fileID: 382400012}
   - {fileID: 1118012185}
+  - {fileID: 260006598}
+  - {fileID: 775420797}
   - {fileID: 438530388}
-  tower: {fileID: 0}
+  - {fileID: 699873091}
+  - {fileID: 1605724594}
+  towers: []
   towerPlacementList:
   - {fileID: 588341367}
   - {fileID: 333596863}
