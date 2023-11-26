@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawnhandler : MonoBehaviour
 {
     // Start is called before the first frame update
     public Terrain TerrainMap;
-    public float spawntimer = 0.75f;
+    private float baserespawntimer = 12f;
+    public float spawntimer = 1.25f;
     //Tests
     public GameObject TestspawnPoint;
     public Vector2 TestspawnSizeXZ;
     public GameObject TestobjectToSpawn;
     public int Testspawnnumber;
     public bool TestonTerrain;
+    private NavMeshAgent navAgent;
     
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
@@ -26,14 +29,11 @@ public class Spawnhandler : MonoBehaviour
     }
     public void SpawnGameobject(GameObject spawnPoint, Vector2 spawnSizeXZ, GameObject objectToSpawn, int spawnnumber, bool onTerrain = false)
     {
-
         StartCoroutine(SpawnObject(spawnPoint, spawnSizeXZ, objectToSpawn, spawnnumber, onTerrain));
-
-
     }
     IEnumerator SpawnObject(GameObject spawnPoint, Vector2 spawnSizeXZ, GameObject objectToSpawn, int spawnnumber, bool onTerrain = false)
     {
-
+        
         for (int i = 0; i <= spawnnumber; i++)
         {
             Vector3 spawnPosition = GetSpawnPosition(spawnPoint, spawnSizeXZ, onTerrain);
@@ -59,6 +59,7 @@ public class Spawnhandler : MonoBehaviour
 
     private void SpawnObjectAtPostition(GameObject objectToSpawn, Vector3 spawnPosition)
     {
+
         if (objectToSpawn == null)
         {
             Debug.LogError("Null SpawnObject");
@@ -66,7 +67,14 @@ public class Spawnhandler : MonoBehaviour
         }
         else
         {
+            navAgent = objectToSpawn.GetComponent<NavMeshAgent>();
+            
             GameObject createdObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+
+            if (navAgent != null)
+            {
+                spawntimer = baserespawntimer / navAgent.speed;
+            }
         }
     }
 
@@ -74,4 +82,5 @@ public class Spawnhandler : MonoBehaviour
     {
     SpawnGameobject(TestspawnPoint, TestspawnSizeXZ, TestobjectToSpawn, Testspawnnumber, TestonTerrain);
     }
+  
 }
