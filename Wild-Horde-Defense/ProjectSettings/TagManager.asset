@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Terrain
+  - CrossBowIcon
+  - PoisonIcon
+  - FireIcon
+  - CannonIcon
+  - Castle
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -13,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Terrain
-  - 
+  - Tower
   - 
   - 
   - 

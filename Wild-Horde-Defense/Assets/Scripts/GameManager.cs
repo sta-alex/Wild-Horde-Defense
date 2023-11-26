@@ -26,33 +26,28 @@ public class GameManager : MonoBehaviour
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            ShowTowerUpgradeAndSell(ray);
+            TowerUi(ray);
 
         }
     }
 
-    private void ShowTowerUpgradeAndSell(Ray ray)
+    private void TowerUi(Ray ray)
     {
+        int layerMask = 1 << LayerMask.NameToLayer("Tower");
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
-            if (hit.transform.parent != null && hit.transform.parent.parent != null &&
-                hit.transform.parent.parent.CompareTag("Tower"))
             {
-                GameObject clickedTower = hit.transform.parent.parent.gameObject;
-                ShowTowerZone(clickedTower);
-                Debug.Log("Spieler hat auf Turm geklickt: " + clickedTower.name);
-            }
-            else if (hit.transform.parent != null &&
-                hit.transform.parent.CompareTag("Tower"))
-            {
-                GameObject clickedTower = hit.transform.parent.gameObject;
-                ShowTowerZone(clickedTower);
-                Debug.Log("Spieler hat auf Turm geklickt: " + clickedTower.name);
+                if (hit.transform != null)
+                {
+                    GameObject clickedTower = hit.transform.gameObject;
+                    ShowTowerZone(clickedTower);
+                    ShowTowerUpgradeAndSell(clickedTower);
+                    Debug.Log("Spieler hat auf Turm geklickt: " + clickedTower.name);
+                }
             }
         }
     }
-
     private void ShowTowerZone(GameObject clickedTower)
     {
         Transform scaledTransform = clickedTower.transform.Find("SCALED");
@@ -74,6 +69,24 @@ public class GameManager : MonoBehaviour
                 {
                     Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
                     enableOrDisableRange(halo);
+                }
+            }
+        }
+    }
+
+    private void ShowTowerUpgradeAndSell(GameObject clickedTower)
+    {
+        {
+            GameObject UpgradeAndSellObject = clickedTower.transform.Find("Tower_Ui")?.gameObject;
+            if (UpgradeAndSellObject != null)
+            {
+                if (towerInScope)
+                {
+                    UpgradeAndSellObject.SetActive(true);
+                }
+                else
+                {
+                    UpgradeAndSellObject.SetActive(false);
                 }
             }
         }
