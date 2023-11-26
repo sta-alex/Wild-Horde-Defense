@@ -8,11 +8,14 @@ public class GameManager : MonoBehaviour
     public Text currencyText;
     private int currency;
     private bool towerInScope;
+    private bool test;
+    private GameObject previousTower;
     // Start is called before the first frame update
     void Start()
     {
         towerInScope = false;
-        currency = 220;
+        test = false;
+        currency = 200000;
         currencyText.text = "$ " + currency;
         Debug.Log(currencyText);
     }
@@ -41,14 +44,42 @@ public class GameManager : MonoBehaviour
                 if (hit.transform != null)
                 {
                     GameObject clickedTower = hit.transform.gameObject;
-                    ShowTowerZone(clickedTower);
-                    ShowTowerUpgradeAndSell(clickedTower);
                     Debug.Log("Spieler hat auf Turm geklickt: " + clickedTower.name);
+                    if (previousTower == null)
+                    {
+                        HUD_Tower(clickedTower, true);
+                        Debug.Log("HUD turned ON" + clickedTower.name);
+                    }
+                    else
+                    {
+                        if (previousTower.name.Equals(clickedTower.name) && ReferenceEquals(previousTower, clickedTower))
+                        {
+                            GameObject UpgradeAndSellObject = clickedTower.transform.Find("Tower_Ui")?.gameObject;
+                            if (UpgradeAndSellObject.activeSelf)
+                            {
+                                HUD_Tower(clickedTower, false);
+                                Debug.Log("HUD turned OFF" + clickedTower.name);
+                            }
+                            else
+                            {
+                                HUD_Tower(clickedTower, true);
+                                Debug.Log("HUD turned ON" + clickedTower.name);
+                            }
+                        }
+                        else
+                        {
+                            HUD_Tower(previousTower, false);
+                            Debug.Log("HUD turned OFF" + previousTower.name);
+                            HUD_Tower(clickedTower, true);
+                            Debug.Log("HUD turned ON" + clickedTower.name);
+                        }
+                    }
+                    previousTower = clickedTower;
                 }
             }
         }
     }
-    private void ShowTowerZone(GameObject clickedTower)
+    private void ShowTowerZone(GameObject clickedTower, bool hudTowerOn = false)
     {
         Transform scaledTransform = clickedTower.transform.Find("SCALED");
         if (scaledTransform != null)
@@ -56,7 +87,7 @@ public class GameManager : MonoBehaviour
             GameObject zoneObject = scaledTransform.Find("Zone")?.gameObject;
 
             Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-            enableOrDisableRange(halo);
+            enableOrDisableRange(halo, hudTowerOn);
         }
         else
         {
@@ -68,19 +99,19 @@ public class GameManager : MonoBehaviour
                 if (zoneObject != null)
                 {
                     Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-                    enableOrDisableRange(halo);
+                    enableOrDisableRange(halo, hudTowerOn);
                 }
             }
         }
     }
 
-    private void ShowTowerUpgradeAndSell(GameObject clickedTower)
+    private void ShowTowerUpgradeAndSell(GameObject clickedTower, bool hudTowerOn = false)
     {
         {
             GameObject UpgradeAndSellObject = clickedTower.transform.Find("Tower_Ui")?.gameObject;
             if (UpgradeAndSellObject != null)
             {
-                if (towerInScope)
+                if (hudTowerOn)
                 {
                     UpgradeAndSellObject.SetActive(true);
                 }
@@ -92,19 +123,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void enableOrDisableRange(Behaviour halo)
+    private void enableOrDisableRange(Behaviour halo, bool hudTowerOn)
     {
-        if (!towerInScope)
+        if (hudTowerOn)
         {
-            towerInScope = true;
             halo.enabled = true;
         }
         else
         {
-            towerInScope = false;
             halo.enabled = false;
         }
     }
+
+    private void HUD_Tower(GameObject clickedTower, bool hudTowerOn = false)
+    {
+       ShowTowerZone(clickedTower, hudTowerOn);
+       ShowTowerUpgradeAndSell(clickedTower, hudTowerOn);
+    }
+
 
     public bool updateCurrency(int decreaseCurrency)
     {
