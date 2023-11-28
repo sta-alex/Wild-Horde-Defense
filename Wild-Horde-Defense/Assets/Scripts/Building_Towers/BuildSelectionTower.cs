@@ -8,8 +8,8 @@ public class BuildSelectionTower : MonoBehaviour
     public GameManager gameManager;
     public Camera cam;
     public List<GameObject> availableTowers;
-   
-    public List<GameObject> towers;
+
+    public GameObject tower;
 
     private GameObject previewTower;
 
@@ -37,10 +37,10 @@ public class BuildSelectionTower : MonoBehaviour
                 Vector3 mousePosition = hit.point;
                 mousePosition.y = 14.99725f;
 
-                if (previewTower != null && towers != null && oneTowerAtTime)
+                if (previewTower != null && tower != null && oneTowerAtTime)
                 {
                     oneTowerAtTime = false;
-                    previewTower = Instantiate(towers[0], mousePosition, Quaternion.identity) as GameObject;
+                    previewTower = Instantiate(tower, mousePosition, Quaternion.identity) as GameObject;
                     SetPreviewCannonScale();
                     ShowTowerZone(previewTower);
                     DisableCollider(previewTower);
@@ -93,25 +93,20 @@ public class BuildSelectionTower : MonoBehaviour
                 previewTower.transform.position.y > towerPlacement.transform.position.y - 15f && previewTower.transform.position.y < towerPlacement.transform.position.y + 15f &&
                 previewTower.transform.position.z > towerPlacement.transform.position.z - 15f && previewTower.transform.position.z < towerPlacement.transform.position.z + 15f)
                 {
-                    if (!towerPlacement.towerPlaced)
+                    GameObject selectedTower = gameManager.getCurrentSelectedTower();
+                    if (!towerPlacement.towerPlaced || selectedTower == null)
                     {
                         DecreaseMoneyFromPlayer();
                         if (transaction)
                         {
                             Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
-                            GameObject towerLvL1 = Instantiate(towers[0], snapPosition, Quaternion.identity);
-                            GameObject towerLvL2 = Instantiate(towers[1], snapPosition, Quaternion.identity);
-                            GameObject towerLvL3 = Instantiate(towers[2], snapPosition, Quaternion.identity);
+                            GameObject towerLvL1 = Instantiate(tower, snapPosition, Quaternion.identity);
                             towerLvL1.transform.localScale = new Vector3(14f, 14f, 14f);
-                            towerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
-                            towerLvL2.SetActive(false);
-                            towerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
-                            towerLvL3.SetActive(false);
                             GameObject.Destroy(previewTower);
                             inPreviewMode = false;
                             towerPlacement.towerPlaced = true;
                             gameManager.enabled = true;
-                            Debug.Log("Placed " + towers[0].name + " on terrain at " + previewTower.transform.position);
+                            Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
                         }
                         else
                         {
@@ -138,11 +133,8 @@ public class BuildSelectionTower : MonoBehaviour
         oneTowerAtTime = true;
         inPreviewMode = true;
         Debug.Log("in Preview");
-        this.towers.Clear();
-        this.towers.Add(availableTowers[9]);
-        this.towers.Add(availableTowers[10]);
-        this.towers.Add(availableTowers[11]);
-        this.previewTower = towers[0];
+        this.tower = availableTowers[9];
+        this.previewTower = tower;
     }
     public void loadCannonTower()
     {
@@ -150,11 +142,8 @@ public class BuildSelectionTower : MonoBehaviour
         oneTowerAtTime = true;
         inPreviewMode = true;
         Debug.Log("in Preview");
-        this.towers.Clear();
-        this.towers.Add(availableTowers[6]);
-        this.towers.Add(availableTowers[7]);
-        this.towers.Add(availableTowers[8]);
-        this.previewTower = towers[0];
+        this.tower = availableTowers[6];
+        this.previewTower = tower;
     }
     public void loadPoisionTower()
     {
@@ -162,11 +151,8 @@ public class BuildSelectionTower : MonoBehaviour
         oneTowerAtTime = true;
         inPreviewMode = true;
         Debug.Log("in Preview");
-        this.towers.Clear();
-        this.towers.Add(availableTowers[3]);
-        this.towers.Add(availableTowers[4]);
-        this.towers.Add(availableTowers[5]);
-        this.previewTower = towers[0];
+        this.tower = availableTowers[3];
+        this.previewTower = tower;
     }
     public void loadCrossbowTower()
     {
@@ -174,11 +160,8 @@ public class BuildSelectionTower : MonoBehaviour
         oneTowerAtTime = true;
         inPreviewMode = true;
         Debug.Log("in Preview");
-        this.towers.Clear();
-        this.towers.Add(availableTowers[0]);
-        this.towers.Add(availableTowers[1]);
-        this.towers.Add(availableTowers[2]);
-        this.previewTower = towers[0];
+        this.tower = availableTowers[0];
+        this.previewTower = tower;
     }
 
     void ShowTowerZone(GameObject towerObject)
@@ -211,19 +194,19 @@ public class BuildSelectionTower : MonoBehaviour
 
     private void DecreaseMoneyFromPlayer()
     {
-        if (towers[0].name.Equals("HM_crossbow_1"))
+        if (tower.name.Equals("HM_crossbow_1"))
         {
             transaction = gameManager.updateCurrency(100);
         }
-        if (towers[0].name.Equals("HM_cannon_1"))
+        if (tower.name.Equals("HM_cannon_1"))
         {
             transaction = gameManager.updateCurrency(120);
         }
-        if (towers[0].name.Equals("HM_poison_1"))
+        if (tower.name.Equals("HM_poison_1"))
         {
             transaction = gameManager.updateCurrency(160);
         }
-        if (towers[0].name.Equals("HM_fire_1"))
+        if (tower.name.Equals("HM_fire_1"))
         {
             transaction = gameManager.updateCurrency(200);
         }

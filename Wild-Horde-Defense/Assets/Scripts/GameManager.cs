@@ -7,15 +7,12 @@ public class GameManager : MonoBehaviour
 {
     public Text currencyText;
     private int currency;
-    private bool towerInScope;
-    private bool test;
     private GameObject previousTower;
+    private GameObject currentSelectedTower;
     // Start is called before the first frame update
     void Start()
     {
-        towerInScope = false;
-        test = false;
-        currency = 200000;
+        currency = 2000;
         currencyText.text = "$ " + currency;
         Debug.Log(currencyText);
     }
@@ -28,9 +25,7 @@ public class GameManager : MonoBehaviour
         {
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
             TowerUi(ray);
-
         }
     }
 
@@ -44,6 +39,7 @@ public class GameManager : MonoBehaviour
                 if (hit.transform != null)
                 {
                     GameObject clickedTower = hit.transform.gameObject;
+                    currentSelectedTower = clickedTower;
                     Debug.Log("Spieler hat auf Turm geklickt: " + clickedTower.name);
                     if (previousTower == null)
                     {
@@ -88,14 +84,15 @@ public class GameManager : MonoBehaviour
         if (scaledTransform != null)
         {
             GameObject zoneObject = scaledTransform.Find("Zone")?.gameObject;
-            if(zoneObject == null)
+            if (zoneObject == null)
             {
                 zoneObject = scaledTransform.Find("Zone2")?.gameObject;
-            }else if(zoneObject == null)
+            }
+            if (zoneObject == null)
             {
                 zoneObject = scaledTransform.Find("Zone3")?.gameObject;
             }
-            if(zoneObject != null)
+            if (zoneObject != null)
             {
                 Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
                 enableOrDisableRange(halo, hudTowerOn);
@@ -113,7 +110,7 @@ public class GameManager : MonoBehaviour
                 {
                     zoneObject = clickedTower.transform.Find("Zone2")?.gameObject;
                 }
-                else if (zoneObject == null)
+                if (zoneObject == null)
                 {
                     zoneObject = clickedTower.transform.Find("Zone3")?.gameObject;
                 }
@@ -159,8 +156,8 @@ public class GameManager : MonoBehaviour
 
     private void HUD_Tower(GameObject clickedTower, bool hudTowerOn = false)
     {
-       ShowTowerZone(clickedTower, hudTowerOn);
-       ShowTowerUpgradeAndSell(clickedTower, hudTowerOn);
+        ShowTowerZone(clickedTower, hudTowerOn);
+        ShowTowerUpgradeAndSell(clickedTower, hudTowerOn);
     }
 
 
@@ -182,9 +179,15 @@ public class GameManager : MonoBehaviour
         return transaction;
     }
 
+    public void increaseCurrency(int increaseCurrency)
+    {
+        this.currency = this.currency + increaseCurrency;
+        this.currencyText.text = "$ " + this.currency;
+    }
+
     private bool currencyAvailable(int oldCurrency)
     {
-        if(this.currency < 0)
+        if (this.currency < 0)
         {
             this.currency = oldCurrency;
             return false;
@@ -193,6 +196,11 @@ public class GameManager : MonoBehaviour
         {
             return true;
         }
+    }
+
+    public GameObject getCurrentSelectedTower()
+    {
+        return this.currentSelectedTower;
     }
 
 }
