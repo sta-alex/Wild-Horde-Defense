@@ -218,7 +218,7 @@ namespace RTS_Cam
                 m_Transform.Translate(desiredMove, Space.Self);
             }
 
-            if (useScreenEdgeInput)
+            if (useScreenEdgeInput && !Input.GetKey(panningKey))
             {
                 Vector3 desiredMove = new Vector3();
 
