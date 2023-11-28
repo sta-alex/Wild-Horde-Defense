@@ -395,7 +395,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 75, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36731889
 MonoBehaviour:
@@ -424,15 +424,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Upgrade
-
-'
+  m_Text: MAX LVL
 --- !u!222 &36731890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2876,7 +2874,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208650753
 MonoBehaviour:
@@ -2905,7 +2903,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2913,7 +2911,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Upgrade
 
-'
+    1080$'
 --- !u!222 &208650754
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3717,7 +3715,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286821552
 MonoBehaviour:
@@ -3746,13 +3744,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Upgrade
+
+    600$
 
 '
 --- !u!222 &286821553
@@ -3799,7 +3799,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287565338
 MonoBehaviour:
@@ -3828,13 +3828,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    180$'
 --- !u!222 &287565339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4024,7 +4026,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313676258
 MonoBehaviour:
@@ -4053,13 +4055,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Upgrade
+
+    900$
 
 '
 --- !u!222 &313676259
@@ -4430,7 +4434,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349680044
 MonoBehaviour:
@@ -4459,13 +4463,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    720$'
 --- !u!222 &349680045
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4744,7 +4750,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377631592
 MonoBehaviour:
@@ -4773,13 +4779,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    450$'
 --- !u!222 &377631593
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5757,7 +5765,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478341467
 MonoBehaviour:
@@ -5786,7 +5794,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5794,7 +5802,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Upgrade
 
-'
+    480$'
 --- !u!222 &478341468
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7883,7 +7891,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &743551609
 MonoBehaviour:
@@ -7912,13 +7920,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    60$'
 --- !u!222 &743551610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8207,7 +8217,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &769062358
 MonoBehaviour:
@@ -8236,13 +8246,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    100$'
 --- !u!222 &769062359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8305,7 +8317,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784107986
 MonoBehaviour:
@@ -8334,13 +8346,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    600$'
 --- !u!222 &784107987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8794,8 +8808,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: -0.4493162, y: -0.030794857, z: -0.031738486, w: 0.8922776}
-  m_LocalPosition: {x: 602.3123, y: -62.24057, z: 266.09494}
+  m_LocalRotation: {x: -0.6755903, y: 0, z: 0, w: 0.73727727}
+  m_LocalPosition: {x: 472.7, y: -268.15997, z: 379.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10769,7 +10783,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1045977519
 MonoBehaviour:
@@ -10798,13 +10812,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    540$'
 --- !u!222 &1045977520
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10849,7 +10865,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1054651752
 MonoBehaviour:
@@ -10878,7 +10894,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -10886,7 +10902,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Upgrade
 
-'
+    1200$'
 --- !u!222 &1054651753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11028,7 +11044,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069600005
 MonoBehaviour:
@@ -11057,13 +11073,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Upgrade
+
+    300$
 
 '
 --- !u!222 &1069600006
@@ -11110,7 +11128,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076792695
 MonoBehaviour:
@@ -11139,13 +11157,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    300$'
 --- !u!222 &1076792696
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11238,7 +11258,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 75, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086245416
 MonoBehaviour:
@@ -11267,15 +11287,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Upgrade
-
-'
+  m_Text: MAX LVL
 --- !u!222 &1086245417
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11320,7 +11338,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1088392283
 MonoBehaviour:
@@ -11349,13 +11367,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    80$'
 --- !u!222 &1088392284
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12369,7 +12389,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188939950
 MonoBehaviour:
@@ -12398,13 +12418,17 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    50$
+
+'
 --- !u!222 &1188939951
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13399,7 +13423,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280604515
 MonoBehaviour:
@@ -13428,7 +13452,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -13436,7 +13460,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Upgrade
 
-'
+    360$'
 --- !u!222 &1280604516
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13543,6 +13567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 963194230}
+  availableTowers: []
 --- !u!4 &1326349192
 Transform:
   m_ObjectHideFlags: 0
@@ -15884,7 +15909,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 75, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1563261921
 MonoBehaviour:
@@ -15913,13 +15938,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Upgrade
+  m_Text: 'MAX LVL
 
 '
 --- !u!222 &1563261922
@@ -16682,7 +16707,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683990270
 MonoBehaviour:
@@ -16711,13 +16736,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    150$'
 --- !u!222 &1683990271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16804,7 +16831,7 @@ MonoBehaviour:
   - {fileID: 438530388}
   - {fileID: 699873091}
   - {fileID: 1605724594}
-  towers: []
+  tower: {fileID: 0}
   towerPlacementList:
   - {fileID: 588341367}
   - {fileID: 333596863}
@@ -18992,7 +19019,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 67.152, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906804489
 MonoBehaviour:
@@ -19021,13 +19048,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Upgrade
+
+    1440$
 
 '
 --- !u!222 &1906804490
@@ -21123,7 +21152,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000013351, y: -0.0000071526}
-  m_SizeDelta: {x: 32.355, y: 20.557}
+  m_SizeDelta: {x: 40, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084735390
 MonoBehaviour:
@@ -21152,13 +21181,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sell
+  m_Text: 'Sell
+
+    240$'
 --- !u!222 &2084735391
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21412,7 +21443,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000211, y: -0.0000071526}
-  m_SizeDelta: {x: 67.152, y: 20.557}
+  m_SizeDelta: {x: 75, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096848137
 MonoBehaviour:
@@ -21447,7 +21478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Upgrade
+  m_Text: 'MAX LVL
 
 '
 --- !u!222 &2096848138
