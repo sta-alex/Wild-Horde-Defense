@@ -119,7 +119,7 @@ namespace RTS_Cam
 
         private float ScrollWheel
         {
-            get { return Input.GetAxis(zoomingAxis); }
+            get { return -Input.GetAxis(zoomingAxis); }
         }
 
         private Vector2 MouseAxis
@@ -132,7 +132,7 @@ namespace RTS_Cam
             get
             {
                 bool zoomIn = Input.GetKey(zoomInKey);
-                bool zoomOut = Input.GetKey(zoomOutKey);
+                bool zoomOut = Input.GetKey(zoomOutKey); 
                 if (zoomIn && zoomOut)
                     return 0;
                 else if (!zoomIn && zoomOut)
@@ -222,10 +222,10 @@ namespace RTS_Cam
             {
                 Vector3 desiredMove = new Vector3();
 
-                Rect leftRect = new Rect(0, 0, screenEdgeBorder, Screen.height);
-                Rect rightRect = new Rect(Screen.width - screenEdgeBorder, 0, screenEdgeBorder, Screen.height);
-                Rect upRect = new Rect(0, Screen.height - screenEdgeBorder, Screen.width, screenEdgeBorder);
-                Rect downRect = new Rect(0, 0, Screen.width, screenEdgeBorder);
+                Rect leftRect = new Rect(0, 0, 150f, Screen.height);
+                Rect rightRect = new Rect(Screen.width - 150f, 0, 150f, Screen.height);
+                Rect upRect = new Rect(0, Screen.height - 150f, Screen.width, 150f);
+                Rect downRect = new Rect(0, 0, Screen.width, 150f);
 
                 desiredMove.x = leftRect.Contains(MouseInput) ? -1 : rightRect.Contains(MouseInput) ? 1 : 0;
                 desiredMove.z = upRect.Contains(MouseInput) ? 1 : downRect.Contains(MouseInput) ? -1 : 0;

@@ -9001,8 +9001,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: -0.58230305, y: -0.0862969, z: -0.09040285, w: 0.8033078}
-  m_LocalPosition: {x: 566.92303, y: -191.22368, z: 290.26926}
+  m_LocalRotation: {x: -0.6755903, y: 0, z: 0, w: 0.73727727}
+  m_LocalPosition: {x: 443, y: -573.86, z: 360.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10579,7 +10579,7 @@ MonoBehaviour:
   inputSettingsFoldout: 0
   useFixedUpdate: 0
   keyboardMovementSpeed: 250
-  screenEdgeMovementSpeed: 100
+  screenEdgeMovementSpeed: 250
   followingSpeed: 10
   rotationSped: 150
   panningSpeed: 800
