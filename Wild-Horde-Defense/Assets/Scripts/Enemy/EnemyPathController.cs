@@ -6,25 +6,35 @@ using UnityEngine.AI;
 public class EnemyPathController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform waypointsPartent;
-    public List<Transform> waypointList = new List<Transform>();
-    public Transform startPoint;
+    public WaveManager waveManager;
+    private Transform waypointsPartent;
+    private List<Transform> waypointList = new List<Transform>();
+    private Transform startPoint;
     private List<Transform> movementPath;
-    public NavMeshAgent pathAgent;
+    private NavMeshAgent pathAgent;
     private int nearestWayPoint = 0;
+    private bool reachedstartDest = true;
     void Start()
     {
+        waypointsPartent = GameObject.Find("WaypointParent").transform;
+        pathAgent = gameObject.GetComponent<NavMeshAgent>();
         GetNearestWayPoints(startPoint);
         pathAgent.SetDestination(startPoint.position);
     }
    
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if(pathAgent.remainingDistance < 4.0)
+        float distance = pathAgent.remainingDistance;
+        if (reachedstartDest)
+        {
+            reachedstartDest = false;
+            pathAgent.SetDestination(startPoint.position);
+        }
+        else if(distance <= 4.0f)
         {
             GoToNextWaypoint();
-        }
+        }  
     }
     private void GetNearestWayPoints(Transform startPoint)
     {
@@ -56,20 +66,31 @@ public class EnemyPathController : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // trigger Destroy
+            Debug.Log("Destroyed");
+            //Destroy(gameObject); // trigger Destroy
         }
   
     }
 
-    public void updateSpeed(float speed)
+    public void UpdateSpeed(float speed)
     {
         float angularAndAccelleration = speed * 12;
         pathAgent.speed = speed;
         pathAgent.angularSpeed = angularAndAccelleration;
         pathAgent.acceleration = angularAndAccelleration;
     }
-    public float getSpeed()
+    public float GetSpeed()
     {
         return pathAgent.speed;
+    }
+
+    public void StopPathing(bool isStop)
+    {
+        pathAgent.isStopped = isStop;
+    }
+
+    public void setfirstLocation(Transform transform)
+    {
+        startPoint = transform;
     }
 }

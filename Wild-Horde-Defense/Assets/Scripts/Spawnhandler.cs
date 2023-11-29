@@ -9,17 +9,22 @@ public class Spawnhandler : MonoBehaviour
     public Terrain TerrainMap;
     private float baserespawntimer = 12f;
     public float spawntimer = 1.25f;
-    //Tests
+    [SerializeField] private List<GameObject> spawnList;
+    [SerializeField] private WaveManager waveManager;
+    private GameObject spawnPointobject;
+
+    /*Tests
     public GameObject TestspawnPoint;
     public Vector2 TestspawnSizeXZ;
     public GameObject TestobjectToSpawn;
     public int Testspawnnumber;
     public bool TestonTerrain;
     private NavMeshAgent navAgent;
-    
+    */
+
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
@@ -29,11 +34,12 @@ public class Spawnhandler : MonoBehaviour
     }
     public void SpawnGameobject(GameObject spawnPoint, Vector2 spawnSizeXZ, GameObject objectToSpawn, int spawnnumber, bool onTerrain = false)
     {
+        spawnPointobject = spawnPoint;
         StartCoroutine(SpawnObject(spawnPoint, spawnSizeXZ, objectToSpawn, spawnnumber, onTerrain));
+
     }
     IEnumerator SpawnObject(GameObject spawnPoint, Vector2 spawnSizeXZ, GameObject objectToSpawn, int spawnnumber, bool onTerrain = false)
     {
-        
         for (int i = 0; i <= spawnnumber; i++)
         {
             Vector3 spawnPosition = GetSpawnPosition(spawnPoint, spawnSizeXZ, onTerrain);
@@ -63,24 +69,37 @@ public class Spawnhandler : MonoBehaviour
         if (objectToSpawn == null)
         {
             Debug.LogError("Null SpawnObject");
-            return;
+            
         }
         else
         {
-            navAgent = objectToSpawn.GetComponent<NavMeshAgent>();
+             NavMeshAgent navAgent = objectToSpawn.GetComponent<NavMeshAgent>();
             
             GameObject createdObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+            createdObject.GetComponent<EnemyPathController>().setfirstLocation(waveManager.getWayPointsEntrance(spawnPointobject));
+            spawnList.Add(createdObject);
 
             if (navAgent != null)
             {
                 spawntimer = baserespawntimer / navAgent.speed;
             }
+            
         }
     }
 
     public void SpawnTestfunc()
     {
-    SpawnGameobject(TestspawnPoint, TestspawnSizeXZ, TestobjectToSpawn, Testspawnnumber, TestonTerrain);
+        //SpawnGameobject(TestspawnPoint, TestspawnSizeXZ, TestobjectToSpawn, Testspawnnumber, TestonTerrain);
     }
+
+    public List<GameObject> GetEnemies()
+    {
+        return spawnList;
+    }
+    public void ResetEnemies()
+    {
+        spawnList.Clear();
+    }
+
   
 }

@@ -11,6 +11,9 @@ TagManager:
   - CannonIcon
   - Castle
   - Tower
+  - WayPoint
+  - EnemyAlive
+  - EnemyDead
   layers:
   - Default
   - TransparentFX
