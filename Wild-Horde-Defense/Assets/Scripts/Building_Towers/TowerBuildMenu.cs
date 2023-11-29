@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TowerBuildMenu : MonoBehaviour
 {
+    public GameManager gameManager;
     public BuildSelectionTower selectionTower;
-    public GameObject BuilderMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +24,7 @@ public class TowerBuildMenu : MonoBehaviour
         if (this.gameObject.activeSelf)
         {
             this.gameObject.SetActive(false);
+            gameManager.enabled = true;
             GameObject.Destroy(selectionTower.getPreviewTower());
         }
         else
