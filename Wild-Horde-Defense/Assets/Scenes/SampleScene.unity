@@ -734,6 +734,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 963194230}
+  towerPlacements:
+  - {fileID: 588341367}
+  - {fileID: 333596863}
+  - {fileID: 1545537986}
+  - {fileID: 487782239}
+  - {fileID: 1184093225}
+  - {fileID: 2104903816}
+  - {fileID: 976257587}
+  - {fileID: 2058643466}
+  - {fileID: 258802940}
 --- !u!4 &79055625
 Transform:
   m_ObjectHideFlags: 0
@@ -19307,8 +19317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137e85f4bd272344092abe64094be2b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 963194230}
   selectionTower: {fileID: 1684111366}
-  BuilderMenu: {fileID: 2102167778}
 --- !u!114 &1684111366
 MonoBehaviour:
   m_ObjectHideFlags: 0
