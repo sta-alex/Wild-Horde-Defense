@@ -12,8 +12,11 @@ public class BuildSelectionTower : MonoBehaviour
     public GameObject tower;
 
     private GameObject previewTower;
+    private GameObject placedTower;
 
     public List<TowerPlacement> towerPlacementList;
+
+    private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionary = new Dictionary<TowerPlacement, GameObject>();
 
     public bool inPreviewMode = false;
     private bool oneTowerAtTime = false;
@@ -100,8 +103,9 @@ public class BuildSelectionTower : MonoBehaviour
                         if (transaction)
                         {
                             Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
-                            GameObject towerLvL1 = Instantiate(tower, snapPosition, Quaternion.identity);
-                            towerLvL1.transform.localScale = new Vector3(14f, 14f, 14f);
+                            GameObject placedTower = Instantiate(tower, snapPosition, Quaternion.identity);
+                            setTowerToDictionary(placedTower, towerPlacement);
+                            placedTower.transform.localScale = new Vector3(14f, 14f, 14f);
                             GameObject.Destroy(previewTower);
                             inPreviewMode = false;
                             towerPlacement.towerPlaced = true;
@@ -125,6 +129,39 @@ public class BuildSelectionTower : MonoBehaviour
             }
 
         }
+    }
+
+    private void setTowerToDictionary(GameObject placedTower, TowerPlacement towerplacement)
+    {
+
+        GameObject specialPlacement = towerplacement.transform.Find("FirePower")?.gameObject;
+        if (specialPlacement == null)
+        {
+            specialPlacement = towerplacement.transform.Find("RangePower")?.gameObject;
+            if(specialPlacement == null)
+            {
+                specialPlacement = towerplacement.transform.Find("SpeedPower")?.gameObject;
+                if(specialPlacement == null)
+                {
+                    Debug.Log("Turm auf normales Placement platziert");
+                }
+                else
+                {
+                    towersPlacedOnPlacementDictionary.Add(towerplacement, placedTower);
+                    Debug.Log("Turm auf SpecialPlacement platziert");
+                }
+            }
+            else
+            {
+                towersPlacedOnPlacementDictionary.Add(towerplacement, placedTower);
+            }
+        }
+        else
+        {
+            towersPlacedOnPlacementDictionary.Add(towerplacement, placedTower);
+        }
+
+
     }
 
     public void loadFireTower()
@@ -231,6 +268,15 @@ public class BuildSelectionTower : MonoBehaviour
         return this.previewTower;
     }
 
+    public GameObject getCurrentPlacedTower()
+    {
+        return this.placedTower;
+    }
+
+    public Dictionary<TowerPlacement, GameObject> getTowersPlacedOnPlacementDictionary()
+    {
+        return this.towersPlacedOnPlacementDictionary;
+    }
 
     /*
     float GetTerrainHeightAt(Vector3 position)
