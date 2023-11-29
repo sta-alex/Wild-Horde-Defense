@@ -222,10 +222,10 @@ namespace RTS_Cam
             {
                 Vector3 desiredMove = new Vector3();
 
-                Rect leftRect = new Rect(0, 0, 100f, Screen.height);
-                Rect rightRect = new Rect(Screen.width - 150f, 0, 150f, Screen.height);
-                Rect upRect = new Rect(0, Screen.height - 150f, Screen.width, 150f);
-                Rect downRect = new Rect(0, 0, Screen.width, 100f);
+                Rect leftRect = new Rect(0, 0, 75f, Screen.height);
+                Rect rightRect = new Rect(Screen.width - 75f, 0, 75f, Screen.height);
+                Rect upRect = new Rect(0, Screen.height - 75f, Screen.width, 75f);
+                Rect downRect = new Rect(0, 0, Screen.width, 75f);
 
                 desiredMove.x = leftRect.Contains(MouseInput) ? -1 : rightRect.Contains(MouseInput) ? 1 : 0;
                 desiredMove.z = upRect.Contains(MouseInput) ? 1 : downRect.Contains(MouseInput) ? -1 : 0;
