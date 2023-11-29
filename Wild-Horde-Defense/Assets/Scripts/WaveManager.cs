@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> Enemies;
     public List<GameObject> Boss;
     public List<GameObject> Spawnlocations;
-    private List<GameObject> wayPointentrance;
+    public List<GameObject> wayPointentrance;
     [SerializeField] Spawnhandler spawnhandler;
     public int currentWave;
     [SerializeField] private int numberofAliveEnemies;
@@ -18,16 +18,19 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPoints();
-        FirstWave();
-        
+        //SpawnPoints();
+        SpawnWaveofSize(Enemies[0], 6);
+
+
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
     }
+
     private void SpawnPoints()
     {
         foreach (GameObject spawn in Spawnlocations)
@@ -54,7 +57,7 @@ public class WaveManager : MonoBehaviour
 
     private GameObject GetSpawnlocation()
     {
-        int locationNumber = Random.Range(0, Spawnlocations.Count);
+        int locationNumber = Random.Range(0, Spawnlocations.Count );
         return Spawnlocations[locationNumber];
     }
 
@@ -63,7 +66,7 @@ public class WaveManager : MonoBehaviour
     {
         for(int i = 0; i < size; i++)
         {
-            
+            spawnhandler.SpawnGameobject(GetSpawnlocation(), new Vector2(5, 5), enemy, 1, true); 
         }
     }
 

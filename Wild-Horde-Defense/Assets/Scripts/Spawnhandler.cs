@@ -8,7 +8,7 @@ public class Spawnhandler : MonoBehaviour
     // Start is called before the first frame update
     public Terrain TerrainMap;
     private float baserespawntimer = 12f;
-    public float spawntimer = 1.25f;
+    public float spawntimer = 2.25f;
     [SerializeField] private List<GameObject> spawnList;
     [SerializeField] private WaveManager waveManager;
     private GameObject spawnPointobject;
@@ -40,7 +40,7 @@ public class Spawnhandler : MonoBehaviour
     }
     IEnumerator SpawnObject(GameObject spawnPoint, Vector2 spawnSizeXZ, GameObject objectToSpawn, int spawnnumber, bool onTerrain = false)
     {
-        for (int i = 0; i <= spawnnumber; i++)
+        for (int i = 0; i < spawnnumber; i++)
         {
             Vector3 spawnPosition = GetSpawnPosition(spawnPoint, spawnSizeXZ, onTerrain);
             SpawnObjectAtPostition(objectToSpawn, spawnPosition);

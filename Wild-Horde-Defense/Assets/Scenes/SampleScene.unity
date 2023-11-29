@@ -7711,7 +7711,7 @@ MonoBehaviour:
   TerrainMap: {fileID: 214316721}
   spawntimer: 0.75
   spawnList: []
-  waveManager: {fileID: 0}
+  waveManager: {fileID: 1875420262}
 --- !u!4 &676635902
 Transform:
   m_ObjectHideFlags: 0
@@ -9578,8 +9578,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: -0.6755903, y: 0, z: 0, w: 0.73727727}
-  m_LocalPosition: {x: 443, y: -573.86, z: 360.8}
+  m_LocalRotation: {x: -0.36367333, y: 0.021240469, z: 0.008277043, w: 0.9312476}
+  m_LocalPosition: {x: 482.18155, y: -221.58694, z: 152.62204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12326,7 +12326,7 @@ MonoBehaviour:
   TerrainMap: {fileID: 214316721}
   spawntimer: 0.75
   spawnList: []
-  waveManager: {fileID: 0}
+  waveManager: {fileID: 1875420262}
 --- !u!4 &1033126543
 Transform:
   m_ObjectHideFlags: 0
@@ -21601,6 +21601,9 @@ MonoBehaviour:
   Spawnlocations:
   - {fileID: 676635900}
   - {fileID: 1033126541}
+  wayPointentrance:
+  - {fileID: 979906706}
+  - {fileID: 989837989}
   spawnhandler: {fileID: 204955964}
   currentWave: 0
   numberofAliveEnemies: 0

@@ -25,16 +25,22 @@ public class EnemyPathController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = pathAgent.remainingDistance;
-        if (reachedstartDest)
+        if (pathAgent != null)
         {
-            reachedstartDest = false;
-            pathAgent.SetDestination(startPoint.position);
+            if (pathAgent.isActiveAndEnabled)
+            {
+                float distance = pathAgent.remainingDistance;
+                if (reachedstartDest)
+                {
+                    reachedstartDest = false;
+                    pathAgent.SetDestination(startPoint.position);
+                }
+                else if (distance <= 4.0f)
+                {
+                    GoToNextWaypoint();
+                }
+            }
         }
-        else if(distance <= 4.0f)
-        {
-            GoToNextWaypoint();
-        }  
     }
     private void GetNearestWayPoints(Transform startPoint)
     {
@@ -66,8 +72,8 @@ public class EnemyPathController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Destroyed");
-            //Destroy(gameObject); // trigger Destroy
+           
+           // Destroy(gameObject); // trigger Destroy toDO fix
         }
   
     }
@@ -81,7 +87,10 @@ public class EnemyPathController : MonoBehaviour
     }
     public float GetSpeed()
     {
-        return pathAgent.speed;
+        if (pathAgent != null)
+            return pathAgent.speed;
+        else
+            return 0f;
     }
 
     public void StopPathing(bool isStop)
