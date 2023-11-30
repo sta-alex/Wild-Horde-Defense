@@ -5,12 +5,17 @@ using UnityEngine;
 public class EnemyStat : MonoBehaviour
 {
     private float maxHealth = 150f;
-    private float currenHealth  = 0f;
+    private float currenHealth = 0f;
+    private float moveSpeed;
+    private float maxSpeed;
+
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private EnemyPathController pathController;
-    [SerializeField] private float reduceSpeed = 2f;
+
+    private float reduceSpeed = 2f;
     private Coroutine smoothSpeedCoroutine;
-    private float movespeed;
+
+    private CapsuleCollider bodycollider;
 
 
     float timer = 0;
@@ -19,47 +24,43 @@ public class EnemyStat : MonoBehaviour
     {
         currenHealth = maxHealth;
         healthBar.UpdateHealthBar(maxHealth, currenHealth);
-        if(pathController.isActiveAndEnabled)
-            movespeed = pathController.GetSpeed();
-        
+        bodycollider = gameObject.GetComponent<CapsuleCollider>();
+        if (pathController.isActiveAndEnabled)
+            moveSpeed = pathController.GetSpeed();
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        timer += 1;
-        if(timer > 200)
-        {
-            UpdateHealth(-30);
-            timer = 0;
-            
-        }
+
     }
 
     public void UpdateHealth(float amount)
     {
         currenHealth += amount;
-        if(currenHealth > 0 && currenHealth <= maxHealth)
+        if (currenHealth > 0 && currenHealth <= maxHealth)
         {
             healthBar.UpdateHealthBar(maxHealth, currenHealth);
-        }else if (currenHealth <= 0)
+        }
+        else if (currenHealth <= 0)
         {
             Death();
         }
     }
-        
-    public void SetMaxHealth( float newmaxHealth)
+
+    public void SetMaxHealth(float newmaxHealth)
     {
         this.maxHealth = newmaxHealth;
     }
-     public void Death()
+    public void Death()
     {
         InterruptPathing(true);
         UpdateSpeed(0f);
         currenHealth = 0f;
-        //doto dy animation und tag ändern -> Tower sagen anderes ziel wählen
+        //doto dy animation und tag andern -> Tower sagen anderes ziel wahlen
     }
-    
+
     public void Revive()
     {
         InterruptPathing(false);
@@ -74,11 +75,11 @@ public class EnemyStat : MonoBehaviour
 
     public void UpdateSpeed(float newspeedtarget)
     {
-        if(movespeed != CurrentSpeed())
-        smoothSpeedCoroutine = StartCoroutine(SmoothlyUpdateSpeed(newspeedtarget));
-        movespeed = newspeedtarget;
+        if (moveSpeed != CurrentSpeed())
+            smoothSpeedCoroutine = StartCoroutine(SmoothlyUpdateSpeed(newspeedtarget));
+        moveSpeed = newspeedtarget;
     }
-    
+
     public float CurrentSpeed()
     {
         return pathController.GetSpeed();
@@ -104,4 +105,13 @@ public class EnemyStat : MonoBehaviour
 
         pathController.UpdateSpeed(targetValue);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("TownHallEntrance"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
