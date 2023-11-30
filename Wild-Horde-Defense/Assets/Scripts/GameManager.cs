@@ -102,24 +102,21 @@ public class GameManager : MonoBehaviour
         {
             scaledTransform = clickedTower.transform.Find("Zone");
 
-            if (scaledTransform != null)
+            GameObject zoneObject = clickedTower.transform.Find("Zone")?.gameObject;
+
+            if (zoneObject == null)
             {
-                GameObject zoneObject = clickedTower.transform.Find("Zone")?.gameObject;
+                zoneObject = clickedTower.transform.Find("Zone2")?.gameObject;
+            }
+            if (zoneObject == null)
+            {
+                zoneObject = clickedTower.transform.Find("Zone3")?.gameObject;
+            }
 
-                if (zoneObject == null)
-                {
-                    zoneObject = clickedTower.transform.Find("Zone2")?.gameObject;
-                }
-                if (zoneObject == null)
-                {
-                    zoneObject = clickedTower.transform.Find("Zone3")?.gameObject;
-                }
-
-                if (zoneObject != null)
-                {
-                    Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-                    enableOrDisableRange(halo, hudTowerOn);
-                }
+            if (zoneObject != null)
+            {
+                Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
+                enableOrDisableRange(halo, hudTowerOn);
             }
         }
     }
