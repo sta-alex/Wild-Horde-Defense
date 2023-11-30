@@ -23,9 +23,9 @@ TagManager:
   - UI
   - Terrain
   - Tower
-  - 
-  - 
-  - 
+  - TowerUi
+  - Placements
+  - Canvas
   - 
   - 
   - 
