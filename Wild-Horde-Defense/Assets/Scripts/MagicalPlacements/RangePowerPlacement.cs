@@ -80,6 +80,7 @@ public class RangePowerPlacement : MonoBehaviour
 
             if (zoneObject != null)
             {
+                //toDO Range Indicator
                 return zoneObject;
             }
         }
@@ -101,6 +102,7 @@ public class RangePowerPlacement : MonoBehaviour
 
                 if (zoneObject != null)
                 {
+                    //toDO Range Indicator
                     return zoneObject;
                 }
             }

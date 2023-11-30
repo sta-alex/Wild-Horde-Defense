@@ -39,7 +39,7 @@ public class BuildSelectionTower : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 mousePosition = hit.point;
-                mousePosition.y = 14.99725f;
+                mousePosition.y = 18.19725f;
 
                 if (previewTower != null && tower != null && oneTowerAtTime)
                 {
@@ -105,7 +105,7 @@ public class BuildSelectionTower : MonoBehaviour
                             DecreaseMoneyFromPlayer();
                             if (transaction)
                             {
-                                Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y, towerPlacement.transform.position.z);
+                                Vector3 snapPosition = new Vector3(towerPlacement.transform.position.x, towerPlacement.transform.position.y + 3.5f, towerPlacement.transform.position.z);
                                 GameObject placedTower = Instantiate(tower, snapPosition, Quaternion.identity);
                                 setTowerToDictionary(placedTower, towerPlacement);
                                 placedTower.transform.localScale = new Vector3(14f, 14f, 14f);
@@ -200,29 +200,29 @@ public class BuildSelectionTower : MonoBehaviour
         this.previewTower = tower;
     }
 
-    void ShowTowerZone(GameObject towerObject)
+    public void ShowTowerZone(GameObject towerObject)
     {
-        Transform scaledTransform = towerObject.transform.Find("SCALED");
+        GameObject towerUI = towerObject.transform.Find("Tower_Ui").gameObject;
 
-        if (scaledTransform != null)
+        towerUI.SetActive(true);
+
+        if (towerUI != null)
         {
-            GameObject zoneObject = scaledTransform.Find("Zone")?.gameObject;
+            GameObject canvas = towerUI.transform.Find("Canvas").gameObject;
 
-            Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-
-            halo.enabled = true;
-        }
-        else
-        {
-            scaledTransform = towerObject.transform.Find("Zone");
-
-            if (scaledTransform != null)
+            if(canvas != null)
             {
-                GameObject zoneObject = towerObject.transform.Find("Zone")?.gameObject;
-                if (zoneObject != null)
+                GameObject towerUI_Upgrade_Sell = canvas.transform.Find("Buttons").gameObject;
+                towerUI_Upgrade_Sell.SetActive(false);
+
+                GameObject imageArrow = canvas.transform.Find("Image").gameObject;
+                imageArrow.SetActive(false);
+
+                GameObject rangeIndicator = canvas.transform.Find("RangeIndicator").gameObject;
+                if(rangeIndicator != null)
                 {
-                    Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-                    halo.enabled = true;
+                    GameObject imageRange = rangeIndicator.transform.Find("Image").gameObject;
+                    imageRange.SetActive(true);
                 }
             }
         }

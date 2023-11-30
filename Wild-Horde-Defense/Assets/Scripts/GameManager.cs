@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currency = 2000;
+        currency = 100000;
         currencyText.text = "$ " + currency;
         Debug.Log(currencyText);
     }
@@ -80,43 +80,26 @@ public class GameManager : MonoBehaviour
     }
     private void ShowTowerZone(GameObject clickedTower, bool hudTowerOn = false)
     {
-        Transform scaledTransform = clickedTower.transform.Find("SCALED");
-        if (scaledTransform != null)
+
+        GameObject towerUI = clickedTower.transform.Find("Tower_Ui").gameObject;
+
+        towerUI.SetActive(true);
+
+        if (towerUI != null)
         {
-            GameObject zoneObject = scaledTransform.Find("Zone")?.gameObject;
-            if (zoneObject == null)
-            {
-                zoneObject = scaledTransform.Find("Zone2")?.gameObject;
-            }
-            if (zoneObject == null)
-            {
-                zoneObject = scaledTransform.Find("Zone3")?.gameObject;
-            }
-            if (zoneObject != null)
-            {
-                Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-                enableOrDisableRange(halo, hudTowerOn);
-            }
-        }
-        else
-        {
-            scaledTransform = clickedTower.transform.Find("Zone");
+            GameObject canvas = towerUI.transform.Find("Canvas").gameObject;
 
-            GameObject zoneObject = clickedTower.transform.Find("Zone")?.gameObject;
+            if (canvas != null)
+            {
+                GameObject towerUI_Upgrade_Sell = canvas.transform.Find("Buttons").gameObject;
+                towerUI_Upgrade_Sell.SetActive(true);
 
-            if (zoneObject == null)
-            {
-                zoneObject = clickedTower.transform.Find("Zone2")?.gameObject;
-            }
-            if (zoneObject == null)
-            {
-                zoneObject = clickedTower.transform.Find("Zone3")?.gameObject;
-            }
-
-            if (zoneObject != null)
-            {
-                Behaviour halo = (Behaviour)zoneObject.GetComponent("Halo");
-                enableOrDisableRange(halo, hudTowerOn);
+                GameObject rangeIndicator = canvas.transform.Find("RangeIndicator").gameObject;
+                if (rangeIndicator != null)
+                {
+                    GameObject image = rangeIndicator.transform.Find("Image").gameObject;
+                    enableOrDisableRange(image, hudTowerOn);
+                }
             }
         }
     }
@@ -139,15 +122,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void enableOrDisableRange(Behaviour halo, bool hudTowerOn)
+    private void enableOrDisableRange(GameObject image, bool hudTowerOn)
     {
         if (hudTowerOn)
         {
-            halo.enabled = true;
+            image.SetActive(true);
         }
         else
         {
-            halo.enabled = false;
+            image.SetActive(false);
         }
     }
 
