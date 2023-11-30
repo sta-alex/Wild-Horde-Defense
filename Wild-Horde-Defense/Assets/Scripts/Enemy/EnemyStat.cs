@@ -107,9 +107,10 @@ public class EnemyStat : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "TownHallEntrance")
+        if (collision.gameObject.CompareTag("TownHallEntrance"))
         {
             Destroy(gameObject);
         }
     }
+
 }
