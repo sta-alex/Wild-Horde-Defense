@@ -44,13 +44,16 @@ public class RangePowerPlacement : MonoBehaviour
                             boostOnce = false;
                         }
                         GameObject zone = findZone(towerToBoost);
-                        if (zone != null)
+                        GameObject towerUi = FindTowerUi(towerToBoost);
+
+                        if (zone != null && towerUi != null)
                         {
                             SphereCollider sphereCollider = zone.GetComponent<SphereCollider>();
                             if (sphereCollider != null && !boostOnce)
                             {
                                 boostOnce = true;
-                                sphereCollider.radius += 0.5f;
+                                sphereCollider.radius += 0.2f;
+                                towerUi.transform.localScale = new Vector3(towerUi.transform.localScale.x + 1f, towerUi.transform.localScale.y +1f, towerUi.transform.localScale.z);
                                 Debug.LogError("Radius boostes from Tower: " + tower.name);
                             }
                         }
@@ -59,6 +62,27 @@ public class RangePowerPlacement : MonoBehaviour
                 }
             }
         }
+    }
+
+    private GameObject FindTowerUi(GameObject tower)
+    {
+        GameObject towerUI = tower.transform.Find("Tower_Ui").gameObject;
+
+        if (towerUI != null)
+        {
+            GameObject canvas = towerUI.transform.Find("Canvas").gameObject;
+
+            if (canvas != null)
+            {
+                GameObject rangeIndicator = canvas.transform.Find("RangeIndicator").gameObject;
+                if (rangeIndicator != null)
+                {
+                    GameObject imageRange = rangeIndicator.transform.Find("Image").gameObject;
+                    return imageRange;
+                }
+            }
+        }
+        return null;
     }
 
     private GameObject findZone(GameObject tower)
