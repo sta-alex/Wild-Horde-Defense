@@ -8,10 +8,15 @@ public class Sell : MonoBehaviour
 {
     public GameManager gameManager;
     private GameObject currentTower;
+    public BuildSelectionTower buildSelectionTower;
+    private List<TowerPlacement> towerplacements;
+    private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionaryNONSpecial;
+    private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionary;
 
     public void SellTower()
     {
         loadCurrentSelectedTower();
+        loadAndTurnOffTowerPlacementList();
         int value = loadTextValue();
         gameManager.increaseCurrency(value);
         GameObject.Destroy(currentTower);
@@ -52,5 +57,57 @@ public class Sell : MonoBehaviour
             }
         }
         return 0;
+    }
+
+    private void loadAndTurnOffTowerPlacementList()
+    {
+        towersPlacedOnPlacementDictionaryNONSpecial = buildSelectionTower.getTowersPlacedOnPlacementDictionaryNONSpecial();
+        towersPlacedOnPlacementDictionary = buildSelectionTower.getTowersPlacedOnPlacementDictionary();
+
+        TurnOffPlacement();
+    }
+
+    private void TurnOffPlacement()
+    {
+        if (towersPlacedOnPlacementDictionaryNONSpecial != null)
+        {
+            if (towersPlacedOnPlacementDictionaryNONSpecial.ContainsValue(currentTower))
+            {
+                TowerPlacement foundKey = null;
+                foreach (var kvp in towersPlacedOnPlacementDictionaryNONSpecial)
+                {
+                    if (kvp.Value == currentTower)
+                    {
+                        foundKey = kvp.Key;
+                        break;
+                    }
+                }
+                if (foundKey != null)
+                {
+                    towersPlacedOnPlacementDictionaryNONSpecial.Remove(foundKey);
+                    foundKey.towerPlaced = false;
+                }
+            }
+        }
+        if (towersPlacedOnPlacementDictionary != null)
+        {
+            if (towersPlacedOnPlacementDictionary.ContainsValue(currentTower))
+            {
+                TowerPlacement foundKey = null;
+                foreach (var kvp in towersPlacedOnPlacementDictionary)
+                {
+                    if (kvp.Value == currentTower)
+                    {
+                        foundKey = kvp.Key;
+                        break;
+                    }
+                }
+                if (foundKey != null)
+                {
+                    towersPlacedOnPlacementDictionary.Remove(foundKey);
+                    foundKey.towerPlaced = false;
+                }
+            }
+        }
     }
 }

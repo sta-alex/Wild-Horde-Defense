@@ -149,6 +149,30 @@ public class Upgrade : MonoBehaviour
                 if(foundKey != null)
                 {
                     towersPlacedOnPlacementDictionary[foundKey] = newTower;
+                    buildSelectionTower.updateDictionary(towersPlacedOnPlacementDictionary);
+                }
+            }
+        }
+
+        Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementNONSpecialDictionary = buildSelectionTower.getTowersPlacedOnPlacementDictionaryNONSpecial();
+        if (towersPlacedOnPlacementNONSpecialDictionary != null)
+        {
+            if (towersPlacedOnPlacementNONSpecialDictionary.ContainsValue(towerToReplace))
+            {
+                TowerPlacement foundKey = null;
+                foreach (var kvp in towersPlacedOnPlacementNONSpecialDictionary)
+                {
+                    if (kvp.Value == towerToReplace)
+                    {
+                        foundKey = kvp.Key;
+                        break;
+                    }
+                }
+
+                if (foundKey != null)
+                {
+                    towersPlacedOnPlacementNONSpecialDictionary[foundKey] = newTower;
+                    buildSelectionTower.updateDictionaryNONSpecialDictionary(towersPlacedOnPlacementNONSpecialDictionary);
                 }
             }
         }
