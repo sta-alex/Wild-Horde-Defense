@@ -249,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3075346659111459511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3606623003799246137, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3606623003799246137, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
       propertyPath: m_LocalScale.x
@@ -422,7 +422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127157838479134595, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
       propertyPath: m_Name
-      value: Troll
+      value: Troll Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127157838479134595, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
+      propertyPath: m_TagString
+      value: EnemyAlive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -440,28 +444,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4127157838479134595, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
   m_PrefabInstance: {fileID: 7328811654467105032}
   m_PrefabAsset: {fileID: 0}
---- !u!195 &7033986268113358762
-NavMeshAgent:
+--- !u!136 &6804020144773987543
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6697898767943057035}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_Height: 2.37
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!114 &971778152529840834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +472,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2277707458602031260}
   pathController: {fileID: 3638596723102142347}
-  reduceSpeed: 2
 --- !u!114 &3638596723102142347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,3 +485,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveManager: {fileID: 0}
+--- !u!195 &7033986268113358762
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697898767943057035}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.21
+  m_Speed: 20
+  m_Acceleration: 240
+  avoidancePriority: 50
+  m_AngularSpeed: 240
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 1.85
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4

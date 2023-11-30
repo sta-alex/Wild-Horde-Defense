@@ -6,11 +6,16 @@ public class EnemyStat : MonoBehaviour
 {
     private float maxHealth = 150f;
     private float currenHealth  = 0f;
+    private float moveSpeed;
+    private float maxSpeed;
+
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private EnemyPathController pathController;
-    [SerializeField] private float reduceSpeed = 2f;
+    
+    private float reduceSpeed = 2f;
     private Coroutine smoothSpeedCoroutine;
-    private float movespeed;
+
+    private CapsuleCollider bodycollider;
 
 
     float timer = 0;
@@ -19,21 +24,16 @@ public class EnemyStat : MonoBehaviour
     {
         currenHealth = maxHealth;
         healthBar.UpdateHealthBar(maxHealth, currenHealth);
+        bodycollider = gameObject.GetComponent<CapsuleCollider>();
         if(pathController.isActiveAndEnabled)
-            movespeed = pathController.GetSpeed();
+            moveSpeed = pathController.GetSpeed();
         
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        timer += 1;
-        if(timer > 200)
-        {
-            UpdateHealth(-30);
-            timer = 0;
-            
-        }
+ 
     }
 
     public void UpdateHealth(float amount)
@@ -74,9 +74,9 @@ public class EnemyStat : MonoBehaviour
 
     public void UpdateSpeed(float newspeedtarget)
     {
-        if(movespeed != CurrentSpeed())
+        if(moveSpeed != CurrentSpeed())
         smoothSpeedCoroutine = StartCoroutine(SmoothlyUpdateSpeed(newspeedtarget));
-        movespeed = newspeedtarget;
+        moveSpeed = newspeedtarget;
     }
     
     public float CurrentSpeed()
@@ -103,5 +103,13 @@ public class EnemyStat : MonoBehaviour
         }
 
         pathController.UpdateSpeed(targetValue);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "TownHallEntrance")
+        {
+            Destroy(gameObject);
+        }
     }
 }
