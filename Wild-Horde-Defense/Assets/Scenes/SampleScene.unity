@@ -3027,7 +3027,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainMap: {fileID: 214316721}
-  baserespawntimer: 25
   spawntimer: 4
   spawnList: []
   waveManager: {fileID: 1875420262}
@@ -7826,7 +7825,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainMap: {fileID: 214316721}
-  baserespawntimer: 12
   spawntimer: 0.75
   spawnList: []
   waveManager: {fileID: 1875420262}
@@ -9742,8 +9740,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: 0.73913574, y: 0.009708736, z: 0.010675034, w: -0.67340195}
-  m_LocalPosition: {x: 514.75104, y: -239.69221, z: 436.08493}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 443, y: -573.86, z: 413.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11323,8 +11321,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944338973}
-  m_LocalRotation: {x: -0.6755903, y: 0, z: 0, w: 0.73727727}
-  m_LocalPosition: {x: 443, y: -573.86, z: 360.8}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 443, y: -573.86, z: 413.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12626,7 +12624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainMap: {fileID: 214316721}
-  baserespawntimer: 12
   spawntimer: 0.75
   spawnList: []
   waveManager: {fileID: 1875420262}
@@ -20231,6 +20228,7 @@ MonoBehaviour:
   - {fileID: 438530388}
   - {fileID: 699873091}
   - {fileID: 1605724594}
+  rangeBooster: {fileID: 1866214093}
   tower: {fileID: 0}
   towerPlacementList:
   - {fileID: 588341367}
@@ -20381,6 +20379,7 @@ MonoBehaviour:
   - {fileID: 699873091}
   - {fileID: 1605724594}
   buildSelectionTower: {fileID: 1684111366}
+  rangeBooster: {fileID: 1866214093}
 --- !u!4 &1689383275
 Transform:
   m_ObjectHideFlags: 0

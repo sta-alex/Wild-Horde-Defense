@@ -5,60 +5,53 @@ using UnityEngine;
 public class RangePowerPlacement : MonoBehaviour
 {
 
+    private bool onlyOneUpgrade;
+
     private Dictionary<TowerPlacement, GameObject> towersInDictionary;
-    private GameObject towerToBoost;
     public BuildSelectionTower buildSelectionTower;
 
-    private string previousTowerName;
-    private bool boostOnce;
     // Start is called before the first frame update
     void Start()
     {
-        previousTowerName = "nothing";
-        boostOnce = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        loadDictionary();
+        
     }
 
-    private void loadDictionary()
+    public void BoostZone(GameObject towerToBoost, TowerPlacement towerPlacement)
     {
         towersInDictionary = buildSelectionTower.getTowersPlacedOnPlacementDictionary();
 
-        if(towersInDictionary != null)
+        if (towersInDictionary != null)
         {
-            foreach (TowerPlacement towerPlacement in towersInDictionary.Keys)
+            foreach (TowerPlacement towerPlacementInDictionary in towersInDictionary.Keys)
             {
-                if(towerPlacement != null)
+                if (towerPlacement != null)
                 {
-                    if (towerPlacement.name.Equals("TowerPlacement01 (2)"))
+                    if (towerPlacementInDictionary.name.Equals(towerPlacement.name))
                     {
-                        GameObject tower = towersInDictionary[towerPlacement];
-                        towerToBoost = tower;
-
-                        if (!towerToBoost.name.Equals(previousTowerName))
+                        GameObject towerFromDictionary = towersInDictionary[towerPlacementInDictionary];
+                        if (towerFromDictionary.name.Equals(towerToBoost.name) && towerPlacement.name.Equals("TowerPlacement01 (2)"))
                         {
-                            boostOnce = false;
-                        }
-                        GameObject zone = findZone(towerToBoost);
-                        GameObject towerUi = FindTowerUi(towerToBoost);
+                            GameObject zone = findZone(towerToBoost);
+                            GameObject towerUi = FindTowerUi(towerToBoost);
 
-                        if (zone != null && towerUi != null)
-                        {
-                            SphereCollider sphereCollider = zone.GetComponent<SphereCollider>();
-                            if (sphereCollider != null && !boostOnce)
+                            if (zone != null && towerUi != null)
                             {
-                                boostOnce = true;
-                                sphereCollider.radius += 0.2f;
-                                towerUi.transform.localScale = new Vector3(towerUi.transform.localScale.x + 1f, towerUi.transform.localScale.y +1f, towerUi.transform.localScale.z);
-                                Debug.LogError("Radius boostes from Tower: " + tower.name);
+                                SphereCollider sphereCollider = zone.GetComponent<SphereCollider>();
+                                if (sphereCollider != null)
+                                {
+                                    sphereCollider.radius += 0.2f;
+                                    towerUi.transform.localScale = new Vector3(towerUi.transform.localScale.x + 1f, towerUi.transform.localScale.y + 1f, towerUi.transform.localScale.z);
+                                    Debug.Log("Radius boostes from Tower: " + towerToBoost.name);
+                                }
                             }
                         }
                     }
-                    previousTowerName = towersInDictionary[towerPlacement].name;
                 }
             }
         }
@@ -133,4 +126,6 @@ public class RangePowerPlacement : MonoBehaviour
         }
             return null;
     }
+
+
 }

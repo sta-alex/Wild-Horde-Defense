@@ -11,6 +11,8 @@ public class Upgrade : MonoBehaviour
     private GameObject towerToUpgrade;
     public BuildSelectionTower buildSelectionTower;
     private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionary;
+    public RangePowerPlacement rangeBooster;
+
     private TowerPlacement towerPlacement;
     private bool transaction;
 
@@ -28,6 +30,7 @@ public class Upgrade : MonoBehaviour
             GameObject crossbowTowerLvL2 = Instantiate(availableTowers[1], snapPosition, Quaternion.identity);
             crossbowTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, crossbowTowerLvL2);
+            rangeBooster.BoostZone(crossbowTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -41,6 +44,7 @@ public class Upgrade : MonoBehaviour
             GameObject crossbowTowerLvL3 = Instantiate(availableTowers[2], snapPosition, Quaternion.identity);
             crossbowTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, crossbowTowerLvL3);
+            rangeBooster.BoostZone(crossbowTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -53,7 +57,9 @@ public class Upgrade : MonoBehaviour
             Vector3 snapPosition = new Vector3(towerToUpgrade.transform.position.x, towerToUpgrade.transform.position.y, towerToUpgrade.transform.position.z);
             GameObject poisonTowerLvL2 = Instantiate(availableTowers[4], snapPosition, Quaternion.identity);
             poisonTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
+            
             replaceFromDictionary(towerToUpgrade, poisonTowerLvL2);
+            rangeBooster.BoostZone(poisonTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -67,6 +73,7 @@ public class Upgrade : MonoBehaviour
             GameObject poisonTowerLvL3 = Instantiate(availableTowers[5], snapPosition, Quaternion.identity);
             poisonTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, poisonTowerLvL3);
+            rangeBooster.BoostZone(poisonTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -81,6 +88,7 @@ public class Upgrade : MonoBehaviour
             GameObject cannonTowerLvL2 = Instantiate(availableTowers[7], snapPosition, Quaternion.identity);
             cannonTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, cannonTowerLvL2);
+            rangeBooster.BoostZone(cannonTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -94,6 +102,7 @@ public class Upgrade : MonoBehaviour
             GameObject cannonTowerLvL3 = Instantiate(availableTowers[8], snapPosition, Quaternion.identity);
             cannonTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, cannonTowerLvL3);
+            rangeBooster.BoostZone(cannonTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -107,6 +116,7 @@ public class Upgrade : MonoBehaviour
             GameObject fireTowerLvL2 = Instantiate(availableTowers[10], snapPosition, Quaternion.identity);
             fireTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, fireTowerLvL2);
+            rangeBooster.BoostZone(fireTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -120,6 +130,7 @@ public class Upgrade : MonoBehaviour
             GameObject fireTowerLvL3 = Instantiate(availableTowers[11], snapPosition, Quaternion.identity);
             fireTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, fireTowerLvL3);
+            rangeBooster.BoostZone(fireTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -142,6 +153,7 @@ public class Upgrade : MonoBehaviour
                     if (kvp.Value == towerToReplace)
                     {
                         foundKey = kvp.Key;
+                        towerPlacement = foundKey;
                         break;
                     }
                 }
@@ -165,6 +177,7 @@ public class Upgrade : MonoBehaviour
                     if (kvp.Value == towerToReplace)
                     {
                         foundKey = kvp.Key;
+                        towerPlacement = foundKey;
                         break;
                     }
                 }
