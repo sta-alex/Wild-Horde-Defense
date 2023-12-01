@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpeedPowerPlacement : MonoBehaviour
 {
-
+    private string hexCode = "078C14";
     private Dictionary<TowerPlacement, GameObject> towersInDictionary;
     public BuildSelectionTower buildSelectionTower;
 
@@ -40,7 +41,16 @@ public class SpeedPowerPlacement : MonoBehaviour
 
                             if (zone != null && towerUi != null)
                             {
-                                //toDo Logik für SpeedUp
+                                Color newColor;
+                                if (ColorUtility.TryParseHtmlString("#" + hexCode, out newColor))
+                                {
+                                    towerUi.gameObject.GetComponent<Image>().color = newColor;
+                                }
+                                Tower tower = towerToBoost.GetComponent<Tower>();
+                                if (tower != null)
+                                {
+                                    tower.shootDelay -= 0.2f;
+                                }
                             }
                         }
                     }

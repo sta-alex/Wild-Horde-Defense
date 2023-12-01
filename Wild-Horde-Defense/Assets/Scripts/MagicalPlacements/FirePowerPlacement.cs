@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FirePowerPlacement : MonoBehaviour
 {
 
-
+    private string hexCode = "9F1008";
     private Dictionary<TowerPlacement, GameObject> towersInDictionary;
     public BuildSelectionTower buildSelectionTower;
 
@@ -36,10 +37,23 @@ public class FirePowerPlacement : MonoBehaviour
                         GameObject towerFromDictionary = towersInDictionary[towerPlacementInDictionary];
                         if (towerFromDictionary.name.Equals(towerToBoost.name) && towerPlacement.name.Equals("TowerPlacement01 (1)"))
                         {
-                            Tower tower = towerToBoost.GetComponent<Tower>();
-                            if(tower != null)
+
+                            GameObject towerUi = FindTowerUi(towerToBoost);
+
+                            if (towerUi != null)
                             {
-                                tower.dmg += 5;
+
+                                Color newColor;
+                                if (ColorUtility.TryParseHtmlString("#" + hexCode, out newColor))
+                                {
+                                    towerUi.gameObject.GetComponent<Image>().color = newColor;
+                                }
+
+                                Tower tower = towerToBoost.GetComponent<Tower>();
+                                if (tower != null)
+                                {
+                                    tower.dmg += 5;
+                                }
                             }
                         }
                     }
@@ -47,6 +61,27 @@ public class FirePowerPlacement : MonoBehaviour
             }
         }
     }
+        private GameObject FindTowerUi(GameObject tower)
+        {
+            GameObject towerUI = tower.transform.Find("Tower_Ui").gameObject;
+
+            if (towerUI != null)
+            {
+                GameObject canvas = towerUI.transform.Find("Canvas").gameObject;
+
+                if (canvas != null)
+                {
+                    GameObject rangeIndicator = canvas.transform.Find("RangeIndicator").gameObject;
+                    if (rangeIndicator != null)
+                    {
+                        GameObject imageRange = rangeIndicator.transform.Find("Image").gameObject;
+                        return imageRange;
+                    }
+                }
+            }
+            return null;
+        }
+
+    }
 
 
-}

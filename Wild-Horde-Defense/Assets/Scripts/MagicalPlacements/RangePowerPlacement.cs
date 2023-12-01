@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RangePowerPlacement : MonoBehaviour
 {
-
+    private string hexCode = "17197D";
     private Dictionary<TowerPlacement, GameObject> towersInDictionary;
     public BuildSelectionTower buildSelectionTower;
 
@@ -43,6 +44,11 @@ public class RangePowerPlacement : MonoBehaviour
                                 SphereCollider sphereCollider = zone.GetComponent<SphereCollider>();
                                 if (sphereCollider != null)
                                 {
+                                    Color newColor;
+                                    if (ColorUtility.TryParseHtmlString("#" + hexCode, out newColor))
+                                    {
+                                        towerUi.gameObject.GetComponent<Image>().color = newColor;
+                                    }
                                     sphereCollider.radius += 0.2f;
                                     towerUi.transform.localScale = new Vector3(towerUi.transform.localScale.x + 1f, towerUi.transform.localScale.y + 1f, towerUi.transform.localScale.z);
                                     Debug.Log("Radius boostes from Tower: " + towerToBoost.name);
