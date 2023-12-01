@@ -6455,7 +6455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: shootDelay
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -7532,7 +7532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: shootDelay
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -9770,7 +9770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
   m_LocalRotation: {x: -0.64871424, y: 0.002279923, z: 0.0019429921, w: 0.76102626}
-  m_LocalPosition: {x: 963.63214, y: -351.7874, z: 123.72486}
+  m_LocalPosition: {x: 469.04297, y: -255.74257, z: 348.63242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10642,7 +10642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114237770718818268, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: shootDelay
-      value: 3.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 199069982654519714, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: m_Materials.Array.size
@@ -18298,7 +18298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114183152169195300, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
       propertyPath: shootDelay
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -22840,7 +22840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: shootDelay
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -23882,7 +23882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114388094878622656, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: shootDelay
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
