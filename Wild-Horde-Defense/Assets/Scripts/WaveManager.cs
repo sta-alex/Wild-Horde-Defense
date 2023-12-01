@@ -17,6 +17,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] static float LvlStartDelay = 7f;
     [SerializeField] static float WaveIntervallDelay = 20f;
 
+    public bool bossIsSpawned = false;
+
     public float SpeedReductionFactor = 0.002f;
 
 
@@ -164,6 +166,11 @@ public class WaveManager : MonoBehaviour
         float maxSpeed = enemy.gameObject.GetComponent<EnemyStat>().GetMaxSpeed();
 
         float reducedmaxSpeed = maxSpeed - (maxHealth * SpeedReductionFactor);
+
+        if (bossIsSpawned)
+        {
+            reducedmaxSpeed = reducedmaxSpeed * 1.5f;
+        }
 
         return (maxHealth, reducedmaxSpeed);
     }
