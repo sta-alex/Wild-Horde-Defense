@@ -12,6 +12,8 @@ public class Upgrade : MonoBehaviour
     public BuildSelectionTower buildSelectionTower;
     private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionary;
     public RangePowerPlacement rangeBooster;
+    public SpeedPowerPlacement speedBooster;
+    public FirePowerPlacement powerBooster;
 
     private TowerPlacement towerPlacement;
     private bool transaction;
@@ -31,6 +33,8 @@ public class Upgrade : MonoBehaviour
             crossbowTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, crossbowTowerLvL2);
             rangeBooster.BoostZone(crossbowTowerLvL2, towerPlacement);
+            speedBooster.BoostSpeed(crossbowTowerLvL2, towerPlacement);
+            powerBooster.BoostPower(crossbowTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -45,6 +49,8 @@ public class Upgrade : MonoBehaviour
             crossbowTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, crossbowTowerLvL3);
             rangeBooster.BoostZone(crossbowTowerLvL3, towerPlacement);
+            speedBooster.BoostSpeed(crossbowTowerLvL3, towerPlacement);
+            powerBooster.BoostPower(crossbowTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -60,6 +66,8 @@ public class Upgrade : MonoBehaviour
             
             replaceFromDictionary(towerToUpgrade, poisonTowerLvL2);
             rangeBooster.BoostZone(poisonTowerLvL2, towerPlacement);
+            speedBooster.BoostSpeed(poisonTowerLvL2, towerPlacement);
+            powerBooster.BoostPower(poisonTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -74,6 +82,8 @@ public class Upgrade : MonoBehaviour
             poisonTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, poisonTowerLvL3);
             rangeBooster.BoostZone(poisonTowerLvL3, towerPlacement);
+            speedBooster.BoostSpeed(poisonTowerLvL3, towerPlacement);
+            powerBooster.BoostPower(poisonTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -89,6 +99,8 @@ public class Upgrade : MonoBehaviour
             cannonTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, cannonTowerLvL2);
             rangeBooster.BoostZone(cannonTowerLvL2, towerPlacement);
+            speedBooster.BoostSpeed(cannonTowerLvL2, towerPlacement);
+            powerBooster.BoostPower(cannonTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -103,6 +115,8 @@ public class Upgrade : MonoBehaviour
             cannonTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, cannonTowerLvL3);
             rangeBooster.BoostZone(cannonTowerLvL3, towerPlacement);
+            speedBooster.BoostSpeed(cannonTowerLvL3, towerPlacement);
+            powerBooster.BoostPower(cannonTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -117,6 +131,8 @@ public class Upgrade : MonoBehaviour
             fireTowerLvL2.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, fireTowerLvL2);
             rangeBooster.BoostZone(fireTowerLvL2, towerPlacement);
+            speedBooster.BoostSpeed(fireTowerLvL2, towerPlacement);
+            powerBooster.BoostPower(fireTowerLvL2, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }
@@ -131,6 +147,8 @@ public class Upgrade : MonoBehaviour
             fireTowerLvL3.transform.localScale = new Vector3(14f, 14f, 14f);
             replaceFromDictionary(towerToUpgrade, fireTowerLvL3);
             rangeBooster.BoostZone(fireTowerLvL3, towerPlacement);
+            speedBooster.BoostSpeed(fireTowerLvL3, towerPlacement);
+            powerBooster.BoostPower(fireTowerLvL3, towerPlacement);
             GameObject.Destroy(towerToUpgrade);
         }
     }

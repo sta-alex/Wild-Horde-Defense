@@ -6175,6 +6175,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475013867}
   m_CullTransparentMesh: 1
+--- !u!1 &478278962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  m_PrefabInstance: {fileID: 1324937533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &478341465
 GameObject:
   m_ObjectHideFlags: 0
@@ -9741,7 +9746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 443, y: -573.86, z: 413.6}
+  m_LocalPosition: {x: 498.96075, y: -261.60822, z: 397.51352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11322,7 +11327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944338973}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 414.38278, y: -239.59077, z: 457.27597}
+  m_LocalPosition: {x: 443, y: -573.86, z: 413.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16248,6 +16253,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
   m_PrefabInstance: {fileID: 1324937533}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1324937537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478278962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c660cc59480ce42a073feaa296c2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildSelectionTower: {fileID: 1684111366}
 --- !u!1 &1330895955
 GameObject:
   m_ObjectHideFlags: 0
@@ -17595,6 +17613,11 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!1 &1403587527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  m_PrefabInstance: {fileID: 1563840861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1404739836
 GameObject:
   m_ObjectHideFlags: 0
@@ -19303,6 +19326,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3423388300971593625, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
   m_PrefabInstance: {fileID: 1563840861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1563840865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403587527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe98dbf44ae7eb40a3a090c75aacdae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildSelectionTower: {fileID: 1684111366}
 --- !u!1 &1567893789
 GameObject:
   m_ObjectHideFlags: 0
@@ -20229,6 +20265,8 @@ MonoBehaviour:
   - {fileID: 699873091}
   - {fileID: 1605724594}
   rangeBooster: {fileID: 1866214093}
+  speedBooster: {fileID: 1563840865}
+  powerBooster: {fileID: 1324937537}
   tower: {fileID: 0}
   towerPlacementList:
   - {fileID: 588341367}
@@ -20380,6 +20418,8 @@ MonoBehaviour:
   - {fileID: 1605724594}
   buildSelectionTower: {fileID: 1684111366}
   rangeBooster: {fileID: 1866214093}
+  speedBooster: {fileID: 1563840865}
+  powerBooster: {fileID: 1324937537}
 --- !u!4 &1689383275
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class BuildSelectionTower : MonoBehaviour
     public Camera cam;
     public List<GameObject> availableTowers;
     public RangePowerPlacement rangeBooster;
+    public SpeedPowerPlacement speedBooster;
+    public FirePowerPlacement powerBooster;
 
     public GameObject tower;
 
@@ -111,6 +113,8 @@ public class BuildSelectionTower : MonoBehaviour
                                 setTowerToDictionary(placedTower, towerPlacement);
                                 placedTower.transform.localScale = new Vector3(14f, 14f, 14f);
                                 rangeBooster.BoostZone(placedTower, towerPlacement);
+                                speedBooster.BoostSpeed(placedTower, towerPlacement);
+                                powerBooster.BoostPower(placedTower, towerPlacement);
                                 GameObject.Destroy(previewTower);
                                 inPreviewMode = false;
                                 towerPlacement.towerPlaced = true;
