@@ -10,6 +10,8 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> wayPointentrance;
     [SerializeField] Spawnhandler spawnhandler;
 
+    public Timer timer;
+
     public int LvlNumver = 0;
     public int maxWaves = 9;
     [SerializeField] int currentWave = 0;
@@ -33,6 +35,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer.StartTimer();
         //SpawnPoints();
         //SpawnWaveofSize(Enemies[0], 6);
         StartCoroutine(EventTimerOnce(LvlStartDelay, StartWaves));
@@ -95,6 +98,9 @@ public class WaveManager : MonoBehaviour
     {
         while (true)
         {
+            timer.StopTimer();
+            timer.seconds = (int) intervalltime;
+            timer.StartTimer();
             yield return new WaitForSeconds(intervalltime);
             intervallfunction.Invoke();
         }
