@@ -77,6 +77,9 @@ public class Spawnhandler : MonoBehaviour
             
             GameObject createdObject = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
             createdObject.GetComponent<EnemyPathController>().setfirstLocation(waveManager.getWayPointsEntrance(spawnPointobject));
+            (float maxHp , float maxSpeed) = waveManager.getEnemyStat_HP_SPEED(createdObject);
+            createdObject.GetComponent<EnemyStat>().SetMaxHealth(maxHp);
+            createdObject.GetComponent<EnemyStat>().SetMaxSpeed(maxSpeed);
             spawnList.Add(createdObject);
 
             if (navAgent != null)

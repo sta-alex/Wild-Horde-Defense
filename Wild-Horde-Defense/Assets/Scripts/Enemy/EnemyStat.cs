@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyStat : MonoBehaviour
 {
-    private float maxHealth = 150f;
-    private float currenHealth = 0f;
-    private float moveSpeed;
-    private float maxSpeed;
+    public float maxHealth = 300f;
+    public float maxSpeed = 25f;
+
+    private float currenHealth;
+    private float currentSpeed;
+
 
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private EnemyPathController pathController;
@@ -26,7 +28,7 @@ public class EnemyStat : MonoBehaviour
         healthBar.UpdateHealthBar(maxHealth, currenHealth);
         bodycollider = gameObject.GetComponent<CapsuleCollider>();
         if (pathController.isActiveAndEnabled)
-            moveSpeed = pathController.GetSpeed();
+            currentSpeed = pathController.GetSpeed();
 
     }
 
@@ -36,6 +38,22 @@ public class EnemyStat : MonoBehaviour
 
     }
 
+    #region HEALTH
+    public void SetMaxHealth(float newmaxHealth)
+    {
+        this.currenHealth = newmaxHealth;
+        this.maxHealth = newmaxHealth;
+    }
+
+    public float GetMaxHealth()
+    {
+        return this.maxHealth;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return this.currenHealth;
+    }
     public void UpdateHealth(float amount)
     {
         currenHealth += amount;
@@ -48,46 +66,35 @@ public class EnemyStat : MonoBehaviour
             Death();
         }
     }
+    #endregion
 
-    public void SetMaxHealth(float newmaxHealth)
+    #region SPEED
+    public void SetMaxSpeed( float newmaxSpeed)
     {
-        this.maxHealth = newmaxHealth;
+        UpdateSpeed(newmaxSpeed);
+        this.maxSpeed = newmaxSpeed;
     }
-    public void Death()
+    public float GetMaxSpeed()
     {
-        InterruptPathing(true);
-        UpdateSpeed(0f);
-        currenHealth = 0f;
-        //doto dy animation und tag andern -> Tower sagen anderes ziel wahlen
-    }
-
-    public void Revive()
-    {
-        InterruptPathing(false);
-        currenHealth = 1f;
-        UpdateHealth(+50f);
+        return this.maxSpeed;
     }
 
-    public float GetCurrentHealth()
-    {
-        return this.currenHealth;
-    }
-
-    public void UpdateSpeed(float newspeedtarget)
-    {
-        if (moveSpeed != CurrentSpeed())
-            smoothSpeedCoroutine = StartCoroutine(SmoothlyUpdateSpeed(newspeedtarget));
-        moveSpeed = newspeedtarget;
-    }
-
-    public float CurrentSpeed()
+    public float GetCurrentSpeed()
     {
         return pathController.GetSpeed();
     }
 
-    public void InterruptPathing(bool interrupt)
+    public void UpdateSpeed(float newspeedtarget)
     {
-        pathController.StopPathing(interrupt);
+        if (currentSpeed != GetCurrentSpeed())
+            smoothSpeedCoroutine = StartCoroutine(SmoothlyUpdateSpeed(newspeedtarget));
+        currentSpeed = newspeedtarget;
+    }
+
+    public void SlowSpeed(float percentage)
+    {
+        float target = 1 - (percentage / 100);
+        UpdateSpeed(GetCurrentSpeed() * target);
     }
 
     private IEnumerator SmoothlyUpdateSpeed(float targetValue)
@@ -104,6 +111,28 @@ public class EnemyStat : MonoBehaviour
         }
 
         pathController.UpdateSpeed(targetValue);
+    }
+    #endregion
+    
+    public void Death()
+    {
+        InterruptPathing(true);
+        UpdateSpeed(0f);
+        currenHealth = 0f;
+        gameObject.tag = "EnemyDead";
+        // ToDo Animation
+    }
+
+    public void Revive()
+    {
+        InterruptPathing(false);
+        currenHealth = 1f;
+        UpdateHealth(+50f);
+    }
+
+    public void InterruptPathing(bool interrupt)
+    {
+        pathController.StopPathing(interrupt);
     }
 
     private void OnCollisionEnter(Collision collision)

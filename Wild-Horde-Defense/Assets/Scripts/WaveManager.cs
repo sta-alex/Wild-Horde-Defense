@@ -13,8 +13,11 @@ public class WaveManager : MonoBehaviour
     public int LvlNumver = 0;
     public int maxWaves = 9;
     [SerializeField] int currentWave = 0;
+    private int enemyStatMultiplier = 1;
     [SerializeField] static float LvlStartDelay = 7f;
     [SerializeField] static float WaveIntervallDelay = 20f;
+
+    public float SpeedReductionFactor = 0.002f;
 
 
 
@@ -113,6 +116,7 @@ public class WaveManager : MonoBehaviour
             case 2:
                 currentWave += 1;
                 SpawnWaveofSize(Enemies[2], 6);
+                enemyStatMultiplier += 1;
                 break;
             case 3:
                 currentWave += 1;
@@ -132,6 +136,7 @@ public class WaveManager : MonoBehaviour
                     SpawnWaveofSize(Boss[0], 1);
                 else
                     SpawnWaveofSize(Boss[1], 1);
+                enemyStatMultiplier += 1;
                 break;
             case 7:
                 currentWave += 1;
@@ -149,6 +154,18 @@ public class WaveManager : MonoBehaviour
                 Debug.Log("currentWave default ");
                 break;
         }
+    }
+
+    public (float,float) getEnemyStat_HP_SPEED(GameObject enemy)
+    {
+
+        float maxHealth = enemy.gameObject.GetComponent<EnemyStat>().GetMaxHealth() * enemyStatMultiplier;
+
+        float maxSpeed = enemy.gameObject.GetComponent<EnemyStat>().GetMaxSpeed();
+
+        float reducedmaxSpeed = maxSpeed - (maxHealth * SpeedReductionFactor);
+
+        return (maxHealth, reducedmaxSpeed);
     }
 
     private void StartWaves()
