@@ -6449,6 +6449,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
+      propertyPath: dmg
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
+      propertyPath: shootDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4509344712265162, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
@@ -7518,6 +7526,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
+      propertyPath: dmg
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
+      propertyPath: shootDelay
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4722492196543158, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
@@ -8549,6 +8565,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114354654986580506, guid: 99ece9e9b0f569e47b4f7e25409c82d7, type: 3}
+      propertyPath: dmg
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114354654986580506, guid: 99ece9e9b0f569e47b4f7e25409c82d7, type: 3}
+      propertyPath: shootDelay
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4368808898071910, guid: 99ece9e9b0f569e47b4f7e25409c82d7, type: 3}
@@ -9294,7 +9318,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Sell
 
-    600$'
+    800$'
 --- !u!222 &784107987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9745,8 +9769,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 498.96075, y: -261.60822, z: 397.51352}
+  m_LocalRotation: {x: -0.64871424, y: 0.002279923, z: 0.0019429921, w: 0.76102626}
+  m_LocalPosition: {x: 469.04297, y: -255.74257, z: 348.63242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10611,6 +10635,14 @@ PrefabInstance:
     - target: {fileID: 4808104226049480, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237770718818268, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
+      propertyPath: dmg
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237770718818268, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
+      propertyPath: shootDelay
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 199069982654519714, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: m_Materials.Array.size
@@ -12956,7 +12988,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Upgrade
 
-    1200$'
+    1600$'
 --- !u!222 &1054651753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15244,6 +15276,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114469051607610886, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
+      propertyPath: dmg
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114469051607610886, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
+      propertyPath: shootDelay
+      value: 1.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4924119128995976, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
@@ -15472,6 +15512,14 @@ PrefabInstance:
     - target: {fileID: 4805959932128592, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: m_LocalScale.z
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
+      propertyPath: dmg
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
+      propertyPath: shootDelay
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -16559,6 +16607,14 @@ PrefabInstance:
     - target: {fileID: 114217518874671156, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751458232940500, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
+      propertyPath: dmg
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114751458232940500, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
+      propertyPath: shootDelay
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 135118300099326916, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: m_Enabled
@@ -18235,6 +18291,14 @@ PrefabInstance:
     - target: {fileID: 4653801878752730, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183152169195300, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
+      propertyPath: dmg
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183152169195300, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
+      propertyPath: shootDelay
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -20753,6 +20817,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114595172463551514, guid: b102820ebbbf10e47adb3f1cb1144c78, type: 3}
+      propertyPath: dmg
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114595172463551514, guid: b102820ebbbf10e47adb3f1cb1144c78, type: 3}
+      propertyPath: shootDelay
+      value: 1.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4047200237069062, guid: b102820ebbbf10e47adb3f1cb1144c78, type: 3}
@@ -21208,6 +21280,14 @@ PrefabInstance:
     - target: {fileID: 23946188704973792, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
+      propertyPath: dmg
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
+      propertyPath: shootDelay
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -22754,6 +22834,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
+      propertyPath: dmg
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
+      propertyPath: shootDelay
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4168932714287992, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
@@ -23787,6 +23875,14 @@ PrefabInstance:
     - target: {fileID: 4918727321141460, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388094878622656, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
+      propertyPath: dmg
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114388094878622656, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
+      propertyPath: shootDelay
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
