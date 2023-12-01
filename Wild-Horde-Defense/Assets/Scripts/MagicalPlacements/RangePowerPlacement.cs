@@ -5,8 +5,6 @@ using UnityEngine;
 public class RangePowerPlacement : MonoBehaviour
 {
 
-    private bool onlyOneUpgrade;
-
     private Dictionary<TowerPlacement, GameObject> towersInDictionary;
     public BuildSelectionTower buildSelectionTower;
 
