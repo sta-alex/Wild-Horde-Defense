@@ -80,6 +80,14 @@ public class Spawnhandler : MonoBehaviour
             (float maxHp , float maxSpeed) = waveManager.getEnemyStat_HP_SPEED(createdObject);
             createdObject.GetComponent<EnemyStat>().SetMaxHealth(maxHp);
             createdObject.GetComponent<EnemyStat>().SetMaxSpeed(maxSpeed);
+            if (waveManager.isBossSpawn()){
+                Animator animator = createdObject.GetComponent<Animator>();
+                animator.SetBool("isWalkAnim", false);
+                animator.SetBool("isRunAnim", true);
+            }
+                
+
+
             spawnList.Add(createdObject);
 
             if (navAgent != null)

@@ -120,7 +120,7 @@ public class EnemyStat : MonoBehaviour
         UpdateSpeed(0f);
         currenHealth = 0f;
         gameObject.tag = "EnemyDead";
-        // ToDo Animation
+        
     }
 
     public void Revive()

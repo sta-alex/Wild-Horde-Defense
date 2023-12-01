@@ -16,8 +16,8 @@ public class WaveManager : MonoBehaviour
     public int maxWaves = 9;
     [SerializeField] int currentWave = 0;
     private int enemyStatMultiplier = 1;
-    [SerializeField] static float LvlStartDelay = 7f;
-    [SerializeField] static float WaveIntervallDelay = 20f;
+    public float LvlStartDelay = 7f;
+    public float WaveIntervallDelay = 20f;
 
     public bool bossIsSpawned = false;
 
@@ -140,6 +140,7 @@ public class WaveManager : MonoBehaviour
                 break;
             case 6:
                 currentWave += 1;
+                bossIsSpawned = true;
                 if (LvlNumver == 0)
                     SpawnWaveofSize(Boss[0], 1);
                 else
@@ -185,6 +186,11 @@ public class WaveManager : MonoBehaviour
     {
         SpawnWaveWithPattern();
         StartCoroutine(RepeatEventTimer(WaveIntervallDelay, SpawnWaveWithPattern));
+    }
+
+    public bool isBossSpawn()
+    {
+        return bossIsSpawned;
     }
 
 }

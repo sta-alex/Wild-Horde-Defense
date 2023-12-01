@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2670046245234316106, guid: 009cbbbecafbcfc4f9bc5eb81c9f2bd1, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3011924329554960862, guid: 009cbbbecafbcfc4f9bc5eb81c9f2bd1, type: 3}
       propertyPath: m_Name
@@ -437,6 +437,11 @@ PrefabInstance:
 --- !u!4 &2362593011849373900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2488047018795776868, guid: 009cbbbecafbcfc4f9bc5eb81c9f2bd1, type: 3}
+  m_PrefabInstance: {fileID: 166294843584189352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2829145323528388834 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2670046245234316106, guid: 009cbbbecafbcfc4f9bc5eb81c9f2bd1, type: 3}
   m_PrefabInstance: {fileID: 166294843584189352}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3135153499510829686 stripped
@@ -474,6 +479,19 @@ CapsuleCollider:
   m_Height: 2.15
   m_Direction: 1
   m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!114 &-3777414690964925159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3135153499510829686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035316257dcb73043bbfe170f1dad848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2829145323528388834}
 --- !u!114 &2112695582994677921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86f06a21add1924d8687be5d4ed901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 300
+  maxSpeed: 25
   healthBar: {fileID: 7795533763622026139}
   pathController: {fileID: 7390648422719492413}
 --- !u!114 &7390648422719492413
@@ -511,10 +531,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.21
-  m_Speed: 20
-  m_Acceleration: 240
+  m_Speed: 25
+  m_Acceleration: 300
   avoidancePriority: 50
-  m_AngularSpeed: 240
+  m_AngularSpeed: 300
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0

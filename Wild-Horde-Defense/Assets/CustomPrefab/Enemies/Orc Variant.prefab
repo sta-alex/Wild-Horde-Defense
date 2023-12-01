@@ -426,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3424787055287789931, guid: ba1b12798431a97489a69f4832ac1d7b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -434,6 +434,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3361636764038069300}
   m_SourcePrefab: {fileID: 100100000, guid: ba1b12798431a97489a69f4832ac1d7b, type: 3}
+--- !u!95 &1598840857225931407 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3424787055287789931, guid: ba1b12798431a97489a69f4832ac1d7b, type: 3}
+  m_PrefabInstance: {fileID: 4158916920866620388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1598840857233179965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3424787055280785113, guid: ba1b12798431a97489a69f4832ac1d7b, type: 3}
@@ -474,6 +479,19 @@ CapsuleCollider:
   m_Height: 1.78
   m_Direction: 1
   m_Center: {x: 0, y: 0.91, z: 0}
+--- !u!114 &-4549905914950035406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598840857233217821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035316257dcb73043bbfe170f1dad848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1598840857225931407}
 --- !u!114 &1592206137566889693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86f06a21add1924d8687be5d4ed901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 300
+  maxSpeed: 25
   healthBar: {fileID: 6447965983477498676}
   pathController: {fileID: 1592206137566889693}
 --- !u!195 &7713189147420273841
@@ -511,10 +531,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.21
-  m_Speed: 100
-  m_Acceleration: 1200
+  m_Speed: 25
+  m_Acceleration: 300
   avoidancePriority: 50
-  m_AngularSpeed: 1200
+  m_AngularSpeed: 300
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0

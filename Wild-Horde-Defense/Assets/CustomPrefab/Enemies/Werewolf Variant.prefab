@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3885764507109215560, guid: ea34abd9e2342034d95bde0dd8e1ae7a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4119786414461758872, guid: ea34abd9e2342034d95bde0dd8e1ae7a, type: 3}
       propertyPath: m_Name
@@ -437,6 +437,11 @@ PrefabInstance:
 --- !u!4 &1210489090055726611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3632077533866456866, guid: ea34abd9e2342034d95bde0dd8e1ae7a, type: 3}
+  m_PrefabInstance: {fileID: 2498158794111488305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1677093971003202681 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3885764507109215560, guid: ea34abd9e2342034d95bde0dd8e1ae7a, type: 3}
   m_PrefabInstance: {fileID: 2498158794111488305}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1983648467153697961 stripped
@@ -474,6 +479,19 @@ CapsuleCollider:
   m_Height: 2.1
   m_Direction: 1
   m_Center: {x: 0, y: 1.08, z: 0}
+--- !u!114 &-6266017644961677659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983648467153697961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 035316257dcb73043bbfe170f1dad848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1677093971003202681}
 --- !u!195 &3671274556606404606
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -484,10 +502,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.21
-  m_Speed: 20
-  m_Acceleration: 240
+  m_Speed: 25
+  m_Acceleration: 300
   avoidancePriority: 50
-  m_AngularSpeed: 240
+  m_AngularSpeed: 300
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
@@ -521,5 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86f06a21add1924d8687be5d4ed901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 300
+  maxSpeed: 25
   healthBar: {fileID: 8502130482910566258}
   pathController: {fileID: 7663645561256991770}
