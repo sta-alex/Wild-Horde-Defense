@@ -139,7 +139,7 @@ public class Upgrade : MonoBehaviour
     public void UpgradeFireLvl2()
     {
         loadCurrentSelectedTower();
-        transaction = gameManager.updateCurrency(1200);
+        transaction = gameManager.updateCurrency(1600);
         if (transaction)
         {
             Vector3 snapPosition = new Vector3(towerToUpgrade.transform.position.x, towerToUpgrade.transform.position.y, towerToUpgrade.transform.position.z);
