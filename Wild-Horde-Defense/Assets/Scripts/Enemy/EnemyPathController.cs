@@ -11,13 +11,14 @@ public class EnemyPathController : MonoBehaviour
     private List<Transform> waypointList = new List<Transform>();
     private Transform startPoint;
     private List<Transform> movementPath;
-    private NavMeshAgent pathAgent;
+    public NavMeshAgent pathAgent;
     private int nearestWayPoint = 0;
     private bool reachedstartDest = true;
     void Start()
     {
+        waveManager = GameObject.Find("Wavemanager").GetComponent<WaveManager>();
         waypointsPartent = GameObject.Find("WaypointParent").transform;
-        pathAgent = gameObject.GetComponent<NavMeshAgent>();
+        pathAgent = GetComponent<NavMeshAgent>();
         GetNearestWayPoints(startPoint);
         pathAgent.SetDestination(startPoint.position);
     }

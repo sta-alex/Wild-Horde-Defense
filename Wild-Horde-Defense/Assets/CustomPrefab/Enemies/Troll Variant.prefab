@@ -492,6 +492,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5778926053117931874}
+  waveManager: {fileID: 0}
+  isBossSpawned: 0
 --- !u!114 &971778152529840834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveManager: {fileID: 0}
+  pathAgent: {fileID: 7033986268113358762}
 --- !u!195 &7033986268113358762
 NavMeshAgent:
   m_ObjectHideFlags: 0

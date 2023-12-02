@@ -8,13 +8,13 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> Boss;
     public List<GameObject> Spawnlocations;
     public List<GameObject> wayPointentrance;
-    [SerializeField] Spawnhandler spawnhandler;
+    public Spawnhandler spawnhandler;
 
     public Timer timer;
 
     public int LvlNumver = 0;
     public int maxWaves = 9;
-    [SerializeField] int currentWave = 0;
+    public int currentWave = 0;
     private int enemyStatMultiplier = 1;
     public float LvlStartDelay = 7f;
     public float WaveIntervallDelay = 20f;
@@ -25,7 +25,7 @@ public class WaveManager : MonoBehaviour
 
 
 
-    [SerializeField] private int numberofAliveEnemies;
+    private int numberofAliveEnemies;
 
 
 
@@ -82,11 +82,13 @@ public class WaveManager : MonoBehaviour
     }
 
 
-    public void SpawnWaveofSize(GameObject enemy, int size)
+    public IEnumerator SpawnWaveofSize(GameObject enemy, int size)
     {
         for (int i = 0; i < size; i++)
         {
-            spawnhandler.SpawnGameobject(GetSpawnlocation(), new Vector2(5, 5), enemy, 1, true);
+            
+            spawnhandler.SpawnGameobject(GetSpawnlocation(), new Vector2(5, 5), enemy, 1, false);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 
@@ -115,49 +117,50 @@ public class WaveManager : MonoBehaviour
         {
             case 0:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[0], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[0], 6));
                 break;
             case 1:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[1], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[1], 6));
                 break;
             case 2:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[2], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[2], 6));
                 enemyStatMultiplier += 1;
                 break;
             case 3:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[0], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[0], 6));
                 break;
             case 4:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[1], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[1], 6));
                 break;
             case 5:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[2], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[2], 6));
                 break;
             case 6:
                 currentWave += 1;
-                bossIsSpawned = true;
+                
                 if (LvlNumver == 0)
-                    SpawnWaveofSize(Boss[0], 1);
+                    StartCoroutine(SpawnWaveofSize(Boss[0], 1));
                 else
-                    SpawnWaveofSize(Boss[1], 1);
+                    StartCoroutine(SpawnWaveofSize(Boss[1], 1));
                 enemyStatMultiplier += 1;
+                bossIsSpawned = true;
                 break;
             case 7:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[0], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[0], 6));
                 break;
             case 8:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[1], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[1], 6));
                 break;
             case 9:
                 currentWave += 1;
-                SpawnWaveofSize(Enemies[2], 6);
+                StartCoroutine(SpawnWaveofSize(Enemies[2], 6));
                 break;
             default:
                 Debug.Log("currentWave default ");

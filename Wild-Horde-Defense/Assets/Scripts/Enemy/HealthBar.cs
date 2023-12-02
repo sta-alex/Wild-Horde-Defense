@@ -13,10 +13,10 @@ public class HealthBar : MonoBehaviour
     private float target = 1;
     private float dmg = 0;
 
-    private Color fullHealthColor = new Color(85f / 255f, 255f / 255f, 85f / 255f);  // Light Green
-    private Color midHealthColor = new Color(255f / 255f, 255f / 255f, 85f / 255f);   // Yellow
-    private Color LowmidHealthColor = new Color(255f / 255f, 165f / 255f, 0f);  // Orange
-    private Color lowHealthColor = new Color(255f / 255f, 85f / 255f, 85f / 255f);    // Light Red
+    private Color fullHealthColor = new Color(85f / 255f, 255f / 255f, 85f / 255f);     // Light Green
+    private Color midHealthColor = new Color(255f / 255f, 255f / 255f, 85f / 255f);     // Yellow
+    private Color LowmidHealthColor = new Color(255f / 255f, 165f / 255f, 0f);          // Orange
+    private Color lowHealthColor = new Color(255f / 255f, 85f / 255f, 85f / 255f);      // Light Red
 
     private Coroutine smoothHealthCoroutine;
     private float despawntimer = 1.5f;

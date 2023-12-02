@@ -25,15 +25,6 @@ public class TownHall : MonoBehaviour
             ReduceTownHallHp();
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("TOWNENTER COLLIDER");
-        if (collision.gameObject.CompareTag("EnemyAlive"))
-        {
-            Destroy(collision.gameObject);
-            ReduceTownHallHp();
-        }
-    }
 
     public void ReduceTownHallHp()
     {

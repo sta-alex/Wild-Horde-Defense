@@ -7,10 +7,10 @@ public class Spawnhandler : MonoBehaviour
 {
     // Start is called before the first frame update
     public Terrain TerrainMap;
-    private float baserespawntimer = 12f;
+    private float baserespawntimer = 25f;
     public float spawntimer = 2.25f;
-    [SerializeField] private List<GameObject> spawnList;
-    [SerializeField] private WaveManager waveManager;
+    public List<GameObject> spawnList;
+    public WaveManager waveManager;
     private GameObject spawnPointobject;
 
     /*Tests
@@ -24,7 +24,7 @@ public class Spawnhandler : MonoBehaviour
 
     void Start()
     {
-        
+        waveManager = GameObject.Find("Wavemanager").GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +40,13 @@ public class Spawnhandler : MonoBehaviour
     }
     IEnumerator SpawnObject(GameObject spawnPoint, Vector2 spawnSizeXZ, GameObject objectToSpawn, int spawnnumber, bool onTerrain = false)
     {
+        NavMeshAgent navAgent = objectToSpawn.GetComponent<NavMeshAgent>();
+        if (navAgent != null)
+        {
+            (float maxHp, float maxSpeed) = waveManager.getEnemyStat_HP_SPEED(objectToSpawn);
+            spawntimer = (baserespawntimer / maxSpeed) + 0.5f ;
+        }
+
         for (int i = 0; i < spawnnumber; i++)
         {
             Vector3 spawnPosition = GetSpawnPosition(spawnPoint, spawnSizeXZ, onTerrain);
@@ -47,6 +54,7 @@ public class Spawnhandler : MonoBehaviour
             yield return new WaitForSeconds(spawntimer);
         }
     }
+
 
     private Vector3 GetSpawnPosition(GameObject spawnPoint, Vector2 spawnSizeXZ, bool onTerrain)
     {
@@ -80,10 +88,9 @@ public class Spawnhandler : MonoBehaviour
             (float maxHp , float maxSpeed) = waveManager.getEnemyStat_HP_SPEED(createdObject);
             createdObject.GetComponent<EnemyStat>().SetMaxHealth(maxHp);
             createdObject.GetComponent<EnemyStat>().SetMaxSpeed(maxSpeed);
+            createdObject.GetComponent<EnemyPathController>().UpdateSpeed(maxSpeed);
             if (waveManager.isBossSpawn()){
-                Animator animator = createdObject.GetComponent<Animator>();
-                animator.SetBool("isWalkAnim", false);
-                animator.SetBool("isRunAnim", true);
+                createdObject.GetComponent<AnimationHandler>().setisBossSpawned(true);
             }
                 
 
@@ -92,7 +99,7 @@ public class Spawnhandler : MonoBehaviour
 
             if (navAgent != null)
             {
-                spawntimer = baserespawntimer / navAgent.speed;
+                spawntimer = baserespawntimer / maxSpeed;
             }
             
         }

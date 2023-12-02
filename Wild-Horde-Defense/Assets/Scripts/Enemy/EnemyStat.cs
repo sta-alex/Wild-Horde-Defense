@@ -11,8 +11,8 @@ public class EnemyStat : MonoBehaviour
     private float currentSpeed;
 
 
-    [SerializeField] private HealthBar healthBar;
-    [SerializeField] private EnemyPathController pathController;
+    public HealthBar healthBar;
+    public EnemyPathController pathController;
 
     private float reduceSpeed = 2f;
     private Coroutine smoothSpeedCoroutine;

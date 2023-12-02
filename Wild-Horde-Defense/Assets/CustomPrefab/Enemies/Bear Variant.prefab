@@ -486,6 +486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 6868485860094505363}
+  waveManager: {fileID: 0}
+  isBossSpawned: 0
 --- !u!195 &1083724777
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -537,6 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveManager: {fileID: 0}
+  pathAgent: {fileID: 1083724777}
 --- !u!4 &6868485860085407341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5508144082251476975, guid: 1e9fb7356ca02464eba9aa0063466f9e, type: 3}
