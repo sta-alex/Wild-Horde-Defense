@@ -9738,6 +9738,7 @@ MonoBehaviour:
   impactParticle: {fileID: 1951936954608838, guid: 4765b43f65450d84694ffeb8c265f20d, type: 3}
   impactNormal: {x: 0, y: 0, z: 0}
   twr: {fileID: 0}
+  flightTime: 2
 --- !u!65 &65375484733859816
 BoxCollider:
   m_ObjectHideFlags: 0

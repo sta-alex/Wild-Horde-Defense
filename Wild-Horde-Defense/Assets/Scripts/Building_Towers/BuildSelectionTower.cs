@@ -48,6 +48,8 @@ public class BuildSelectionTower : MonoBehaviour
                 {
                     oneTowerAtTime = false;
                     previewTower = Instantiate(tower, mousePosition, Quaternion.identity) as GameObject;
+                    Tower disableSelectedTower = previewTower.GetComponent<Tower>();
+                    disableSelectedTower.enabled = false;
                     SetPreviewCannonScale();
                     ShowTowerZone(previewTower);
                     DisableCollider(previewTower);
