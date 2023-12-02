@@ -25,7 +25,7 @@ public class EnemyStat : MonoBehaviour
     void Start()
     {
         currenHealth = maxHealth;
-        healthBar.UpdateHealthBar(maxHealth, currenHealth);
+        //healthBar.UpdateHealthBar(maxHealth, currenHealth);
         bodycollider = gameObject.GetComponent<CapsuleCollider>();
         if (pathController.isActiveAndEnabled)
             currentSpeed = pathController.GetSpeed();
