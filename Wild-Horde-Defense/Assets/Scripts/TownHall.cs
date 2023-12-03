@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TownHall : MonoBehaviour
 {
     public HealthBarHUDTester healthBar;
+    private int lives = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class TownHall : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyAlive"))
         {
-            healthBar.Hurt(1);
+            
             Destroy(other.gameObject);
             ReduceTownHallHp();
         }
@@ -29,6 +31,11 @@ public class TownHall : MonoBehaviour
 
     public void ReduceTownHallHp()
     {
-        //todo
+        healthBar.Hurt(1);
+        lives -= 1;
+        if(lives <= 0)
+        {
+            SceneManager.LoadScene("GameOverMenu");
+        }
     }
 }
