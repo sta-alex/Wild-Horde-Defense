@@ -132,6 +132,10 @@ public class EnemyStat : MonoBehaviour
         UpdateSpeed(0f);
         currenHealth = 0f;
         gameObject.tag = "EnemyDead";
+        if (gameObject.name == "Troll Variant(Clone)" || gameObject.name == "Demon Variant(Clone)")
+            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
+        else
+            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
         gameObject.GetComponent<AnimationHandler>().isDead = true;
         InterruptPathing(true);
         StartCoroutine(EventTimerOnce(3f, DestroyObjekt));

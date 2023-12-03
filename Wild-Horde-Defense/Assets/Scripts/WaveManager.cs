@@ -17,7 +17,7 @@ public class WaveManager : MonoBehaviour
     public int currentWave = 0;
     private int enemyStatMultiplier = 1;
     public float LvlStartDelay = 60f;
-    public float WaveIntervallDelay = 45f;
+    public float WaveIntervallDelay = 50f;
     private Timer timer;
     public bool bossIsSpawned = false;
 
