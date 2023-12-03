@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     private int enemyStatMultiplier = 1;
     public float LvlStartDelay = 7f;
     private float shortStartDelay = 5f;
-    public float WaveIntervallDelay = 20f;
+    public float WaveIntervallDelay = 60f;
     private Timer timer;
     public bool bossIsSpawned = false;
 
@@ -96,7 +96,7 @@ public class WaveManager : MonoBehaviour
         {
             numberofAliveEnemies += 1;
             spawnhandler.SpawnGameobject(GetSpawnlocation(), new Vector2(5, 5), enemy, 1, false);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 
