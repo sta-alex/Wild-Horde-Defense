@@ -50,7 +50,7 @@ public class RangePowerPlacement : MonoBehaviour
                                         towerUi.gameObject.GetComponent<Image>().color = newColor;
                                     }
                                     sphereCollider.radius += 0.2f;
-                                    towerUi.transform.localScale = new Vector3(towerUi.transform.localScale.x + 1f, towerUi.transform.localScale.y + 1f, towerUi.transform.localScale.z);
+                                    towerUi.transform.localScale = new Vector3(towerUi.transform.localScale.x + 1.2f, towerUi.transform.localScale.y + 1.2f, towerUi.transform.localScale.z);
                                     Debug.Log("Radius boostes from Tower: " + towerToBoost.name);
                                 }
                             }

@@ -463,10 +463,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.35
+  m_Radius: 0.7
   m_Height: 1.9
   m_Direction: 1
-  m_Center: {x: 0, y: 0.97, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &-2261654419260106617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   maxSpeed: 25
+  currenHealth: 0
   healthBar: {fileID: 937469594}
   pathController: {fileID: 1083724782}
 --- !u!114 &1083724782

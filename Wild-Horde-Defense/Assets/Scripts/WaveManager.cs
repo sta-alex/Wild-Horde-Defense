@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> wayPointentrance;
     public Spawnhandler spawnhandler;
 
-    public Timer timer;
+    public GameObject timerObj;
 
     public int LvlNumver = 0;
     public int maxWaves = 9;
@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
     private int enemyStatMultiplier = 1;
     public float LvlStartDelay = 7f;
     public float WaveIntervallDelay = 20f;
-
+    private Timer timer;
     public bool bossIsSpawned = false;
 
     public float SpeedReductionFactor = 0.002f;
@@ -37,12 +37,11 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = timerObj.transform.Find("Timer").GetComponent<Timer>();
         timer.StartTimer();
         //SpawnPoints();
         //SpawnWaveofSize(Enemies[0], 6);
         StartCoroutine(EventTimerOnce(LvlStartDelay, StartWaves));
-
-
     }
 
     // Update is called once per frame
@@ -102,7 +101,6 @@ public class WaveManager : MonoBehaviour
     {
         while (true)
         {
-            timer.StopTimer();
             timer.seconds = (int) intervalltime;
             timer.StartTimer();
             yield return new WaitForSeconds(intervalltime);
@@ -164,6 +162,7 @@ public class WaveManager : MonoBehaviour
                 break;
             default:
                 Debug.Log("currentWave default ");
+                timerObj.SetActive(false);
                 break;
         }
     }

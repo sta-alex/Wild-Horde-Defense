@@ -7,7 +7,7 @@ public class EnemyStat : MonoBehaviour
     public float maxHealth = 300f;
     public float maxSpeed = 25f;
 
-    private float currenHealth;
+    public float currenHealth;
     private float currentSpeed;
 
 
