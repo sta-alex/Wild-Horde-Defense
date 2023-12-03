@@ -20,7 +20,10 @@ public class AnimationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (gameObject.CompareTag("EnemyDead"))
+        {
+            DeadAnimation();
+        }
         if (isBossSpawned)
         {
             RunAnimation();
@@ -52,7 +55,8 @@ public class AnimationHandler : MonoBehaviour
 
     public void DeadAnimation()
     {
-        anim = gameObject.GetComponent<Animator>();
+        anim.SetBool("isWalkAnim", false);
+        anim.SetBool("isRunAnim", false);
         anim.SetBool("isDeadAnim", true);
     }
 
