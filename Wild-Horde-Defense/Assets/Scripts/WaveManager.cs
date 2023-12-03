@@ -17,15 +17,17 @@ public class WaveManager : MonoBehaviour
     public int currentWave = 0;
     private int enemyStatMultiplier = 1;
     public float LvlStartDelay = 7f;
+    private float shortStartDelay = 5f;
     public float WaveIntervallDelay = 20f;
     private Timer timer;
     public bool bossIsSpawned = false;
 
     public float SpeedReductionFactor = 0.002f;
 
+    private int numberofAliveEnemies = 0;
 
-
-    private int numberofAliveEnemies;
+    private Coroutine waveStartCoroutine;
+    private Coroutine waveIntervallCoroutine;
 
 
 
@@ -41,7 +43,7 @@ public class WaveManager : MonoBehaviour
         timer.StartTimer();
         //SpawnPoints();
         //SpawnWaveofSize(Enemies[0], 6);
-        StartCoroutine(EventTimerOnce(LvlStartDelay, StartWaves));
+        waveStartCoroutine = StartCoroutine(EventTimerOnce(LvlStartDelay, StartWaves));
     }
 
     // Update is called once per frame
@@ -71,7 +73,14 @@ public class WaveManager : MonoBehaviour
     }
     public void CharackterDeadInfo()
     {
-
+        numberofAliveEnemies -= 1;
+        if(numberofAliveEnemies <= 0)
+        {
+            StopCoroutine(waveStartCoroutine);
+            StopCoroutine(waveIntervallCoroutine);
+            SpawnWaveWithPattern();
+            waveIntervallCoroutine = StartCoroutine(EventTimerOnce(WaveIntervallDelay, StartWaves));
+        }
     }
 
     private GameObject GetSpawnlocation()
@@ -85,7 +94,7 @@ public class WaveManager : MonoBehaviour
     {
         for (int i = 0; i < size; i++)
         {
-            
+            numberofAliveEnemies += 1;
             spawnhandler.SpawnGameobject(GetSpawnlocation(), new Vector2(5, 5), enemy, 1, false);
             yield return new WaitForSeconds(1.5f);
         }
@@ -93,6 +102,9 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator EventTimerOnce(float waitingtime, System.Action function)
     {
+        timer.StopTimer();
+        timer.seconds = (int)waitingtime;
+        timer.StartTimer();
         yield return new WaitForSeconds(waitingtime);
         function.Invoke();
     }
@@ -162,6 +174,8 @@ public class WaveManager : MonoBehaviour
                 break;
             default:
                 Debug.Log("currentWave default ");
+                StopCoroutine(waveStartCoroutine);
+                timer.StopTimer();
                 timerObj.SetActive(false);
                 break;
         }
@@ -187,7 +201,7 @@ public class WaveManager : MonoBehaviour
     private void StartWaves()
     {
         SpawnWaveWithPattern();
-        StartCoroutine(RepeatEventTimer(WaveIntervallDelay, SpawnWaveWithPattern));
+        waveIntervallCoroutine = StartCoroutine(RepeatEventTimer(WaveIntervallDelay, SpawnWaveWithPattern));
     }
 
     public bool isBossSpawn()

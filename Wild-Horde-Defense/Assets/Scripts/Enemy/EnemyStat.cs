@@ -153,6 +153,8 @@ public class EnemyStat : MonoBehaviour
     
     private void DestroyObjekt()
     {
+        GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(100);
+        GameObject.Find("Wavemanager").GetComponent<WaveManager>().CharackterDeadInfo();
         Destroy(this.gameObject);
     }
 
