@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currency = 5000;
+        currency = 220;
         currencyText.text = "$ " + currency;
         Debug.Log(currencyText);
     }
