@@ -18,27 +18,33 @@ public class HealthBar : MonoBehaviour
     private Color lowHealthColor = new Color(255f / 255f, 85f / 255f, 85f / 255f);      // Light Red
 
     private Coroutine smoothHealthCoroutine;
+    private Coroutine destroycoroutine;
     private float despawntimer = 3f;
+
+    private GameObject foreGround;
+    private GameObject backGround;
 
 
     // Start is called before the first frame update
     void Start()
     {
         maincamera = Camera.main;
+        enableUI(false);
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
         //transform.rotation = Quaternion.LookRotation(transform.position - maincamera.transform.position);
+        
     }
 
     public void UpdateHealthBar(float maxHealth, float currentHealth)
     {
+        enableUI(true);
         target = currentHealth / maxHealth;
         if (target > 0f && target <= 1f)
         {
-            gameObject.SetActive(true);
 
             if (smoothHealthCoroutine != null)
             {
@@ -54,6 +60,8 @@ public class HealthBar : MonoBehaviour
         {
             healthbarSprite.fillAmount = 0f;
             UpdateHealthBarColor(target);
+          
+            
         }
     }
 
@@ -75,7 +83,7 @@ public class HealthBar : MonoBehaviour
 
     private IEnumerator SmoothlyUpdateHealthBar(float targetValue)
     {
-        StopCoroutine(Despawntimer());
+        //StopCoroutine(destroycoroutine);
         float currentTime = 0f;
         float initialFillAmount = healthbarSprite.fillAmount;
 
@@ -83,19 +91,39 @@ public class HealthBar : MonoBehaviour
         {
             currentTime += 0.01f; // Erhöhen Sie currentTime um einen festen Wert
             healthbarSprite.fillAmount = Mathf.Lerp(initialFillAmount, targetValue, currentTime);
+            if (healthbarSprite.fillAmount < 0f)
+                enableUI(false);
 
             yield return null;
         }
 
         healthbarSprite.fillAmount = targetValue;
-        StartCoroutine(Despawntimer());
+       destroycoroutine = StartCoroutine(Despawntimer());
     }
 
     private IEnumerator Despawntimer()
     {
         yield return new WaitForSeconds(despawntimer);
-        gameObject.SetActive(false);
+        enableUI(false);
+    }
+    private void OnDestroy()
+    {
+        healthbarSprite.fillAmount = 0f;
+        
     }
 
+    public void enableUI(bool OfforOn)
+    {
+            if (OfforOn)
+            {
+                gameObject.transform.Find("Foreground").gameObject.SetActive(true);
+                gameObject.transform.Find("Background").gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.transform.Find("Foreground").gameObject.SetActive(false);
+                gameObject.transform.Find("Background").gameObject.SetActive(false);
+            }       
+    }
 
 }

@@ -171,7 +171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3075346659111459511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 5778926053117931874}
   waveManager: {fileID: 0}
+  isDead: 0
   isBossSpawned: 0
 --- !u!114 &971778152529840834
 MonoBehaviour:

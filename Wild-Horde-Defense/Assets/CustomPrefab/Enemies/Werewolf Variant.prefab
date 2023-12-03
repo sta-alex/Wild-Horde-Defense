@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3708028331944854119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1677093971003202681}
   waveManager: {fileID: 0}
+  isDead: 0
   isBossSpawned: 0
 --- !u!195 &3671274556606404606
 NavMeshAgent:

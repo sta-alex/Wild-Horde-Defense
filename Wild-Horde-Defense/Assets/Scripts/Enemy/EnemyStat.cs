@@ -16,6 +16,7 @@ public class EnemyStat : MonoBehaviour
 
     private float reduceSpeed = 2f;
     private Coroutine smoothSpeedCoroutine;
+    private Coroutine slowCoroutine;
 
     private CapsuleCollider bodycollider;
 
@@ -93,10 +94,16 @@ public class EnemyStat : MonoBehaviour
         currentSpeed = newspeedtarget;
     }
 
+    private void ResetSpeed()
+    {
+        UpdateSpeed(GetMaxSpeed());
+    }
+
     public void SlowSpeed(float percentage)
     {
         float target = 1 - (percentage / 100);
         UpdateSpeed(GetCurrentSpeed() * target);
+        slowCoroutine = StartCoroutine(EventTimerOnce(5.0f, ResetSpeed));
     }
 
     private IEnumerator SmoothlyUpdateSpeed(float targetValue)
@@ -154,7 +161,10 @@ public class EnemyStat : MonoBehaviour
     
     private void DestroyObjekt()
     {
-        GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(100);
+        if(gameObject.name == "Troll Variant(Clone)" || gameObject.name == "Demon Variant(Clone)")
+            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
+        else
+            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
         GameObject.Find("Wavemanager").GetComponent<WaveManager>().CharackterDeadInfo();
         Destroy(this.gameObject);
     }
