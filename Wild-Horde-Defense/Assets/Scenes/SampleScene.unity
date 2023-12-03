@@ -6614,7 +6614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: dmg
-      value: 40
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: shootDelay
@@ -6662,7 +6662,7 @@ RectTransform:
   m_GameObject: {fileID: 532700998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 104.27496}
-  m_LocalScale: {x: 2.3, y: 2.3, z: 1}
+  m_LocalScale: {x: 4.4, y: 4.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 934119523}
@@ -7725,7 +7725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: dmg
-      value: 70
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: shootDelay
@@ -10050,8 +10050,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: 0.32597077, y: 0.17861193, z: 0.062860265, w: -0.9262233}
-  m_LocalPosition: {x: 1094.3861, y: -118.79176, z: 131.68999}
+  m_LocalRotation: {x: -0.43846008, y: 0.0067397794, z: 0.003287748, w: 0.89871943}
+  m_LocalPosition: {x: 456.52115, y: -214.6075, z: 218.98206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10924,6 +10924,10 @@ PrefabInstance:
     - target: {fileID: 114237770718818268, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: shootDelay
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 135367814797736572, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
+      propertyPath: m_Radius
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 199069982654519714, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: m_Materials.Array.size
@@ -16011,7 +16015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: shootDelay
-      value: 1
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 135841552861663602, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: m_Radius
@@ -16374,7 +16378,7 @@ RectTransform:
   m_GameObject: {fileID: 1249466531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 104.27529}
-  m_LocalScale: {x: 1.6, y: 1.6, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2077910840}
@@ -18823,6 +18827,10 @@ PrefabInstance:
     - target: {fileID: 114183152169195300, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
       propertyPath: shootDelay
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 135007984540990562, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
+      propertyPath: m_Radius
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -21828,7 +21836,7 @@ RectTransform:
   m_GameObject: {fileID: 1727872357}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 76.02503}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1036535617}
@@ -21971,7 +21979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: shootDelay
-      value: 1.5
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
@@ -23520,7 +23528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: dmg
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: shootDelay
@@ -24571,6 +24579,10 @@ PrefabInstance:
     - target: {fileID: 114388094878622656, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: shootDelay
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 135258617932420732, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
+      propertyPath: m_Radius
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
