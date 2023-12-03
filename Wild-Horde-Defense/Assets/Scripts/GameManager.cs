@@ -77,6 +77,13 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (previousTower.activeSelf)
+            {
+                HUD_Tower(previousTower, false);
+            }
+        }
     }
     private void ShowTowerZone(GameObject clickedTower, bool hudTowerOn = false)
     {
