@@ -178,7 +178,15 @@ public class EnemyStat : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameObject.Find("Wavemanager").GetComponent<WaveManager>().CharackterDeadInfo();
+        GameObject waveManagerObject = GameObject.Find("Wavemanager");
+        if (waveManagerObject != null)
+        {
+            WaveManager waveManagerComponent = waveManagerObject.GetComponent<WaveManager>();
+            if (waveManagerComponent != null)
+            {
+                waveManagerComponent.CharackterDeadInfo();
+            }
+        }
     }
 
 }
