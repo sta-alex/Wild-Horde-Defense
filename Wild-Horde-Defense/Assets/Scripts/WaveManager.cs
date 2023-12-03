@@ -17,7 +17,7 @@ public class WaveManager : MonoBehaviour
     public int currentWave = 0;
     private int enemyStatMultiplier = 1;
     public float LvlStartDelay = 60f;
-    public float WaveIntervallDelay = 60f;
+    public float WaveIntervallDelay = 45f;
     private Timer timer;
     public bool bossIsSpawned = false;
 
@@ -39,6 +39,8 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         timer = timerObj.transform.Find("Timer").GetComponent<Timer>();
+        timer.StopTimer();
+        timer.seconds = (int)LvlStartDelay;
         timer.StartTimer();
         //SpawnPoints();
         //SpawnWaveofSize(Enemies[0], 6);
@@ -73,15 +75,13 @@ public class WaveManager : MonoBehaviour
     public void CharackterDeadInfo()
     {
         numberofAliveEnemies -= 1;
+
         if(numberofAliveEnemies <= 0)
         {
             StopCoroutine(waveStartCoroutine);
             StopCoroutine(waveIntervallCoroutine);
-            timer.StopTimer();
-            timer.seconds = (int)WaveIntervallDelay;
-            timer.StartTimer();
-                 SpawnWaveWithPattern();
-            waveIntervallCoroutine = StartCoroutine(EventTimerOnce(WaveIntervallDelay, StartWaves));
+            SpawnWaveWithPattern();
+            waveIntervallCoroutine = StartCoroutine(RepeatEventTimer(WaveIntervallDelay, SpawnWaveWithPattern));
         }
     }
 
@@ -112,9 +112,6 @@ public class WaveManager : MonoBehaviour
     {
         while (true)
         {
-            timer.StopTimer();
-            timer.seconds = (int) intervalltime;
-            timer.StartTimer();
             yield return new WaitForSeconds(intervalltime);
             intervallfunction.Invoke();
         }
@@ -123,6 +120,9 @@ public class WaveManager : MonoBehaviour
 
     void SpawnWaveWithPattern()
     {
+        timer.StopTimer();
+        timer.seconds = (int)WaveIntervallDelay;
+        timer.StartTimer();
         switch (currentWave)
         {
             case 0:
@@ -175,6 +175,7 @@ public class WaveManager : MonoBehaviour
             default:
                 Debug.Log("currentWave default ");
                 StopCoroutine(waveStartCoroutine);
+                StopCoroutine(waveIntervallCoroutine);
                 timer.StopTimer();
                 timerObj.SetActive(false);
                 break;

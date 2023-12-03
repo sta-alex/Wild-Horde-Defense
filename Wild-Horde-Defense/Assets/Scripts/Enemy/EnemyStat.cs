@@ -169,8 +169,12 @@ public class EnemyStat : MonoBehaviour
             GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
         else
             GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
-        GameObject.Find("Wavemanager").GetComponent<WaveManager>().CharackterDeadInfo();
         Destroy(this.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        GameObject.Find("Wavemanager").GetComponent<WaveManager>().CharackterDeadInfo();
     }
 
 }
