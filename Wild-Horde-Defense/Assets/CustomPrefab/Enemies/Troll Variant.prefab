@@ -270,6 +270,115 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbarSprite: {fileID: 7617635934845319491}
   reduceSpeed: 2
+--- !u!1001 &7090094449412910889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 6320916279632192561}
+    m_Modifications:
+    - target: {fileID: 801993979845341578, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457314347233005369, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_Name
+      value: SlowEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457314347233005369, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336847016606446056, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336847016606446056, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336847016606446056, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336847016606446056, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+--- !u!4 &1460326176369392042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8512099879051990659, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+  m_PrefabInstance: {fileID: 7090094449412910889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8528824814870126608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1457314347233005369, guid: 10c8b059d10d5204cb466ba59785a563, type: 3}
+  m_PrefabInstance: {fileID: 7090094449412910889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7328811654467105032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,13 +457,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127157838479134595, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
       propertyPath: m_TagString
-      value: EnemyAlive
+      value: EnemySpawn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3606623003799246137, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3075346659111459511}
+    - targetCorrespondingSourceObject: {fileID: 3606623003799246137, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1460326176369392042}
   m_SourcePrefab: {fileID: 100100000, guid: a8c3350db6b0d8747af1c89899ddec8d, type: 3}
 --- !u!95 &5778926053117931874 stripped
 Animator:
@@ -434,6 +546,7 @@ MonoBehaviour:
   currenHealth: 0
   healthBar: {fileID: 2277707458602031260}
   pathController: {fileID: 3638596723102142347}
+  freezeEffect: {fileID: 8528824814870126608}
 --- !u!114 &3638596723102142347
 MonoBehaviour:
   m_ObjectHideFlags: 0

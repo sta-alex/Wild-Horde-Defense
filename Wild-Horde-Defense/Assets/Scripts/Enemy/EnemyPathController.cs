@@ -38,6 +38,7 @@ public class EnemyPathController : MonoBehaviour
                 }
                 else if (distance <= 4.0f)
                 {
+                    gameObject.tag = "EnemyAlive";
                     GoToNextWaypoint();
                 }
             }

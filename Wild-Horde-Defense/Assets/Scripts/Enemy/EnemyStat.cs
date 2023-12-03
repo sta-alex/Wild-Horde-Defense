@@ -20,6 +20,8 @@ public class EnemyStat : MonoBehaviour
 
     private CapsuleCollider bodycollider;
 
+    public GameObject freezeEffect;
+
 
     float timer = 0;
     // Start is called before the first frame update
@@ -97,10 +99,12 @@ public class EnemyStat : MonoBehaviour
     private void ResetSpeed()
     {
         UpdateSpeed(GetMaxSpeed());
+        freezeEffect.SetActive(false);
     }
 
     public void SlowSpeed(float percentage)
     {
+        freezeEffect.SetActive(true);
         float target = 1 - (percentage / 100);
         UpdateSpeed(GetCurrentSpeed() * target);
         slowCoroutine = StartCoroutine(EventTimerOnce(5.0f, ResetSpeed));

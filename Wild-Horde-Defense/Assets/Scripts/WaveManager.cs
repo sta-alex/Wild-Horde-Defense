@@ -16,8 +16,7 @@ public class WaveManager : MonoBehaviour
     public int maxWaves = 9;
     public int currentWave = 0;
     private int enemyStatMultiplier = 1;
-    public float LvlStartDelay = 7f;
-    private float shortStartDelay = 5f;
+    public float LvlStartDelay = 60f;
     public float WaveIntervallDelay = 60f;
     private Timer timer;
     public bool bossIsSpawned = false;
@@ -78,7 +77,10 @@ public class WaveManager : MonoBehaviour
         {
             StopCoroutine(waveStartCoroutine);
             StopCoroutine(waveIntervallCoroutine);
-            SpawnWaveWithPattern();
+            timer.StopTimer();
+            timer.seconds = (int)WaveIntervallDelay;
+            timer.StartTimer();
+                 SpawnWaveWithPattern();
             waveIntervallCoroutine = StartCoroutine(EventTimerOnce(WaveIntervallDelay, StartWaves));
         }
     }
@@ -102,9 +104,6 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator EventTimerOnce(float waitingtime, System.Action function)
     {
-        timer.StopTimer();
-        timer.seconds = (int)waitingtime;
-        timer.StartTimer();
         yield return new WaitForSeconds(waitingtime);
         function.Invoke();
     }
@@ -113,6 +112,7 @@ public class WaveManager : MonoBehaviour
     {
         while (true)
         {
+            timer.StopTimer();
             timer.seconds = (int) intervalltime;
             timer.StartTimer();
             yield return new WaitForSeconds(intervalltime);

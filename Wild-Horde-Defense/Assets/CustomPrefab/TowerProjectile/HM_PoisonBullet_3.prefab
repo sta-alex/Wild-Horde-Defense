@@ -4912,7 +4912,8 @@ MonoBehaviour:
   impactNormal: {x: 0, y: 0, z: 0}
   twr: {fileID: 0}
   flightTime: 2
-  explosionObj: {fileID: 2681179909207957773}
+  explosionObj: {fileID: 0}
+  freezeObj: {fileID: 2681179909207957773}
 --- !u!135 &2140980298224703122
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9762,7 +9763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689580917336308293}
   - component: {fileID: 8293204015896100666}
-  - component: {fileID: 8854759992034158983}
+  - component: {fileID: 8833952702814585359}
   m_Layer: 0
   m_Name: Freeze
   m_TagString: Untagged
@@ -9798,7 +9799,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 35
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8854759992034158983
+--- !u!114 &8833952702814585359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9807,7 +9808,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2681179909207957773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e970273c63b81f4f90a471e27e4fb89, type: 3}
+  m_Script: {fileID: 11500000, guid: 298c8a7633d546048bb62b405d22fc88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tower: {fileID: 0}
