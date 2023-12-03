@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TownHall : MonoBehaviour
 {
+    public HealthBarHUDTester healthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +19,9 @@ public class TownHall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TOWNENTER COLLIDER");
         if (other.gameObject.CompareTag("EnemyAlive"))
         {
+            healthBar.Hurt(1);
             Destroy(other.gameObject);
             ReduceTownHallHp();
         }
