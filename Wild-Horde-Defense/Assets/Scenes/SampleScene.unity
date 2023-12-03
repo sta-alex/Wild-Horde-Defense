@@ -3649,6 +3649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 254905240}
+  - component: {fileID: 254905241}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -3672,6 +3673,19 @@ Transform:
   m_Father: {fileID: 1927369193}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &254905241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254905239}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &258802938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4233,6 +4247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307620239}
+  - component: {fileID: 307620240}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -4256,6 +4271,19 @@ Transform:
   m_Father: {fileID: 875078901}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &307620240
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307620238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &308288656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,6 +4486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 319746609}
+  - component: {fileID: 319746610}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -4481,6 +4510,19 @@ Transform:
   m_Father: {fileID: 1231226459}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &319746610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319746608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &327191269
 GameObject:
   m_ObjectHideFlags: 0
@@ -4897,6 +4939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358683044}
+  - component: {fileID: 358683045}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -4920,6 +4963,19 @@ Transform:
   m_Father: {fileID: 1337038186}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &358683045
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358683043}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &364338528
 GameObject:
   m_ObjectHideFlags: 0
@@ -5996,6 +6052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 467039992}
+  - component: {fileID: 467039993}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -6019,6 +6076,19 @@ Transform:
   m_Father: {fileID: 1210843779}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &467039993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467039991}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &471014442
 GameObject:
   m_ObjectHideFlags: 0
@@ -6544,7 +6614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: dmg
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: shootDelay
@@ -6754,6 +6824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539737908}
+  - component: {fileID: 539737909}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -6777,6 +6848,19 @@ Transform:
   m_Father: {fileID: 662775122}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &539737909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539737907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &547032498
 GameObject:
   m_ObjectHideFlags: 0
@@ -7400,6 +7484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621081404}
+  - component: {fileID: 621081405}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -7423,6 +7508,19 @@ Transform:
   m_Father: {fileID: 740148225}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &621081405
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621081403}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &639975055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,7 +7725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: dmg
-      value: 110
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: shootDelay
@@ -8565,6 +8663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732853224}
+  - component: {fileID: 732853225}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -8588,6 +8687,19 @@ Transform:
   m_Father: {fileID: 507475078}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &732853225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732853223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1001 &740148224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9833,6 +9945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792701090}
+  - component: {fileID: 792701091}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -9856,6 +9969,19 @@ Transform:
   m_Father: {fileID: 1730257694}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &792701091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792701089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &797943682
 GameObject:
   m_ObjectHideFlags: 0
@@ -9924,8 +10050,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: 0.45324242, y: 0.003436963, z: 0.0015757934, w: -0.8913793}
-  m_LocalPosition: {x: 403.11313, y: -211.06407, z: 259.72876}
+  m_LocalRotation: {x: 0.32597077, y: 0.17861193, z: 0.062860265, w: -0.9262233}
+  m_LocalPosition: {x: 1094.3861, y: -118.79176, z: 131.68999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11513,8 +11639,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944338973}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 443, y: -573.86, z: 413.6}
+  m_LocalRotation: {x: -0.49418375, y: 0.0026020815, z: 0.0014763237, w: 0.86935234}
+  m_LocalPosition: {x: 450.86115, y: -248.2683, z: 229.72508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15669,6 +15795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210971185}
+  - component: {fileID: 1210971186}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -15692,6 +15819,19 @@ Transform:
   m_Father: {fileID: 1713965244}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &1210971186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210971184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &1227879110
 GameObject:
   m_ObjectHideFlags: 0
@@ -15867,7 +16007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: dmg
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: shootDelay
@@ -16327,6 +16467,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1262821591}
+  - component: {fileID: 1262821592}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -16350,6 +16491,19 @@ Transform:
   m_Father: {fileID: 1874944654}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &1262821592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262821590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &1280604513
 GameObject:
   m_ObjectHideFlags: 0
@@ -16441,6 +16595,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293476307}
+  - component: {fileID: 1293476308}
   m_Layer: 9
   m_Name: Tower_Ui
   m_TagString: Untagged
@@ -16464,6 +16619,19 @@ Transform:
   m_Father: {fileID: 1460921208}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &1293476308
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293476306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.819297, y: 1.3792633, z: 0}
+  m_Center: {x: 0.71686745, y: 2.9198563, z: 0.50000006}
 --- !u!1 &1297135100
 GameObject:
   m_ObjectHideFlags: 0
@@ -16966,7 +17134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114751458232940500, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: dmg
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114751458232940500, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: shootDelay
@@ -21799,7 +21967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: dmg
-      value: 90
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: shootDelay
@@ -23352,7 +23520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: dmg
-      value: 90
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: shootDelay
