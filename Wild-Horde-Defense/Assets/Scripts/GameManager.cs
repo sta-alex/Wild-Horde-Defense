@@ -79,7 +79,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (previousTower.activeSelf)
+            int layerMask2 = 1 << LayerMask.NameToLayer("Placements");
+            RaycastHit hit2;
+            if (Physics.Raycast(ray, out hit2, Mathf.Infinity, layerMask2))
+            {
+
+            }
+            else
             {
                 HUD_Tower(previousTower, false);
             }
