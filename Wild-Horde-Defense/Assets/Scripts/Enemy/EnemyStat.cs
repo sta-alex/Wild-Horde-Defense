@@ -121,6 +121,7 @@ public class EnemyStat : MonoBehaviour
         UpdateSpeed(0f);
         currenHealth = 0f;
         gameObject.tag = "EnemyDead";
+        gameObject.GetComponent<AnimationHandler>().isDead = true;
         InterruptPathing(true);
         StartCoroutine(EventTimerOnce(3f, DestroyObjekt));
     }

@@ -7,7 +7,7 @@ public class AnimationHandler : MonoBehaviour
     public Animator anim;
 
     public WaveManager waveManager;
-
+    public bool isDead = false;
     public bool isBossSpawned = false;
     // Start is called before the first frame update
     void Start()
@@ -20,11 +20,11 @@ public class AnimationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (gameObject.CompareTag("EnemyDead"))
         {
             DeadAnimation();
-        }
-        if (isBossSpawned)
+        }else if (isBossSpawned)
         {
             RunAnimation();
         }
@@ -42,6 +42,7 @@ public class AnimationHandler : MonoBehaviour
     }
     public void WalkAnimation()
     {
+        
         anim.SetBool("isWalkAnim", true);
         anim.SetBool("isRunAnim", false);
     }
@@ -54,9 +55,7 @@ public class AnimationHandler : MonoBehaviour
     }
 
     public void DeadAnimation()
-    {
-        anim.SetBool("isWalkAnim", false);
-        anim.SetBool("isRunAnim", false);
+    { 
         anim.SetBool("isDeadAnim", true);
     }
 
