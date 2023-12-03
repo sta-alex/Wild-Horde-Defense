@@ -63,6 +63,8 @@ public class EnemyStat : MonoBehaviour
         }
         else if (currenHealth <= 0)
         {
+            currenHealth = 0f;
+            healthBar.UpdateHealthBar(maxHealth, currenHealth);
             Death();
         }
     }
@@ -116,11 +118,11 @@ public class EnemyStat : MonoBehaviour
     
     public void Death()
     {
-        InterruptPathing(true);
         UpdateSpeed(0f);
         currenHealth = 0f;
         gameObject.tag = "EnemyDead";
-        
+        InterruptPathing(true);
+        StartCoroutine(EventTimerOnce(3f, DestroyObjekt));
     }
 
     public void Revive()
@@ -128,6 +130,7 @@ public class EnemyStat : MonoBehaviour
         InterruptPathing(false);
         currenHealth = 1f;
         UpdateHealth(+50f);
+        gameObject.tag = "EnemyAlive";
     }
 
     public void InterruptPathing(bool interrupt)
@@ -141,6 +144,16 @@ public class EnemyStat : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    IEnumerator EventTimerOnce(float waitingtime, System.Action function)
+    {
+        yield return new WaitForSeconds(waitingtime);
+        function.Invoke();
+    }
+    
+    private void DestroyObjekt()
+    {
+        Destroy(this.gameObject);
     }
 
 }
