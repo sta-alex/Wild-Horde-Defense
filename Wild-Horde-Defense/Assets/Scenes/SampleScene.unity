@@ -4678,7 +4678,7 @@ GameObject:
   - component: {fileID: 338542819}
   - component: {fileID: 338542821}
   - component: {fileID: 338542820}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5627,7 +5627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441343207}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: RangeIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6354,7 +6354,7 @@ GameObject:
   - component: {fileID: 478341466}
   - component: {fileID: 478341468}
   - component: {fileID: 478341467}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6614,7 +6614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: dmg
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 114231757648547274, guid: 997eda0f844715845a30121b4553e2fd, type: 3}
       propertyPath: shootDelay
@@ -7725,7 +7725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: dmg
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: shootDelay
@@ -8306,7 +8306,7 @@ GameObject:
   - component: {fileID: 722035192}
   - component: {fileID: 722035194}
   - component: {fileID: 722035193}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9606,7 +9606,7 @@ GameObject:
   - component: {fileID: 784801695}
   - component: {fileID: 784801694}
   - component: {fileID: 784801693}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10050,8 +10050,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: -0.43846008, y: 0.0067397794, z: 0.003287748, w: 0.89871943}
-  m_LocalPosition: {x: 456.52115, y: -214.6075, z: 218.98206}
+  m_LocalRotation: {x: 0.45835024, y: 0.028754875, z: 0.014675063, w: -0.8881852}
+  m_LocalPosition: {x: 385.02484, y: -171.79436, z: 287.43298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11119,7 +11119,7 @@ GameObject:
   - component: {fileID: 877351149}
   - component: {fileID: 877351148}
   - component: {fileID: 877351147}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Sell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11252,7 +11252,7 @@ GameObject:
   - component: {fileID: 891338860}
   - component: {fileID: 891338862}
   - component: {fileID: 891338861}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11643,8 +11643,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944338973}
-  m_LocalRotation: {x: -0.49418375, y: 0.0026020815, z: 0.0014763237, w: 0.86935234}
-  m_LocalPosition: {x: 450.86115, y: -248.2683, z: 229.72508}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 443, y: -573.86, z: 413.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14097,7 +14097,7 @@ GameObject:
   - component: {fileID: 1088392282}
   - component: {fileID: 1088392284}
   - component: {fileID: 1088392283}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14180,7 +14180,7 @@ GameObject:
   - component: {fileID: 1088803706}
   - component: {fileID: 1088803705}
   - component: {fileID: 1088803704}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15662,6 +15662,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 1796725137498576, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
+      propertyPath: m_Name
+      value: Zone2
+      objectReference: {fileID: 0}
     - target: {fileID: 4449779493613100, guid: 50c316650621d4b4b91ed1bf3f7c4f4c, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
@@ -15790,6 +15794,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6778896, y: 3.3886135, z: 1.0052187}
   m_Center: {x: 0.016338348, y: 1.1943067, z: 0.09725945}
+--- !u!23 &1210843786
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313475905}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1210971184
 GameObject:
   m_ObjectHideFlags: 0
@@ -18444,7 +18490,7 @@ GameObject:
   - component: {fileID: 1443126419}
   - component: {fileID: 1443126418}
   - component: {fileID: 1443126417}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22003,7 +22049,7 @@ GameObject:
   - component: {fileID: 1761397662}
   - component: {fileID: 1761397664}
   - component: {fileID: 1761397663}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22946,7 +22992,7 @@ GameObject:
   - component: {fileID: 1847107477}
   - component: {fileID: 1847107476}
   - component: {fileID: 1847107475}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23528,7 +23574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: dmg
-      value: 70
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 114253568441369398, guid: 0dfb945d3f30f114ca2ad3191228b665, type: 3}
       propertyPath: shootDelay
@@ -23605,7 +23651,7 @@ MonoBehaviour:
   LvlNumver: 0
   maxWaves: 10
   currentWave: 0
-  LvlStartDelay: 60
+  LvlStartDelay: 10
   WaveIntervallDelay: 50
   bossIsSpawned: 0
   SpeedReductionFactor: 0.002
@@ -26431,7 +26477,7 @@ GameObject:
   - component: {fileID: 2086942187}
   - component: {fileID: 2086942186}
   - component: {fileID: 2086942185}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}

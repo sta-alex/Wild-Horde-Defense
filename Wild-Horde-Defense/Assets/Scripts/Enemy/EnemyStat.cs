@@ -20,7 +20,7 @@ public class EnemyStat : MonoBehaviour
 
     private CapsuleCollider bodycollider;
 
-    public GameObject freezeEffect;
+    public List <GameObject> particleEffects;
 
 
     float timer = 0;
@@ -99,12 +99,12 @@ public class EnemyStat : MonoBehaviour
     private void ResetSpeed()
     {
         UpdateSpeed(GetMaxSpeed());
-        freezeEffect.SetActive(false);
+        activateParticleEffect(0, false);
     }
 
     public void SlowSpeed(float percentage)
     {
-        freezeEffect.SetActive(true);
+        activateParticleEffect(0, true);
         float target = 1 - (percentage / 100);
         UpdateSpeed(GetCurrentSpeed() * target);
         slowCoroutine = StartCoroutine(EventTimerOnce(5.0f, ResetSpeed));
@@ -192,4 +192,28 @@ public class EnemyStat : MonoBehaviour
         }
     }
 
+    public void activateParticleEffect(int listNumber, bool isActive, float time = 0f)
+    {
+        if (isActive)
+        {
+            if(time == 0f)
+                particleEffects[listNumber].SetActive(true);
+            else
+            {
+                particleEffects[listNumber].SetActive(true);
+                StartCoroutine(particletime(listNumber, time));
+            }
+        }
+        else
+        {
+            particleEffects[listNumber].SetActive(false);
+        }
+    }
+
+    IEnumerator particletime(int listNumber, float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        particleEffects[listNumber].SetActive(false);
+    }
 }

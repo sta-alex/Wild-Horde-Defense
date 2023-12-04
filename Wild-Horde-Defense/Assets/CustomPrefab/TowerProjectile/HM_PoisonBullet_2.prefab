@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152493106083398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.159, y: 0, z: 0}
   m_LocalScale: {x: 1.0000002, y: 0.9999998, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6157,7 +6157,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -9735,6 +9735,7 @@ MonoBehaviour:
   Speed: 150
   target: {fileID: 0}
   impactParticle: {fileID: 1951936954608838, guid: 4765b43f65450d84694ffeb8c265f20d, type: 3}
+  explosionParticle: {fileID: 0}
   impactNormal: {x: 0, y: 0, z: 0}
   twr: {fileID: 0}
   flightTime: 2

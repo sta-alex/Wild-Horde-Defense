@@ -451,7 +451,8 @@ MonoBehaviour:
   currenHealth: 0
   healthBar: {fileID: 6447965983477498676}
   pathController: {fileID: 1592206137566889693}
-  freezeEffect: {fileID: 6693590409620177164}
+  particleEffects:
+  - {fileID: 6693590409620177164}
 --- !u!195 &7713189147420273841
 NavMeshAgent:
   m_ObjectHideFlags: 0

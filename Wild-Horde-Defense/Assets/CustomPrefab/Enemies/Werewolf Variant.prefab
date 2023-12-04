@@ -582,4 +582,5 @@ MonoBehaviour:
   currenHealth: 0
   healthBar: {fileID: 8502130482910566258}
   pathController: {fileID: 7663645561256991770}
-  freezeEffect: {fileID: 224477115097346883}
+  particleEffects:
+  - {fileID: 224477115097346883}

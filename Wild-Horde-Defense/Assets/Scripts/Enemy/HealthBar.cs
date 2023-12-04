@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
 
     private Coroutine smoothHealthCoroutine;
     private Coroutine destroycoroutine;
-    private float despawntimer = 3f;
+    private float despawntimer = 5f;
 
     private GameObject foreGround;
     private GameObject backGround;

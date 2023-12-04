@@ -4909,6 +4909,7 @@ MonoBehaviour:
   Speed: 150
   target: {fileID: 0}
   impactParticle: {fileID: 1103574013324760, guid: a62bbd5960ae4cc48a283b638f54046f, type: 3}
+  explosionParticle: {fileID: 0}
   impactNormal: {x: 0, y: 0, z: 0}
   twr: {fileID: 0}
   flightTime: 2
@@ -5035,7 +5036,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -6225,7 +6226,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1

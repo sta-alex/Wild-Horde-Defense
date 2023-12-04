@@ -52,7 +52,7 @@ public class FirePowerPlacement : MonoBehaviour
                                 Tower tower = towerToBoost.GetComponent<Tower>();
                                 if (tower != null)
                                 {
-                                    tower.dmg += 20;
+                                    tower.dmg += 30;
                                 }
                             }
                         }

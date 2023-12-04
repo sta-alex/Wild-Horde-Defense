@@ -525,7 +525,8 @@ MonoBehaviour:
   currenHealth: 0
   healthBar: {fileID: 937469594}
   pathController: {fileID: 1083724782}
-  freezeEffect: {fileID: 8251743430537128252}
+  particleEffects:
+  - {fileID: 8251743430537128252}
 --- !u!114 &1083724782
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9780,7 +9780,7 @@ GameObject:
   - component: {fileID: 4592977019630770}
   - component: {fileID: 114214184228652696}
   - component: {fileID: -3403048616093558499}
-  - component: {fileID: 4536995185278192643}
+  - component: {fileID: 1092470954625620612}
   m_Layer: 0
   m_Name: HM_cannon_bullet3
   m_TagString: Untagged
@@ -9821,10 +9821,12 @@ MonoBehaviour:
   Speed: 150
   target: {fileID: 0}
   impactParticle: {fileID: 1191811519933358, guid: 274f043ea1351e74887b9465be612e2b, type: 3}
+  explosionParticle: {fileID: 358637981425055526, guid: 6329126a4e3034f40b06e2425d308583, type: 3}
   impactNormal: {x: 0, y: 0, z: 0}
   twr: {fileID: 0}
   flightTime: 2
   explosionObj: {fileID: 6559589980132710598}
+  freezeObj: {fileID: 0}
 --- !u!135 &-3403048616093558499
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9838,7 +9840,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4536995185278192643
+--- !u!114 &1092470954625620612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9847,10 +9849,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1882907469660978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e970273c63b81f4f90a471e27e4fb89, type: 3}
+  m_Script: {fileID: 11500000, guid: 2771e3d6b398ddb488dc5af9eb065c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 0}
+  explosionobjc: {fileID: 358637981425055526, guid: 6329126a4e3034f40b06e2425d308583, type: 3}
 --- !u!1 &6559589980132710598
 GameObject:
   m_ObjectHideFlags: 0

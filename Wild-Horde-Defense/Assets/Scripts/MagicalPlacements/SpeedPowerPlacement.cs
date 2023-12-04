@@ -49,7 +49,7 @@ public class SpeedPowerPlacement : MonoBehaviour
                                 Tower tower = towerToBoost.GetComponent<Tower>();
                                 if (tower != null)
                                 {
-                                    tower.shootDelay -= 0.2f;
+                                    tower.shootDelay -= 0.5f;
                                 }
                             }
                         }
