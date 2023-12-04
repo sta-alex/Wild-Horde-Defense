@@ -132,13 +132,10 @@ public class EnemyStat : MonoBehaviour
         UpdateSpeed(0f);
         currenHealth = 0f;
         gameObject.tag = "EnemyDead";
-        if (gameObject.name == "Troll Variant(Clone)" || gameObject.name == "Demon Variant(Clone)")
-            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
-        else
-            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
+        KillMoney(true);
         gameObject.GetComponent<AnimationHandler>().isDead = true;
         InterruptPathing(true);
-        StartCoroutine(EventTimerOnce(3f, DestroyObjekt));
+        StartCoroutine(EventTimerOnce(2f, DestroyObj));
     }
 
     public void Revive()
@@ -167,13 +164,19 @@ public class EnemyStat : MonoBehaviour
         function.Invoke();
     }
     
-    private void DestroyObjekt()
+    private void KillMoney(bool iskilled)
     {
-        if(gameObject.name == "Troll Variant(Clone)" || gameObject.name == "Demon Variant(Clone)")
-            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
-        else
-            GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
-        Destroy(this.gameObject);
+        if (iskilled){
+            if (gameObject.name == "Troll Variant(Clone)" || gameObject.name == "Demon Variant(Clone)")
+                GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
+            else
+                GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
+        }
+    }
+
+    private void DestroyObj()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDestroy()
