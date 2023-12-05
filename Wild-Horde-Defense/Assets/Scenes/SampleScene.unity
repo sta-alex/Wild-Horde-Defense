@@ -19080,6 +19080,7 @@ RectTransform:
   - {fileID: 1049056747}
   - {fileID: 147786893}
   - {fileID: 327191270}
+  - {fileID: 1620462666}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59423,6 +59424,7 @@ MonoBehaviour:
   LvlStartDelay: 60
   WaveIntervallDelay: 50
   bossIsSpawned: 0
+  victoryText: {fileID: 1620462665}
   SpeedReductionFactor: 0.002
 --- !u!4 &1875420263
 Transform:
