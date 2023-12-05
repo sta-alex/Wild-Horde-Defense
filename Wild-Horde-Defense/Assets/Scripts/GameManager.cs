@@ -87,7 +87,10 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                HUD_Tower(previousTower, false);
+                if(previousTower != null)
+                {
+                    HUD_Tower(previousTower, false);
+                }
             }
         }
     }
@@ -96,25 +99,29 @@ public class GameManager : MonoBehaviour
 
         GameObject towerUI = clickedTower.transform.Find("Tower_Ui").gameObject;
 
-        towerUI.SetActive(true);
 
-        if (towerUI != null)
-        {
-            GameObject canvas = towerUI.transform.Find("Canvas").gameObject;
+        
 
-            if (canvas != null)
+            towerUI.SetActive(true);
+
+            if (towerUI != null)
             {
-                GameObject towerUI_Upgrade_Sell = canvas.transform.Find("Buttons").gameObject;
-                towerUI_Upgrade_Sell.SetActive(true);
+                GameObject canvas = towerUI.transform.Find("Canvas").gameObject;
 
-                GameObject rangeIndicator = canvas.transform.Find("RangeIndicator").gameObject;
-                if (rangeIndicator != null)
+                if (canvas != null)
                 {
-                    GameObject image = rangeIndicator.transform.Find("Image").gameObject;
-                    enableOrDisableRange(image, hudTowerOn);
+                    GameObject towerUI_Upgrade_Sell = canvas.transform.Find("Buttons").gameObject;
+                    towerUI_Upgrade_Sell.SetActive(true);
+
+                    GameObject rangeIndicator = canvas.transform.Find("RangeIndicator").gameObject;
+                    if (rangeIndicator != null)
+                    {
+                        GameObject image = rangeIndicator.transform.Find("Image").gameObject;
+                        enableOrDisableRange(image, hudTowerOn);
+                    }
                 }
             }
-        }
+        
     }
 
     private void ShowTowerUpgradeAndSell(GameObject clickedTower, bool hudTowerOn = false)
