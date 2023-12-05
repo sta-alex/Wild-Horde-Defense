@@ -22,19 +22,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_RootOrder
-      value: 105
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_LocalPosition.x
@@ -90,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_Size
-      value: 40
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_FadeMode
@@ -102,7 +102,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 20500000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
-      value: 0.25
+      value: 0.00625
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 80e93bebfbbd6da409d3e9e3c7049540, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.003798002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

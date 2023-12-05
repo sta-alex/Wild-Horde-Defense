@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2587542320163409016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_Name
+      value: Tree4A Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_RootOrder
+      value: 457
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.476349
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 44.077686
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.692276
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.00625
+      objectReference: {fileID: 0}
+    - target: {fileID: 20500000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.003798002
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29e15ba9401bf194b89d3c4a125a3529, type: 3}
