@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
@@ -21,6 +23,8 @@ public class WaveManager : MonoBehaviour
     private Timer timer;
     public bool bossIsSpawned = false;
 
+    public GameObject victoryText;
+
     public float SpeedReductionFactor = 0.002f;
 
     private int numberofAliveEnemies = 0;
@@ -38,6 +42,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        victoryText.SetActive(false);
         timer = timerObj.transform.Find("Timer").GetComponent<Timer>();
         timer.StopTimer();
         timer.seconds = (int)LvlStartDelay;
@@ -178,6 +183,8 @@ public class WaveManager : MonoBehaviour
                 StopCoroutine(waveIntervallCoroutine);
                 timer.StopTimer();
                 timerObj.SetActive(false);
+                victoryText.SetActive(true);
+                Invoke("NextLevel", 6f);
                 break;
         }
     }
@@ -208,6 +215,23 @@ public class WaveManager : MonoBehaviour
     public bool isBossSpawn()
     {
         return bossIsSpawned;
+    }
+
+
+    private void NextLevel()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name.Equals("Level1"))
+        {
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("SampleScene");
+        }
+        else if (currentScene.name.Equals("SampleScene"))
+        {
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("GameMenu");
+        }
     }
 
 }

@@ -17,8 +17,15 @@ public class GameMenu : MonoBehaviour
         
     }
 
-    public void LoadGameScene()
+    public void LoadLeve1()
     {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void LoadLevel2()
+    {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("SampleScene");
     }
 
