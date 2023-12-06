@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -12,8 +13,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currency = 220;
-        currencyText.text = "$ " + currency;
+        setCurrency();
         Debug.Log(currencyText);
     }
 
@@ -201,6 +201,22 @@ public class GameManager : MonoBehaviour
     public GameObject getCurrentSelectedTower()
     {
         return this.currentSelectedTower;
+    }
+
+    private void setCurrency()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        if (currentScene.name.Equals("Level1"))
+        {
+            currency = 400;
+            currencyText.text = "$ " + currency;
+        }
+        else if (currentScene.name.Equals("SampleScene"))
+        {
+            currency = 220;
+            currencyText.text = "$ " + currency;
+        }
     }
 
 }
