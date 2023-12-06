@@ -35,7 +35,18 @@ public class TownHall : MonoBehaviour
         lives -= 1;
         if(lives <= 0)
         {
-            SceneManager.LoadScene("GameOverMenu");
+            Scene currentScene = SceneManager.GetActiveScene();
+
+            if (currentScene.name.Equals("Level1"))
+            {
+                Time.timeScale = 1.0f;
+                SceneManager.LoadScene("GameOverMenuLevel1");
+            }
+            else if (currentScene.name.Equals("SampleScene"))
+            {
+                Time.timeScale = 1.0f;
+                SceneManager.LoadScene("GameOverMenuLevel2");
+            }
         }
     }
 }
