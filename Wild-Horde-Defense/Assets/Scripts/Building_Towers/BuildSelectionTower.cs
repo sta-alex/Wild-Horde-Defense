@@ -22,6 +22,8 @@ public class BuildSelectionTower : MonoBehaviour
     private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionary = new Dictionary<TowerPlacement, GameObject>();
     private Dictionary<TowerPlacement, GameObject> towersPlacedOnPlacementDictionaryNONSpecial = new Dictionary<TowerPlacement, GameObject>();
 
+    public GameObject lighting;
+
     public bool inPreviewMode = false;
     private bool oneTowerAtTime = false;
     private bool transaction;
@@ -35,6 +37,7 @@ public class BuildSelectionTower : MonoBehaviour
     {
         if (inPreviewMode)
         {
+            lighting.SetActive(true);
             gameManager.enabled = false;
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -62,6 +65,10 @@ public class BuildSelectionTower : MonoBehaviour
                     PlaceTower();
                 }
             }
+        }
+        else
+        {
+            lighting.SetActive(false);
         }
     }
 
@@ -298,13 +305,9 @@ public class BuildSelectionTower : MonoBehaviour
         this.towersPlacedOnPlacementDictionaryNONSpecial = nonSpecialDictionary;
     }
 
-    /*
-    float GetTerrainHeightAt(Vector3 position)
+    public GameObject getLightingEffect()
     {
-        Terrain terrain = Terrain.activeTerrain;
-        float terrainHeight = terrain.SampleHeight(position);
-
-        return terrainHeight;
+        return this.lighting;
     }
-    */
+
 }
