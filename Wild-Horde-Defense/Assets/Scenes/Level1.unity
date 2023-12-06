@@ -32833,6 +32833,8 @@ MonoBehaviour:
   - {fileID: 976257587}
   - {fileID: 2058643466}
   - {fileID: 258802940}
+  - {fileID: 1202466396}
+  - {fileID: 1754452057}
   lighting: {fileID: 833985369}
   inPreviewMode: 0
 --- !u!1 &1685189059 stripped
