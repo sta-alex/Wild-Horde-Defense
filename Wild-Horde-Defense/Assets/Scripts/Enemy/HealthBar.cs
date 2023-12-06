@@ -41,6 +41,8 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateHealthBar(float maxHealth, float currentHealth)
     {
+        if (destroycoroutine != null)
+            StopCoroutine(destroycoroutine);
         enableUI(true);
         target = currentHealth / maxHealth;
         if (target > 0f && target <= 1f)

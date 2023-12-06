@@ -17063,8 +17063,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836708692}
-  m_LocalRotation: {x: -0.6651611, y: -0.13107842, z: -0.13308373, w: 0.7229578}
-  m_LocalPosition: {x: 517.3298, y: -161.93277, z: 322.3071}
+  m_LocalRotation: {x: -0.6385688, y: -0.08960755, z: -0.0880515, w: 0.7592412}
+  m_LocalPosition: {x: 494.9388, y: -291.04114, z: 255.22977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17399,11 +17399,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114237770718818268, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: dmg
-      value: 260
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 114237770718818268, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: shootDelay
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 135367814797736572, guid: dcfa431fa08147d4e8625060edd1e1ce, type: 3}
       propertyPath: m_Radius
@@ -38784,11 +38784,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114388094878622656, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: dmg
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 114388094878622656, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: shootDelay
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 135258617932420732, guid: 1ced8274635d6354e9da6572dcbb911d, type: 3}
       propertyPath: m_Radius

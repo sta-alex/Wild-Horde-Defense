@@ -22,6 +22,7 @@ public class EnemyStat : MonoBehaviour
     private CapsuleCollider bodycollider;
 
     public List <GameObject> particleEffects;
+    private bool isDead = false;
 
 
     float timer = 0;
@@ -60,16 +61,19 @@ public class EnemyStat : MonoBehaviour
     }
     public void UpdateHealth(float amount)
     {
-        currenHealth += amount;
-        if (currenHealth > 0 && currenHealth <= maxHealth)
+        if (!isDead)
         {
-            healthBar.UpdateHealthBar(maxHealth, currenHealth);
-        }
-        else if (currenHealth <= 0)
-        {
-            currenHealth = 0f;
-            healthBar.UpdateHealthBar(maxHealth, currenHealth);
-            Death();
+            currenHealth += amount;
+            if (currenHealth > 0 && currenHealth <= maxHealth)
+            {
+                healthBar.UpdateHealthBar(maxHealth, currenHealth);
+            }
+            else if (currenHealth <= 0)
+            {
+                currenHealth = 0f;
+                healthBar.UpdateHealthBar(maxHealth, currenHealth);
+                Death();
+            }
         }
     }
     #endregion
@@ -101,13 +105,14 @@ public class EnemyStat : MonoBehaviour
     {
         UpdateSpeed(GetMaxSpeed());
         activateParticleEffect(0, false);
+        StopCoroutine(damageCoroutine);
     }
 
     public void SlowSpeed(float percentage)
     {
+        StartDamageOverTime(2f, 5f, (int) percentage);
         activateParticleEffect(0, true);
         float target = 1 - (percentage / 100);
-        StartDamageOverTime(2f, 5f, (int) percentage);
         UpdateSpeed(GetCurrentSpeed() * target);
         slowCoroutine = StartCoroutine(EventTimerOnce(5.0f, ResetSpeed));
     }
@@ -131,6 +136,7 @@ public class EnemyStat : MonoBehaviour
     
     public void Death()
     {
+        isDead = true;
         UpdateSpeed(0f);
         currenHealth = 0f;
         gameObject.tag = "EnemyDead";
@@ -172,7 +178,11 @@ public class EnemyStat : MonoBehaviour
             if (gameObject.name == "Troll Variant(Clone)" || gameObject.name == "Demon Variant(Clone)")
                 GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
             else
-                GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(50);
+            {
+                int myInt = (int)(maxHealth / 300  * 70f) ;
+                GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(myInt);
+            }
+                
         }
     }
 
@@ -231,12 +241,12 @@ public class EnemyStat : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            yield return new WaitForSeconds(interval);
-            float damageAmount = twrDMG; 
+            float damageAmount = twrDMG;
             UpdateHealth(-damageAmount);
-
+            yield return new WaitForSeconds(interval);
             elapsedTime += interval;
         }
+        
 
     }
 
