@@ -11,6 +11,7 @@ public class TowerBuildMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.gameObject.SetActive(false);
         lighting = GameObject.Find("Lightning");
     }
 
