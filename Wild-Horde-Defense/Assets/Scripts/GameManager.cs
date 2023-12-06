@@ -209,7 +209,7 @@ public class GameManager : MonoBehaviour
 
         if (currentScene.name.Equals("Level1"))
         {
-            currency = 400;
+            currency = 550;
             currencyText.text = "$ " + currency;
         }
         else if (currentScene.name.Equals("SampleScene"))
