@@ -13,13 +13,16 @@ public class EnemyPathController : MonoBehaviour
     private List<Transform> movementPath;
     public NavMeshAgent pathAgent;
     private int nearestWayPoint = 0;
+    private Transform[] splitWayPointArray;
+    private int splitWayPoint = 0;
+    private bool isOnRoute = true;
     private bool reachedstartDest = true;
     void Start()
     {
         waveManager = GameObject.Find("Wavemanager").GetComponent<WaveManager>();
         waypointsPartent = GameObject.Find("WaypointParent").transform;
         pathAgent = GetComponent<NavMeshAgent>();
-        GetNearestWayPoints(startPoint);
+        SetNearestWayPoint(startPoint);
         pathAgent.SetDestination(startPoint.position);
     }
    
@@ -44,7 +47,7 @@ public class EnemyPathController : MonoBehaviour
             }
         }
     }
-    private void GetNearestWayPoints(Transform startPoint)
+    private void SetNearestWayPoint(Transform startPoint)
     {
         float shortestDistance = float.MaxValue;
         if(waypointsPartent != null)
@@ -67,12 +70,53 @@ public class EnemyPathController : MonoBehaviour
     }
     private void GoToNextWaypoint()
     {
-        if(nearestWayPoint < waypointsPartent.childCount)
-        {
-            pathAgent.SetDestination(waypointsPartent.GetChild(nearestWayPoint).position);
-            nearestWayPoint+=1;
+
+        if (isOnRoute){ 
+
+            if (nearestWayPoint < waypointsPartent.childCount)
+            {
+                if (waypointsPartent.GetChild(nearestWayPoint).CompareTag("WayPointSplit"))
+                {
+
+                    int rand = Random.Range(0, 3);
+                    if (rand == 0)
+                    {
+                        splitWayPointArray = waypointsPartent.GetChild(nearestWayPoint).GetComponentsInChildren<Transform>();
+                        isOnRoute = false;
+                        splitWayPoint = 0;
+                        pathAgent.SetDestination(splitWayPointArray[splitWayPoint].position);
+                        splitWayPoint += 1;
+                    }
+                    else
+                    {
+                        pathAgent.SetDestination(waypointsPartent.GetChild(nearestWayPoint).position);
+                        nearestWayPoint += 1;
+                    }
+
+                }
+                else
+                {
+                    pathAgent.SetDestination(waypointsPartent.GetChild(nearestWayPoint).position);
+                    nearestWayPoint += 1;
+                }
+            }
         }
-  
+        else
+        {
+            if(splitWayPoint < splitWayPointArray.Length)
+            {
+                pathAgent.SetDestination(splitWayPointArray[splitWayPoint].position);
+                splitWayPoint += 1;
+            }else
+            {
+                
+                isOnRoute = true;
+                SetNearestWayPoint(splitWayPointArray[splitWayPointArray.Length - 1]);
+                pathAgent.SetDestination(waypointsPartent.GetChild(nearestWayPoint).position);
+                splitWayPoint = 0;
+                
+            }
+        }
     }
 
     public void UpdateSpeed(float speed)
