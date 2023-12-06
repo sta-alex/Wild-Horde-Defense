@@ -37,7 +37,6 @@ public class BuildSelectionTower : MonoBehaviour
     {
         if (inPreviewMode)
         {
-            lighting.SetActive(true);
             gameManager.enabled = false;
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -126,6 +125,7 @@ public class BuildSelectionTower : MonoBehaviour
                                 powerBooster.BoostPower(placedTower, towerPlacement);
                                 GameObject.Destroy(previewTower);
                                 inPreviewMode = false;
+                                lighting.SetActive(false);
                                 towerPlacement.towerPlaced = true;
                                 gameManager.enabled = true;
                                 Debug.Log("Placed " + tower.name + " on terrain at " + previewTower.transform.position);
@@ -180,6 +180,7 @@ public class BuildSelectionTower : MonoBehaviour
 
     public void loadFireTower()
     {
+        lighting.SetActive(true);
         GameObject.Destroy(previewTower);
         oneTowerAtTime = true;
         inPreviewMode = true;
@@ -189,6 +190,7 @@ public class BuildSelectionTower : MonoBehaviour
     }
     public void loadCannonTower()
     {
+        lighting.SetActive(true);
         GameObject.Destroy(previewTower);
         oneTowerAtTime = true;
         inPreviewMode = true;
@@ -198,6 +200,7 @@ public class BuildSelectionTower : MonoBehaviour
     }
     public void loadPoisionTower()
     {
+        lighting.SetActive(true);
         GameObject.Destroy(previewTower);
         oneTowerAtTime = true;
         inPreviewMode = true;
@@ -207,6 +210,7 @@ public class BuildSelectionTower : MonoBehaviour
     }
     public void loadCrossbowTower()
     {
+        lighting.SetActive(true);
         GameObject.Destroy(previewTower);
         oneTowerAtTime = true;
         inPreviewMode = true;
