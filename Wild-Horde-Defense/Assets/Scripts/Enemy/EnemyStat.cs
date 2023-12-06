@@ -17,6 +17,7 @@ public class EnemyStat : MonoBehaviour
     private float reduceSpeed = 2f;
     private Coroutine smoothSpeedCoroutine;
     private Coroutine slowCoroutine;
+    private Coroutine damageCoroutine;
 
     private CapsuleCollider bodycollider;
 
@@ -106,6 +107,7 @@ public class EnemyStat : MonoBehaviour
     {
         activateParticleEffect(0, true);
         float target = 1 - (percentage / 100);
+        StartDamageOverTime(2f, 5f, (int) percentage);
         UpdateSpeed(GetCurrentSpeed() * target);
         slowCoroutine = StartCoroutine(EventTimerOnce(5.0f, ResetSpeed));
     }
@@ -216,4 +218,26 @@ public class EnemyStat : MonoBehaviour
 
         particleEffects[listNumber].SetActive(false);
     }
+
+
+    private void StartDamageOverTime(float interval, float duration, int twrDMG)
+    {
+        damageCoroutine = StartCoroutine(DamageOverTime(interval, duration, twrDMG));
+    }
+
+    private IEnumerator DamageOverTime(float interval, float duration, int twrDMG)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            yield return new WaitForSeconds(interval);
+            float damageAmount = twrDMG; 
+            UpdateHealth(-damageAmount);
+
+            elapsedTime += interval;
+        }
+
+    }
+
 }
