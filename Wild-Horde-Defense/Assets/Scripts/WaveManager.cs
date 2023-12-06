@@ -164,6 +164,7 @@ public class WaveManager : MonoBehaviour
                     StartCoroutine(SpawnWaveofSize(Boss[1], 1));
                 enemyStatMultiplier += 1;
                 bossIsSpawned = true;
+                WaveIntervallDelay = 15f;
                 break;
             case 7:
                 currentWave += 1;
