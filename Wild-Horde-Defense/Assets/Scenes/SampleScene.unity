@@ -32768,11 +32768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: dmg
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: shootDelay
-      value: 1.2
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 135841552861663602, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: m_Radius
@@ -35250,11 +35250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114751458232940500, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: dmg
-      value: 50
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114751458232940500, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: shootDelay
-      value: 2
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 135118300099326916, guid: a1beaea2123fae24798c8567dbe43d63, type: 3}
       propertyPath: m_Enabled
@@ -44825,11 +44825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: dmg
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114426785601216136, guid: b5d493498b1ba5f449c440d193046551, type: 3}
       propertyPath: shootDelay
-      value: 1.8
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
