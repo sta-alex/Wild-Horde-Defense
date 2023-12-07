@@ -14,7 +14,7 @@ public class EnemyStat : MonoBehaviour
     public HealthBar healthBar;
     public EnemyPathController pathController;
 
-    private float reduceSpeed = 2f;
+    private float reduceSpeed = 1f;
     private Coroutine smoothSpeedCoroutine;
     private Coroutine slowCoroutine;
     private Coroutine damageCoroutine;
@@ -22,6 +22,7 @@ public class EnemyStat : MonoBehaviour
     private CapsuleCollider bodycollider;
 
     public List <GameObject> particleEffects;
+    private Coroutine particlecoroutine;
     private bool isDead = false;
 
 
@@ -96,6 +97,8 @@ public class EnemyStat : MonoBehaviour
 
     public void UpdateSpeed(float newspeedtarget)
     {
+        if (smoothSpeedCoroutine != null)
+            StopCoroutine(smoothSpeedCoroutine);
         if (currentSpeed != GetCurrentSpeed())
             smoothSpeedCoroutine = StartCoroutine(SmoothlyUpdateSpeed(newspeedtarget));
         currentSpeed = newspeedtarget;
@@ -110,7 +113,7 @@ public class EnemyStat : MonoBehaviour
 
     public void SlowSpeed(float percentage)
     {
-        StartDamageOverTime(2f, 5f, (int) percentage);
+        StartDamageOverTime(2f, 5f, (int) percentage / 2);
         activateParticleEffect(0, true);
         float target = 1 - (percentage / 100);
         UpdateSpeed(GetCurrentSpeed() * target);
@@ -206,6 +209,8 @@ public class EnemyStat : MonoBehaviour
 
     public void activateParticleEffect(int listNumber, bool isActive, float time = 0f)
     {
+        if(particlecoroutine != null)
+            StopCoroutine(particlecoroutine);
         if (isActive)
         {
             if(time == 0f)
@@ -213,7 +218,7 @@ public class EnemyStat : MonoBehaviour
             else
             {
                 particleEffects[listNumber].SetActive(true);
-                StartCoroutine(particletime(listNumber, time));
+                particlecoroutine = StartCoroutine(particletime(listNumber, time));
             }
         }
         else

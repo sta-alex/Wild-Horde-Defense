@@ -89,9 +89,9 @@ public class HealthBar : MonoBehaviour
         float currentTime = 0f;
         float initialFillAmount = healthbarSprite.fillAmount;
 
-        while (currentTime < 1f) // Ändern Sie dies auf 1f
+        while (currentTime < 1f) 
         {
-            currentTime += 0.01f; // Erhöhen Sie currentTime um einen festen Wert
+            currentTime += 0.01f; 
             healthbarSprite.fillAmount = Mathf.Lerp(initialFillAmount, targetValue, currentTime);
             if (healthbarSprite.fillAmount < 0f)
                 enableUI(false);

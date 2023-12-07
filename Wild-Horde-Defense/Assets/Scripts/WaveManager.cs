@@ -34,11 +34,6 @@ public class WaveManager : MonoBehaviour
 
 
 
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -83,8 +78,11 @@ public class WaveManager : MonoBehaviour
 
         if(numberofAliveEnemies <= 0)
         {
-            StopCoroutine(waveStartCoroutine);
-            StopCoroutine(waveIntervallCoroutine);
+            if(waveStartCoroutine != null && waveIntervallCoroutine!= null)
+            {
+                StopCoroutine(waveStartCoroutine);
+                StopCoroutine(waveIntervallCoroutine);
+            }
             SpawnWaveWithPattern();
             waveIntervallCoroutine = StartCoroutine(RepeatEventTimer(WaveIntervallDelay, SpawnWaveWithPattern));
         }
@@ -164,7 +162,10 @@ public class WaveManager : MonoBehaviour
                     StartCoroutine(SpawnWaveofSize(Boss[1], 1));
                 enemyStatMultiplier += 1;
                 bossIsSpawned = true;
-                WaveIntervallDelay = 15f;
+                StopCoroutine(waveStartCoroutine);
+                StopCoroutine(waveIntervallCoroutine);
+                WaveIntervallDelay = 7f;
+                waveIntervallCoroutine = StartCoroutine(RepeatEventTimer(WaveIntervallDelay, SpawnWaveWithPattern));
                 break;
             case 7:
                 currentWave += 1;
@@ -184,11 +185,20 @@ public class WaveManager : MonoBehaviour
                 StopCoroutine(waveIntervallCoroutine);
                 timer.StopTimer();
                 timerObj.SetActive(false);
-                victoryText.SetActive(true);
-                Invoke("NextLevel", 6f);
+                StartCoroutine(RepeatEventTimer(5f,Victory));
                 break;
         }
     }
+
+    private void Victory()
+    {
+        if(numberofAliveEnemies <= 0)
+        {
+            victoryText.SetActive(true);
+            Invoke("NextLevel", 7f);
+        }
+    }
+
 
     public (float,float) getEnemyStat_HP_SPEED(GameObject enemy)
     {
