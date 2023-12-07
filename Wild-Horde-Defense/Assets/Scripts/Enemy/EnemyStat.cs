@@ -116,7 +116,12 @@ public class EnemyStat : MonoBehaviour
         StartDamageOverTime(2f, 5f, (int) percentage / 2);
         activateParticleEffect(0, true);
         float target = 1 - (percentage / 100);
-        UpdateSpeed(GetCurrentSpeed() * target);
+        float newspeed = GetCurrentSpeed() * target;
+        if (newspeed < maxSpeed / 2)
+        {
+            newspeed = maxSpeed / 2;
+        }
+        UpdateSpeed(newspeed);
         slowCoroutine = StartCoroutine(EventTimerOnce(5.0f, ResetSpeed));
     }
 

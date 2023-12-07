@@ -21292,8 +21292,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797943682}
-  m_LocalRotation: {x: 0.7782616, y: -0.0018825384, z: -0.0023335284, w: -0.6279331}
-  m_LocalPosition: {x: 433.5251, y: -240.10454, z: 449.96863}
+  m_LocalRotation: {x: -0.0014195982, y: -0.007736983, z: -0.010141876, w: 0.9999176}
+  m_LocalPosition: {x: 963.01843, y: -573.4759, z: -1113.9524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47764,7 +47764,7 @@ MonoBehaviour:
   - {fileID: 989837989}
   spawnhandler: {fileID: 204955964}
   timerObj: {fileID: 327191269}
-  LvlNumver: 0
+  LvlNumver: 1
   maxWaves: 10
   currentWave: 0
   LvlStartDelay: 60
