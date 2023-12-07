@@ -52,7 +52,14 @@ public class FirePowerPlacement : MonoBehaviour
                                 Tower tower = towerToBoost.GetComponent<Tower>();
                                 if (tower != null)
                                 {
-                                    tower.dmg += 30;
+                                    if (towerToBoost.name.Contains("HM_poison"))
+                                    {
+                                        tower.dmg += 5;
+                                    }
+                                    else
+                                    {
+                                        tower.dmg += 30;
+                                    }
                                 }
                             }
                         }

@@ -182,7 +182,7 @@ public class EnemyStat : MonoBehaviour
                 GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(500);
             else
             {
-                int myInt = (int)(maxHealth / 300  * 70f) ;
+                int myInt = (int)(maxHealth / 300  * 100f) ;
                 GameObject.Find("Main Camera").GetComponent<GameManager>().increaseCurrency(myInt);
             }
                 

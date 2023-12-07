@@ -12401,7 +12401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: dmg
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 114420310575102740, guid: 37ed12dc69d861b48893cfb9169a4382, type: 3}
       propertyPath: shootDelay
@@ -17022,6 +17022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836708694}
   - component: {fileID: 836708693}
+  - component: {fileID: 836708695}
   m_Layer: 0
   m_Name: Water4AdvancedReflectionSceneCamera
   m_TagString: Untagged
@@ -17079,14 +17080,23 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836708692}
-  m_LocalRotation: {x: -0.0014195982, y: -0.007736983, z: -0.010141876, w: 0.9999176}
-  m_LocalPosition: {x: 666.50995, y: -238.94438, z: -637.20337}
+  m_LocalRotation: {x: -0.6767931, y: 0.0010728571, z: 0.0009837967, w: 0.73617184}
+  m_LocalPosition: {x: 518.3405, y: -305.51642, z: 262.09894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &836708695
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836708692}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 5fec9b763534eef46aa9e222d527e8d4, type: 2}
 --- !u!1001 &848528485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25128,7 +25138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114347841765385122, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: shootDelay
-      value: 1.6
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 135841552861663602, guid: 2ebe581237b6b8049afe7214b88f8b05, type: 3}
       propertyPath: m_Radius
@@ -29606,7 +29616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114183152169195300, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
       propertyPath: dmg
-      value: 360
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 114183152169195300, guid: e2c208996efa8f541ab0803b3535b9ee, type: 3}
       propertyPath: shootDelay
